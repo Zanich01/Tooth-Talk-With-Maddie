@@ -1,3 +1,4 @@
+/* Apply to all elements */
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +6,7 @@
   text-align: center;
 }
 
+/* Style the body: set font, line-height, color, background color, and display properties */
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
@@ -16,20 +18,22 @@ body {
   margin-bottom: 100px;
 }
 
+/* Style the navigation bar */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #005f99;
   color: #fff;
-  padding: 10px 20px;
   flex-wrap: wrap;
 }
 
+/* Style the logo within the navigation bar */
 .navbar .logo img {
   height: 40px;
 }
 
+/* Style the navigation links */
 .navbar a {
   color: #fff;
   padding: 14px 20px;
@@ -37,15 +41,18 @@ body {
   text-align: center;
 }
 
+/* Add hover effect to navigation links */
 .navbar a:hover {
   background: #003f66;
   color: #fff;
 }
 
+/* Style the search icon in the navigation bar */
 .navbar .fa-search {
   cursor: pointer;
 }
 
+/* Style the text input in the navigation bar */
 .navbar input[type="text"] {
   padding: 5px;
   margin-left: 10px;
@@ -53,6 +60,7 @@ body {
   border-radius: 3px;
 }
 
+/* Style the main content area */
 .main-content {
   flex: 1;
   padding: 20px;
@@ -66,23 +74,27 @@ body {
   flex-direction: column;
 }
 
+/* Style the main content headers */
 .main-content h1 {
   margin-bottom: 20px;
   color: #005f99;
   text-align: center;
 }
 
+/* Style the main content paragraphs */
 .main-content p {
   margin-bottom: 20px;
   font-size: 1.2em;
 }
 
+/* Style the unordered lists in the main content */
 .main-content ul {
   list-style-type: disc;
   margin-left: 20px;
   font-size: 1.1em;
 }
 
+/* Styling the "back to top" button */
 #topBtn {
   display: none;
   position: fixed;
@@ -99,10 +111,12 @@ body {
   border-radius: 10px;
 }
 
+/* Add hover effect to the "back to top" button */
 #topBtn:hover {
   background-color: #003f66;
 }
 
+/* Style the footer */
 footer {
   background: #005f99;
   color: #fff;
@@ -113,6 +127,7 @@ footer {
   bottom: 0;
 }
 
+/* Style the photo logo section */
 .photo-logo {
   display: flex;
   justify-content: center;
@@ -120,16 +135,19 @@ footer {
   margin: 20px 0;
 }
 
+/* Style the images in the photo logo section */
 .photo-logo img {
   width: 400px;
   height: 500px;
   object-fit: cover;
 }
 
+/* Mobile device adjustments */
 @media (max-width: 768px) {
   .navbar {
       flex-direction: column;
       align-items: flex-start;
+      padding: 10px 20px;
   }
 
   .navbar a {
@@ -149,5 +167,4 @@ footer {
       box-shadow: none;
       border-radius: 0;
   }
-
 }

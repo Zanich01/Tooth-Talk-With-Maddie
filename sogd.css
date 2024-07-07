@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  padding-bottom: 10px;
   box-sizing: border-box;
 }
 
@@ -22,7 +21,6 @@ body {
   justify-content: space-between;
   background: #005f99;
   color: #fff;
-  padding: 10px 20px;
   flex-wrap: wrap;
 }
 
@@ -116,6 +114,7 @@ footer {
   .navbar {
       flex-direction: column;
       align-items: flex-start;
+      padding: 10px 20px;
   }
 
   .navbar a {
@@ -138,7 +137,7 @@ footer {
 
   #topBtn {
       right: 10px;
-      bottom: 82px;
+      bottom: 50px;
       padding: 10px;
   }
 }
