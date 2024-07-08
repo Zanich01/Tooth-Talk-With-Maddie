@@ -1,37 +1,383 @@
 <DOCTYPE html>
     <html>
        <head>
-          <title>Product Recommendations</title>
+        <head>
+
+          <meta charset="UTF-8">
+          
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          
+          <title>Product Recommendations | TTWM</title>
+          
           <link rel="stylesheet" href="pr.css">
-          <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">       
-        </head>
+          
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        </head>    
+        
       <body>
       
     <!-- Load an icon library -->
     <link rel="stylesheet" href="grey">
     
     <div class="navbar">
+      
       <a href="index.html" class="logo"><img src="HSHYlogo1.png" alt="Logo"></a>
+    
       <i class="fa fa-search" onclick="toggleSearchBar()"></i>
+    
       <input type="text" id="mySearch" onkeyup="filterLinks()" placeholder="Search.." title="Type in a category">
-      <a class="active" href="index.html"><i class="home"></i> Home</a>
-      <a href="whd.html"><i class="whd"></i> What Hygenists Do</a>
-      <a href="sogd.html"><i class="sogd"></i> Stages Of Gum Disease</a>
-      <a href="hshy.html"><i class="pdt"></i> Healthier Smile, Healthier You</a>
-      <a href="cpd.html"><i class="cpd"></i> Cavity Prevention & Decay</a>
-      <a href="pr.html"><i class="pr"></i> Product Recommendations</a>
+    
+      <a class="active" href="index.html"><i class="fa fa-home"></i> Home</a>
+    
+      <a href="whd.html"><i class="fa fa-info-circle"></i> What Hygienists Do</a>
+    
+      <a href="sogd.html"><i class="fa fa-heartbeat"></i> Stages Of Gum Disease</a>
+    
+      <a href="hshy.html"><i class="fa fa-smile-o"></i> Healthier Smile, Healthier You</a>
+    
+      <a href="cpd.html"><i class="fa fa-shield"></i> Cavity Prevention & Decay</a>
+    
+      <a href="pr.html"><i class="fa fa-thumbs-up"></i> Product Recommendations</a>
+    
     </div>
     
-      <h1 style="color:rgb(255, 255, 255);"><strong>Some Products I Recommend For a Healthier Smile</strong> </h1>
+    <div class="container">
+
+      <div class="header">
+      
+        <h1>Product Recommendations</h1>
+      
+        <br>
+        
+      </div>
+
+      
+      <div class="product-category">
+      
+        <h2>Gum Disease — Gingivitis and Periodontal Disease</h2>
+      
+        <p>To reverse gingivitis or keep periodontitis stable, I recommend brushing twice daily using an electric toothbrush for 2 minutes each, using a water
+           flosser along the gumline once daily, flossing daily using string floss, and rinsing using an antiseptic mouth rinse daily. In severe cases, a stronger 
+           mouth rinse may be recommended. 
+        </p>
+        <br>
+
+        <div class="product-list">
+      
+          <div class="product-item">
+      
+            <h3>Electric Toothbrush: Oral B iO</h3>
+
+            <a href="https://www.target.com/p/oral-b-io3-electric-toothbrush-light-blue/-/A-87153883" target="_blank">
               
-            <p1 style="color:White;font-size:160%;"background-color: Black;"">  </p1>
-          
-          <footer>
-           <p>&copy; 2024 Dental Hygienist Association. All rights reserved.</p>
-          </footer>
+              <img id="toothBrush" src="oralbToothbrush.webp" alt="oral-b-io3-electric-toothbrush-light-blue"> 
+      
+            </a>  
 
-        <script src="script.js"> </script>
+            <p><a href="https://www.target.com/p/oral-b-io3-electric-toothbrush-light-blue/-/A-87153883" target="_blank">View on Target</a></p>
+      
+          </div>
+      
+          <div class="product-item">
+      
+            <h3>Electric Toothbrush: Sonicare ProtectiveClean</h3>
+      
+            <a href="https://www.amazon.com/Philips-Sonicare-ProtectiveClean-Rechargeable-HX6857/dp/B078GVMVRJ" target="_blank">
 
-      </body>
-    </html>
+            <img id="psToothbrush" src="phillipsSonicare.jpg"  alt="Philips-Sonicare-ProtectiveClean-Rechargeable-HX6857"> 
+
+            </a>
+
+            <p><a href="https://www.amazon.com/Philips-Sonicare-ProtectiveClean-Rechargeable-HX6857/dp/B078GVMVRJ" target="_blank">View on Amazon</a></p>
+      
+          </div>
+      
+          <div class="product-item">
+      
+            <h3>Waterflosser: Oral B Cordless Waterflosser</h3>
+      
+            <a href="https://www.walgreens.com/store/c/oral-b-water-flosser-advanced,-portable-oral-irrigator-handle-with-2-nozzles/ID=300411189-product" target="_blank">
+
+            <img id="obWaterFlosser" src="oralbWaterFlosser.avif"  alt="oral-b-water-flosser-advanced"> 
+
+            </a>
+
+            <p><a href="https://www.walgreens.com/store/c/oral-b-water-flosser-advanced,-portable-oral-irrigator-handle-with-2-nozzles/ID=300411189-product" target="_blank">View on Walgreens</a></p>
+      
+          </div>
+      
+          <!-- <div class="product-item">
+      
+            <h3>Antiseptic Mouth Rinse: Listerine Gum Therapy</h3>
+      
+            <p><a href="https://www.meijer.com/shopping/product/listerine-gum-therapy-anti-gingivitis-mouthwash--glacier-mint--500-ml/31254735266.html">View on Meijer</a></p>
+      
+          </div>
+        -->
+
+          <div class="product-item">
+      
+            <h3>Mouth Rinse for Severe Cases: iO Rinse</h3>
+      
+            <a href="https://www.physicsforceps.com/molecular-iodine-mouthwash?product_id=513" target="_blank">
+
+            <img id="ioRinse" src="ioRinse.jpg"  alt="ioRinse">
+
+            </a>
+
+            <p><a href="https://www.physicsforceps.com/molecular-iodine-mouthwash?product_id=513" target="_blank">View on Physics Forceps</a></p>
+      
+          </div>
+      
+        </div>
+      
+      </div>
+
+
+      <div class="product-category">
+      
+        <h2>Dry Mouth</h2>
+      
+        <p>If you suffer from frequent dry mouth, you are more prone to developing cavities and gum disease. To prevent issues
+           from arising, I recommend Biotene products as needed for daytime use and Xylimelt tablets for use while sleeping. Keeping
+           water nearby for frequent sipping also is advised</p>
+           <br>
+
+        <div class="product-list">
+      
+          <div class="product-item">
+      
+            <h3>Biotene Oral Rinse</h3>
+      
+            <a href="https://www.cvs.com/shop/biotene-oral-rinse-mouthwash-for-dry-mouth-alcohol-free-fresh-mint-prodid-795989" target="_blank">
+
+            <img id="bioRinse" src="bioteneOralrinse.jpg"  alt="biotene-oral-rinse-mouthwash-for-dry-mouth-alcohol-free-fresh-mint-prodid-795989">
+
+            </a>
+
+            <p><a href="https://www.cvs.com/shop/biotene-oral-rinse-mouthwash-for-dry-mouth-alcohol-free-fresh-mint-prodid-795989" target="_blank">View on CVS</a></p>
+      
+          </div>
+      
+          <div class="product-item">
+      
+            <h3>Biotene Dry Mouth Lozenges</h3>
+      
+            <a href="https://www.kroger.com/p/biotene-dry-mouth-refreshing-mint-lozenges/0004858215942" target="_blank">
+
+            <img id="bioLozenges" src="bioteneLozenges.webp"  alt="biotene-dry-mouth-refreshing-mint-lozenges">
+
+            </a>
+
+            <p><a href="https://www.kroger.com/p/biotene-dry-mouth-refreshing-mint-lozenges/0004858215942" target="_blank">View on Kroger</a></p>
+      
+          </div>
+      
+          <div class="product-item">
+      
+            <h3>Xylimelts</h3>
+      
+            <a href="https://www.amazon.com/XyliMelts-Moisturizing-Adhering-Stimulates-Non-Acidic/dp/B007XEVQ8G" target="_blank">
+
+            <img id="xyliMelts" src="xyliMelts.jpg"  alt="XyliMelts-Moisturizing-Adhering-Stimulates-Non-Acidic">
+
+            </a>
+
+            <p><a href="https://www.amazon.com/XyliMelts-Moisturizing-Adhering-Stimulates-Non-Acidic/dp/B007XEVQ8G" target="_blank">View on Amazon</a></p>
+      
+          </div>
+      
+        </div>
+      
+      </div>
+
+      
+      <div class="product-category">
+      
+        <h2>Bad Breath</h2>
+      
+        <p>If you suffer from frequent bad breath, it could be due to several factors. Poor oral hygiene, digestive issues, overgrowth of bacteria
+           on the tongue, gum disease, and cavities can be causing malodor in your mouth. If your dental team has ruled out gum disease and decay, 
+           making small tweaks to your oral hygiene may help. A large amount of bacteria in your mouth hide in the small projections on the tongue’s 
+           surface. To address these stubborn areas, I recommend using a tongue scraper and/or brushing the tongue daily. Mouth rinses like Therabreath 
+           or an antiseptic Listerine can also help reduce the overall bad breath germs in the mouth. </p>
+          <br>
+
+
+        <div class="product-list">
+      
+          <div class="product-item">
+      
+            <h3>Metal Tongue Scraper</h3>
+      
+            <a href="https://www.walmart.com/ip/GuruNanda-Stainless-Steel-Spoon-Tongue-Scraper-2pk/2112475696" target="_blank">
+
+            <img id="metalScraper" src="metalToungeScraper.webp"  alt="metalToungeScraper">
+
+            </a>
+
+            <p><a href="https://www.walmart.com/ip/GuruNanda-Stainless-Steel-Spoon-Tongue-Scraper-2pk/2112475696" target="_blank">View on Walmart</a></p>
+      
+          </div>
+      
+          <div class="product-item">
+      
+            <h3>Bad Breath Mouth Rinse: Therabreath Deep Clean</h3>
+
+            <a href="https://www.walmart.com/ip/TheraBreath-Deep-Clean-Mouthwash-Alcohol-Free-Fresh-Mint-16-fl-oz/3784750828" target="_blank">
+
+            <img id="Therabreath" src="theraBreathDeepClean.webp"  alt="TheraBreath-Deep-Clean-Mouthwash-Alcohol-Free-Fresh-Mint-16-fl-oz">
+      
+            </a>
+
+            <p><a href="https://www.walmart.com/ip/TheraBreath-Deep-Clean-Mouthwash-Alcohol-Free-Fresh-Mint-16-fl-oz/3784750828" target="_blank">View on Walmart</a></p>
+      
+          </div>
+      
+          <div class="product-item">
+      
+            <h3>Bad Breath Mouth Rinse: Listerine Antiseptic Cool Mint</h3>
+
+            <a href="https://www.walmart.com/ip/Listerine-Cool-Mint-Antiseptic-Mouthwash-for-Bad-Breath-250-mL/10294065" target="_blank">
+
+            <img id="listerineAntiseptic" src="listerineAntiseptic.webp"  alt="Listerine-Cool-Mint-Antiseptic-Mouthwash-for-Bad-Breath-250-mL">
+      
+            </a>
+
+            <p><a href="https://www.walmart.com/ip/Listerine-Cool-Mint-Antiseptic-Mouthwash-for-Bad-Breath-250-mL/10294065" target="_blank">View on Walmart</a></p>
+      
+          </div>
+      
+        </div>
+      
+      </div>
+
+
+      <div class="product-category">
+      
+        <h2>Whitening</h2>
+      
+        <p>The most common complaint I hear from patients as a dental hygienist is wanting a brighter smile. One thing I did not know
+           before becoming a hygienist was how to properly use whitening products to achieve noticeable results. To achieve a brightening
+           effect, it is recommended to whiten 7-10 times in 7-10 days. If hypersensitivity develops, it is okay to skip a day in between,
+           but 7-10 applications are recommended to see a significant difference in tooth shade. Personally, I recommend Opalescence 
+           products due to the higher concentration of the active ingredients hydrogen peroxide and hydrogen carbomide than drugstore brands.
+           Ultimately, higher-end whitening products and drug-store brands contain the same active ingredients, just at different levels 
+           of concentration. Higher concentrations provide quicker results. Drug-store brands, like Crest 3D White strips, are still very 
+           effective and provide great results at a more budget-friendly price, however it may take longer to see the same results. *I do 
+           not personally recommend whitening toothpastes or mouthwash. Whitening toothpastes are highly abrasive and can damage tooth enamel
+           and I have never personally seen results from whitening mouth wash.*</p>
+           <br>
+
+        <div class="product-list">
+      
+          <div class="product-item">
+      
+            <h3>Opalescence Whitening Gel 15% Syringes</h3>
+      
+            <a href="https://www.amazon.com/Opalescence-Teeth-Whitening-Flavor-Syringes/dp/B00VQTM43A" target="_blank">
+
+            <img id="opalesceneWhiteSyringes" src="opalesceneWhite.jpg"  alt="Opalescence-Teeth-Whitening-Flavor-Syringes">
+
+            </a>
+
+            <p><a href="https://www.amazon.com/Opalescence-Teeth-Whitening-Flavor-Syringes/dp/B00VQTM43A" target="_blank">View on Amazon</a></p>
+      
+          </div>
+      
+          <div class="product-item">
+      
+            <h3>Opalescence Go Trays</h3>
+
+            <a href="https://www.walmart.com/ip/Opalescence-Go-Prefilled-Teeth-Whitening-Trays-15-Hydrogen-Peroxide-Mint/2097180240" target="_blank">
+
+            <img id="oplasceneGoWhite" src="oplasceneGoWhite.webp"  alt="Opalescence-Go-Prefilled-Teeth-Whitening-Trays-15-Hydrogen-Peroxide-Mint">
+      
+            </a>
+
+            <p><a href="https://www.walmart.com/ip/Opalescence-Go-Prefilled-Teeth-Whitening-Trays-15-Hydrogen-Peroxide-Mint/2097180240" target="_blank">View on Walmart</a></p>
+      
+          </div>
+      
+          <div class="product-item">
+      
+            <h3>Crest 3D White Strips</h3>
+      
+            <a href="https://www.target.com/p/crest-3dwhitestrips-classic-white-at-home-teeth-whitening-kit-10-treatments/-/A-80137822" target="_blank">
+
+            <img id="crest3DWhiteStrips" src="crest3DWhiteStrips.webp"  alt="crest-3dwhitestrips-classic-white-at-home-teeth-whitening-kit-10-treatments">
+
+            </a>
+
+            <p><a href="https://www.target.com/p/crest-3dwhitestrips-classic-white-at-home-teeth-whitening-kit-10-treatments/-/A-80137822" target="_blank">View on Target</a></p>
+      
+          </div>
+      
+        </div>
+      
+      </div>
+
+      <div class="product-category">
+      
+        <h2>High Cavity Risk</h2>
+      
+        <p>If you are someone prone to getting cavities, I recommend brushing twice daily using an electric toothbrush for 2 minutes each, flossing daily using 
+          string floss, and using an antiseptic mouth rinse daily. Your dental team may also recommend a preventative prescription-strength fluoride toothpaste to
+          help strengthen and protect the teeth from additional decay. It would be most beneficial to speak with a dental professional to help determine how your
+          diet or lifestyle habits may be impacting your teeth. 
+          <br><center>(See <a href="cpd.html" style="color:rgb(0, 44, 83)"><em>Cavity Prevention and Decay</em></a> for more information).</center> </p>
+          <br>
+
+        <div class="product-list">
+      
+          <div class="product-item">
+      
+            <h3>Electric Toothbrush: Oral B iO</h3>
+      
+            <a href="https://www.target.com/p/oral-b-io3-electric-toothbrush-light-blue/-/A-87153883" target="_blank">
+
+            <img id="toothBrush" src="oralbToothbrush.webp"  alt="oral-b-io3-electric-toothbrush-light-blue">
+
+            </a>
+
+            <p><a href="https://www.target.com/p/oral-b-io3-electric-toothbrush-light-blue/-/A-87153883" target="_blank">View on Target</a></p>
+      
+          </div>
+      
+          <div class="product-item">
+      
+            <h3>Electric Toothbrush: Sonicare ProtectiveClean</h3>
+      
+            <a href="https://www.amazon.com/Philips-Sonicare-ProtectiveClean-Rechargeable-HX6857/dp/B078GVMVRJ" target="_blank">
+
+            <img id="psToothbrush" src="phillipsSonicare.jpg"  alt="Philips-Sonicare-ProtectiveClean-Rechargeable-HX6857"> 
+
+            </a>
+
+            <p><a href="https://www.amazon.com/Philips-Sonicare-ProtectiveClean-Rechargeable-HX6857/dp/B078GVMVRJ" target="_blank">View on Amazon</a></p>
+      
+          </div>
+      
+        </div>
+      
+      </div>
+  </div>
+
+  <p align="center">Disclaimer: All product recommendations are made based on personal experience or seeing positive clinical results on patients I have treated. The links 
+    provided are the cheapest available version of each item in my area. I recommend doing research on available pricing in your area to ensure you’re getting the best value!</p>
+
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Back To Top</button>
+
+
+  <footer>
+
+    <p>&copy; 2024 Dental Hygienist Association. All rights reserved.</p>
+
+  </footer>
+
+       <script src="script.js"></script>
+
+    </body>
+    
+  </html>

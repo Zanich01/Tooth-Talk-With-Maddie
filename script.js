@@ -9,7 +9,7 @@ function filterLinks() {
   
     // Get all the links in the navbar
     const links = document.querySelectorAll('.navbar a');
-  
+    
     // Iterate through each link and hide/show based on the user input
     links.forEach(link => {
       const linkText = link.textContent.toLowerCase();

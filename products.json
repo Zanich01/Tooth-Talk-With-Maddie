@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Oral B iO Electric Toothbrush",
+        "category": "Gum Disease",
+        "url": "https://www.target.com/p/oral-b-io3-electric-toothbrush-light-blue/-/A-87153883",
+        "image": "oralbToothbrush.webp"
+    },
+    {
+        "name": "Sonicare ProtectiveClean",
+        "category": "Gum Disease",
+        "url": "https://www.amazon.com/Philips-Sonicare-ProtectiveClean-Rechargeable-HX6857/dp/B078GVMVRJ",
+        "image": "phillipsSonicare.jpg"
+    },
+    {
+        "name": "Oral B Cordless Waterflosser",
+        "category": "Gum Disease",
+        "url": "https://www.walgreens.com/store/c/oral-b-water-flosser-advanced,-portable-oral-irrigator-handle-with-2-nozzles/ID=300411189-product",
+        "image": "oralbWaterFlosser.avif"
+    },
+    {
+        "name": "iO Rinse",
+        "category": "Gum Disease",
+        "url": "https://www.physicsforceps.com/molecular-iodine-mouthwash?product_id=513",
+        "image": "ioRinse.jpg"
+    },
+    {
+        "name": "Biotene Oral Rinse",
+        "category": "Dry Mouth",
+        "url": "https://www.cvs.com/shop/biotene-oral-rinse-mouthwash-for-dry-mouth-alcohol-free-fresh-mint-prodid-795989",
+        "image": "bioteneOralrinse.jpg"
+    },
+    {
+        "name": "Biotene Dry Mouth Lozenges",
+        "category": "Dry Mouth",
+        "url": "https://www.kroger.com/p/biotene-dry-mouth-refreshing-mint-lozenges/0004858215942",
+        "image": "bioteneLozenges.webp"
+    },
+    {
+        "name": "Xylimelts",
+        "category": "Dry Mouth",
+        "url": "https://www.amazon.com/XyliMelts-Moisturizing-Adhering-Stimulates-Non-Acidic/dp/B007XEVQ8G",
+        "image": "xyliMelts.jpg"
+    },
+    {
+        "name": "Metal Tongue Scraper",
+        "category": "Bad Breath",
+        "url": "https://www.walmart.com/ip/GuruNanda-Stainless-Steel-Spoon-Tongue-Scraper-2pk/2112475696",
+        "image": "metalToungeScraper.webp"
+    },
+    {
+        "name": "Therabreath Deep Clean",
+        "category": "Bad Breath",
+        "url": "https://www.walmart.com/ip/TheraBreath-Deep-Clean-Mouthwash-Alcohol-Free-Fresh-Mint-16-fl-oz/3784750828",
+        "image": "theraBreathDeepClean.webp"
+    },
+    {
+        "name": "Listerine Antiseptic Cool Mint",
+        "category": "Bad Breath",
+        "url": "https://www.walmart.com/ip/Listerine-Cool-Mint-Antiseptic-Mouthwash-for-Bad-Breath-250-mL/10294065",
+        "image": "listerineAntiseptic.webp"
+    },
+    {
+        "name": "Opalescence Whitening Gel 15% Syringes",
+        "category": "Whitening",
+        "url": "https://www.amazon.com/Opalescence-Teeth-Whitening-Flavor-Syringes/dp/B00VQTM43A",
+        "image": "opalesceneWhite.jpg"
+    },
+    {
+        "name": "Opalescence Go Trays",
+        "category": "Whitening",
+        "url": "https://www.walmart.com/ip/Opalescence-Go-Prefilled-Teeth-Whitening-Trays-15-Hydrogen-Peroxide-Mint/2097180240",
+        "image": "oplasceneGoWhite.webp"
+    },
+    {
+        "name": "Crest 3D White Strips",
+        "category": "Whitening",
+        "url": "https://www.target.com/p/crest-3dwhitestrips-classic-white-at-home-teeth-whitening-kit-10-treatments/-/A-80137822",
+        "image": "crest3DWhiteStrips.webp"
+    }
+]

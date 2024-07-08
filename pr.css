@@ -1,82 +1,226 @@
-body {
-    font-family: century-gothic, sans-serif;
-  }
+/* Apply to all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: revert - layer;
+}
 
+/* Styling the body */
 body {
-    background-color: black;
-    background-image: url();
-    background-repeat: no-repeat;
-    background-size: 100% 80%;
-  }
-  
-/* Style the navigation bar */
-.navbar {
-  background-color: #2c3e50; /* Dark background color */
-  overflow: hidden;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 95px;
+}
+
+/* Styling the container */
+.container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 10px 20px; /* Adjust padding as needed */
+  padding: 20px;
 }
 
-/* Style the logo */
-.logo img {
-  max-height: 60px; /* Adjust the max height of the logo as needed */
-}
-
-/* Navbar links */
-.navbar a {
-  text-decoration: none;
-  color: #ecf0f1; /* Text color */
-  font-size: 18px;
-  padding: 10px 15px;
-  transition: background-color 0.3s;
-}
-
-/* Navbar links on hover */
-.navbar a:hover {
-  background-color: #34495e; /* Darker background color on hover */
-}
-
-/* Current/active navbar link */
-.active {
-  background-color: rgb(66, 66, 66); /* Highlight color for active link */
-}
-
-/* Search bar styles */
-#mySearch {
-  display: none;
-  width: 200px; /* Adjust the width as needed */
-  margin-left: 20px; /* Adjust the margin as needed */
-  padding: 8px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-/* Style the circular search icon */
-.fa-search {
-  background-color: white;
-  border-radius: 50%;
-  padding: 15px;
-  cursor: pointer;
-  border: 2px solid rgb(66, 66, 66); /* Add border color */
-}
-
-.fa-search i {
-  color: #4267B2; /* Facebook blue color */
-  font-size: 20px;
-}
-
-/* Optional: Add a subtle box shadow to the navbar */
-.navbar {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-footer {
+/* Styling the header */
+.header {
   text-align: center;
-  margin-top: 20px;
-  padding-top: 10px;
-  border-top: 1px solid #2c3e50;
+  margin-bottom: 20px;
 }
 
+/* adjusting search bar */
+#mySearch {
+  display: none; /* Hide the search bar initially */
+  padding: 5px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+/* Styling the navigation bar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #005f99;
+  color: #fff;
+  flex-wrap: wrap;
+}
+
+/* Styling the logo within the navigation bar */
+.navbar .logo img {
+  height: 40px;
+}
+
+/* Styling the navigation links */
+.navbar a {
+  color: #fff;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Add hover effect to navigation links */
+.navbar a:hover {
+  background: #003f66;
+  color: #fff;
+}
+
+/* Styling the search icon in the navigation bar */
+.navbar .fa-search {
+  cursor: pointer;
+}
+
+/* Styling the text input in the navigation bar */
+.navbar input[type="text"] {
+  padding: 5px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+/* Styling the product category section */
+.product-category {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 40px;
+}
+
+/* Styling the product category header */
+.product-category h2 {
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Styling the product list */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+/* Styling individual product items */
+.product-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: calc(50% - 40px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+/* Add hover effect to product items to move them up slightly */
+.product-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Styling the product item headers */
+.product-item h3 {
+  margin-top: 0;
+}
+
+/* Styling the product item links */
+.product-item a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Add hover effect to product item links */
+.product-item a:hover {
+  text-decoration: underline;
+}
+
+/* Ensure product images fit within their container */
+.product-item img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Styling the "back to top" button */
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #005f99;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Add hover effect to the "back to top" button */
+#topBtn:hover {
+  background-color: #003f66;
+}
+
+/* Styling the footer */
+footer {
+  background: #005f99;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+
+/* Styling the footer */
+footer {
+  background: #005f99;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Adjustment for mobile devices */
+@media (max-width: 768px) {
+  .product-item {
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .navbar a {
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+  }
+
+  .navbar input[type="text"] {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .main-content {
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  #topBtn {
+    right: 10px;
+    bottom: 50px;
+    padding: 10px;
+  }
+}
