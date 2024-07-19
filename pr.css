@@ -29,12 +29,38 @@ body {
 }
 
 /* adjusting search bar */
-#mySearch {
-  display: none; /* Hide the search bar initially */
+#search-bar {
+  display: inline;
   padding: 5px;
   margin-left: 10px;
   border: none;
   border-radius: 3px;
+}
+
+/* search results */
+#results {
+  margin-top: 20px;
+}
+
+/* product sizing on search */
+.product {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* sizing the image on product search */
+.product img {
+  max-width: 100px;
+  margin-right: 20px;
+}
+
+/* putting the products in column form */
+.product-info {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Styling the navigation bar */

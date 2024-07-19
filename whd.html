@@ -27,10 +27,10 @@
     <div class="navbar">
       
         <a href="index.html" class="logo"><img src="HSHYlogo1.png" alt="Logo"></a>
-      
-        <i class="fa fa-search" onclick="toggleSearchBar()"></i>
-      
-        <input type="text" id="mySearch" onkeyup="filterLinks()" placeholder="Search.." title="Type in a category">
+        
+        <i class="fa fa-search"></i>
+        
+        <input type="text" id="search-bar" placeholder="Search for products..." oninput="searchProducts()">
       
         <a class="active" href="index.html"><i class="fa fa-home"></i> Home</a>
       
@@ -43,8 +43,11 @@
         <a href="cpd.html"><i class="fa fa-shield"></i> Cavity Prevention & Decay</a>
       
         <a href="pr.html"><i class="fa fa-thumbs-up"></i> Product Recommendations</a>
-    
-    </div>
+      
+      </div>
+      
+  
+      <div id="results"></div>
     
     
     <div class="main-content">

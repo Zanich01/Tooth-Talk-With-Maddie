@@ -11,16 +11,29 @@
     <link rel="stylesheet" href="grey">
     
     <div class="navbar">
+      
       <a href="index.html" class="logo"><img src="HSHYlogo1.png" alt="Logo"></a>
-      <i class="fa fa-search" onclick="toggleSearchBar()"></i>
-      <input type="text" id="mySearch" onkeyup="filterLinks()" placeholder="Search.." title="Type in a category">
-      <a class="active" href="index.html"><i class="home"></i> Home</a>
-      <a href="whd.html"><i class="whd"></i> What Hygenists Do</a>
-      <a href="sogd.html"><i class="sogd"></i> Stages Of Gum Disease</a>
-      <a href="hshy.html"><i class="pdt"></i> Healthier Smile, Healthier You</a>
-      <a href="cpd.html"><i class="cpd"></i> Cavity Prevention & Decay</a>
-      <a href="pr.html"><i class="pr"></i> Product Recommendations</a>
+      
+      <i class="fa fa-search"></i>
+      
+      <input type="text" id="search-bar" placeholder="Search for products..." oninput="searchProducts()">
+    
+      <a class="active" href="index.html"><i class="fa fa-home"></i> Home</a>
+    
+      <a href="whd.html"><i class="fa fa-info-circle"></i> What Hygienists Do</a>
+    
+      <a href="sogd.html"><i class="fa fa-heartbeat"></i> Stages Of Gum Disease</a>
+    
+      <a href="hshy.html"><i class="fa fa-smile-o"></i> Healthier Smile, Healthier You</a>
+    
+      <a href="cpd.html"><i class="fa fa-shield"></i> Cavity Prevention & Decay</a>
+    
+      <a href="pr.html"><i class="fa fa-thumbs-up"></i> Product Recommendations</a>
+    
     </div>
+    
+
+    <div id="results"></div>
     
       <h1 style="color:rgb(255, 255, 255);"><strong>Cavities and How To Prevent Them</strong> </h1>
               
