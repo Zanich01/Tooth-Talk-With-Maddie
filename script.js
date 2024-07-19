@@ -41,6 +41,11 @@ function searchProducts() {
     const resultsContainer = document.getElementById('results');
     resultsContainer.innerHTML = '';
 
+    if (query.trim() === '') {
+        resultsContainer.style.display = 'none';
+        return;
+    }
+
     const filteredProducts = products.filter(product => 
         product.name.toLowerCase().includes(query) ||
         product.category.toLowerCase().includes(query)
@@ -50,15 +55,23 @@ function searchProducts() {
         const productElement = document.createElement('div');
         productElement.className = 'product';
         
+        const productImageLink = document.createElement('a');
+        productImageLink.href = product.url;
+        productImageLink.target = '_blank';
+        
         const productImage = document.createElement('img');
         productImage.src = product.image;
-        productElement.appendChild(productImage);
+        productImage.alt = product.name;
+        
+        productImageLink.appendChild(productImage);
+        productElement.appendChild(productImageLink);
         
         const productInfo = document.createElement('div');
         productInfo.className = 'product-info';
         
         const productName = document.createElement('a');
         productName.href = product.url;
+        productName.target = '_blank';
         productName.textContent = product.name;
         productInfo.appendChild(productName);
         
@@ -72,10 +85,26 @@ function searchProducts() {
 
     if (filteredProducts.length === 0) {
         resultsContainer.textContent = 'No products found';
+    } else {
+        resultsContainer.style.display = 'block';
     }
 }
 
 fetchProducts();
 
+const searchBar = document.getElementById('search-bar');
+const resultsContainer = document.getElementById('results');
 
+searchBar.addEventListener('input', searchProducts);
 
+searchBar.addEventListener('focus', () => {
+    if (searchBar.value.trim() !== '') {
+        resultsContainer.style.display = 'block';
+    }
+});
+
+document.addEventListener('click', (event) => {
+    if (!searchBar.contains(event.target) && !resultsContainer.contains(event.target)) {
+        resultsContainer.style.display = 'none';
+    }
+});
