@@ -49,6 +49,7 @@ function searchProducts() {
     const filteredProducts = products.filter(product => 
         product.name.toLowerCase().includes(query) ||
         product.category.toLowerCase().includes(query)
+        
     );
 
     filteredProducts.forEach(product => {
