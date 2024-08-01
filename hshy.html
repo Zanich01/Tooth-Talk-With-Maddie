@@ -1,54 +1,149 @@
-<DOCTYPE html>
-    <html>
-       <head>
-        <meta charset="UTF-8">
+<!DOCTYPE html>
+  <html>
+    <head>
+     
+      <meta charset="UTF-8">
         
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <title>Healthier Smile, Healthier You</title>
-        
-        <link rel="stylesheet" href="hshy.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+      <title>Healthier Smile, Healthier You</title>
+    
+      <link rel="stylesheet" href="hshy.css">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-       </head>
-      <body>
-      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+
+  <body>
     <!-- Load an icon library -->
     <link rel="stylesheet" href="grey">
     
     <div class="navbar">
       
-      <a href="index.html" class="logo"><img src="HSHYlogo1.png" alt="Logo"></a>
+        <a href="index.html" class="logo"><img src="HSHYlogo1.png" alt="Logo"></a>
+        
+        <i class="fa fa-search"></i>
+        
+        <input type="text" id="search-bar" placeholder="Search for products..." oninput="searchProducts()">
       
-      <i class="fa fa-search"></i>
+        <a class="active" href="index.html"><i class="fa fa-home"></i> Home</a>
       
-      <input type="text" id="search-bar" placeholder="Search for products..." oninput="searchProducts()">
-    
-      <a class="active" href="index.html"><i class="fa fa-home"></i> Home</a>
-    
-      <a href="whd.html"><i class="fa fa-info-circle"></i> What Hygienists Do</a>
-    
-      <a href="sogd.html"><i class="fa fa-heartbeat"></i> Stages Of Gum Disease</a>
-    
-      <a href="hshy.html"><i class="fa fa-smile-o"></i> Healthier Smile, Healthier You</a>
-    
-      <a href="cpd.html"><i class="fa fa-shield"></i> Cavity Prevention & Decay</a>
-    
-      <a href="pr.html"><i class="fa fa-thumbs-up"></i> Product Recommendations</a>
-    
-    </div>
-    
+        <a href="whd.html"><i class="fa fa-info-circle"></i> What Hygienists Do</a>
+      
+        <a href="sogd.html"><i class="fa fa-heartbeat"></i> Stages Of Gum Disease</a>
+      
+        <a href="hshy.html"><i class="fa fa-smile-o"></i> Healthier Smile, Healthier You</a>
+      
+        <a href="cpd.html"><i class="fa fa-shield"></i> Cavity Prevention & Decay</a>
+      
+        <a href="pr.html"><i class="fa fa-thumbs-up"></i> Product Recommendations</a>
+      
+      </div>
+      
+      <div id="results"></div>     
 
-    <div id="results"></div>
-    
-      <h1 style="color:rgb(255, 255, 255);"><strong>Healthier Smile, Healthier You</strong> </h1>
-            <p1 style="color:White;font-size:160%;"background-color: Black;"">  </p1>
+
+      <div class="main-content">
+
+            <h1><strong>Healthier Smile, Healthier You</strong></h1>
             
-          <footer>
-            <p>&copy; 2024 Dental Hygienist Association. All rights reserved.</p>
-          </footer>
+            <div id="result"></div>
+                   
+            <p><br>According to the CDC, nearly half of the population aged 30 years and older, which translates to approximately 972 million
+               people, have periodontitis. Furthermore, 85% of the global population, or around 6.6 billion people, suffer from some form of gum 
+               disease, making it more prevalent than diabetes, cancer, and heart disease. Despite this high prevalence, only 60% of those 
+               affected, or about 4 billion people, are aware of their condition, leaving roughly 2.6 billion people unaware that they have gum 
+               disease.</p>
+        
+            <div class="line">
 
-        <script src="script.js"> </script>
+            <p>The pathogenic bacteria that is responsible for periodontal disease is correlated to several systemic conditions. This bacteria 
+                spreads through the bloodstream to the rest of the body, increasing risk of developing disease in these areas as well. 
+                Systemic diseases can also put one at more risk of developing periodontal disease, as the immune function may be deficient 
+                depending on the systemic condition.</p>
 
-      </body>
-    </html>
+                <img class="periodontalDisease" src="periodontalDisease.jpg" alt="periodontal bacteria" width="100%" height="50%">
+                
+            </div>
+
+            <div class="section">
+                
+              <h2><br>Brain</h2>
+
+              <p>The bacteria present in periodontal disease is found in the brains of patients with Alzheimer’s disease and dementia. 
+                    Periodontitis is also a risk factor that increases the likelihood of a stroke occurring.</p>
+            
+            </div>
+    
+            <div class="section">
+                
+              <h2>Lungs</h2>
+
+              <p>Bacteria from periodontal disease can be inhaled and spread to the lungs, contributing to the development of respiratory 
+                   diseases like pneumonia and bronchitis. It can also worsen symptoms for patients with Chronic Obstructive Pulmonary Disease 
+                   (COPD).</p>
+
+            </div>
+    
+            <div class="section">
+
+              <h2>Heart</h2>
+                
+              <p>Patients with periodontal disease are two to three times more likely to have a heart attack or stroke. Uncontrolled 
+                   hypertension (high blood pressure) is directly correlated to uncontrolled periodontal disease.</p>
+            
+            </div>
+    
+            <div class="section">
+
+              <h2>Pancreas</h2>
+
+              <p>Periodontal disease is linked with complications in controlling blood sugar for patients with diabetes. Patients with
+                   diabetes also have a reduced immune response, which allows for the periodontal bacteria to run rampant and progress
+                   much quicker than in someone without diabetes.</p>
+            
+            </div>
+    
+            <div class="section">
+      
+              <h2>Reproductive Organs</h2>
+      
+              <p>Patients with periodontal disease are more likely to have issues with infertility, adverse birth outcomes during pregnancy
+                 like low-birth weight and premature birth, and the development of erectile dysfunction.</p>
+
+            </div>
+    
+            <div class="section">
+
+                <h2>Cancer</h2>
+
+                <p>The link between the bacteria present in periodontal disease and the development of many forms of cancer are significant.
+                   There is an overall 24% increased risk of developing cancer among patients with severe periodontitis.</p>
+    
+                <div class="cancer-risk">
+
+                    <h3>The following is a breakdown of each type of cancer and the associated increased risk of developing it in patients
+                        with periodontal disease:</h3>
+
+                    <ul>
+                        <li>Esophageal Cancer - 43% increased risk</li>
+                        <li>Throat Cancer - 43% increased risk</li>
+                        <li>Stomach Cancer - 52% increased risk</li>
+                        <li>Lung Cancer - 24% increased risk</li>
+                        <li>Pancreatic Cancer - 59% increased risk</li>
+                    </ul>
+
+                    <p><br>There are also ties to oral, thyroid, breast, and bladder cancer and leukemia.</p>
+                </div>
+            </div>
+        </div>
+    
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Back To Top</button>
+
+    <footer>
+        <p>&copy; 2024 Dental Hygienist Association. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
