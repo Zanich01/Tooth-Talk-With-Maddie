@@ -140,7 +140,6 @@ body {
   bottom: 20px;
   right: 30px;
   z-index: 99;
-  font-size: 18px;
   border: none;
   outline: none;
   background-color: #005f99;
@@ -191,4 +190,10 @@ footer {
       box-shadow: none;
       border-radius: 0;
   }
+
+  #topBtn {
+    right: 10px;
+    bottom: 50px;
+    padding: 10px;
+}
 }
