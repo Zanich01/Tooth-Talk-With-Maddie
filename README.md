@@ -49,11 +49,4 @@ Enjoy exploring the project!
 
 
 
-Run the Project Locally:
-
-For full functionality, it's recommended to run the project on a local server using Python:
-Open Git Bash in the project folder.
-Type the following command and press "Enter":
-python -m http.server
-Open your web browser and go to localhost:8000.
-Enjoy the Project
+Or just click the Link in the repo.
