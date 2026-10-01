@@ -1,130 +1,69 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
-
-
-<head>
-    
+  <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>What Hygienists Do | TTWM</title>
-    
-    <link rel="stylesheet" href="whd.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">       
-
-</head>
-
-
-<body>
-
-    
-    <div class="navbar">
-      
-        <a href="index.html" class="logo"><img src="HSHYlogo1.png" alt="Logo"></a>
-        
-        <i class="fa fa-search"></i>
-        
-        <input type="text" id="search-bar" placeholder="Search for products..." oninput="searchProducts()">
-      
-        <a class="active" href="index.html"><i class="fa fa-home"></i> Home</a>
-      
-        <a href="whd.html"><i class="fa fa-info-circle"></i> What Hygienists Do</a>
-      
-        <a href="sogd.html"><i class="fa fa-heartbeat"></i> Stages Of Gum Disease</a>
-      
-        <a href="hshy.html"><i class="fa fa-smile-o"></i> Healthier Smile, Healthier You</a>
-      
-        <a href="cpd.html"><i class="fa fa-shield"></i> Cavity Prevention & Decay</a>
-      
-        <a href="pr.html"><i class="fa fa-thumbs-up"></i> Product Recommendations</a>
-      
-      </div>
-      
-  
-      <div id="results"></div>
-    
-    
-    <div class="main-content">
-        
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header>
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="index.html" class="logo"><img src="assets/images/HSHYlogo1.png" alt=""><span>Tooth Talk<span class="brand-subtitle">with Maddie · RDH</span></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" hidden><span class="menu-icon" aria-hidden="true"></span><span class="menu-label">Menu</span></button>
+        <input type="search" id="search-bar" aria-label="Search products" aria-controls="results" placeholder="Search products…">
+        <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="whd.html" aria-current="page">What Hygienists Do</a>
+        <a href="sogd.html">Stages Of Gum Disease</a>
+        <a href="hshy.html">Healthier Smile, Healthier You</a>
+        <a href="cpd.html">Cavity Prevention & Decay</a>
+        <a href="pr.html">Product Recommendations</a>
+        </div>
+      </nav>
+    </header>
+    <section id="results" aria-label="Product search results" aria-live="polite" hidden></section>
+    <main id="main-content">
+      <div class="main-content">
         <h1>Dental Hygienist Responsibilities</h1>
-        
         <p>To the average person, a dental hygienist might seem to just "do cleanings.” But there’s much more to our profession than that. The responsibilities of a dental hygienist are as follows:</p>
-        
         <ul>
-            
-            <li>Assessing patient’s dental and medical histories</li>
-            
-            <li>Understanding how a patient’s medical conditions and medications can affect their oral health</li>
-            
-            <li>Assessing vitals and recognizing abnormal readings and signs of undiagnosed medical conditions</li>
-            
-            <li>Recognizing any pathologic conditions of the head and neck</li>
-            
-            <li>Assessing for oral cancer</li>
-            
-            <li>Taking x-rays</li>
-            
-            <li>Assessing x-rays for signs of cavities, bone loss, and recognizing any abnormalities</li>
-            
-            <li>Updating patient’s hard tissue charting (missing teeth, existing restorations, etc.)</li>
-            
-            <li>Assessing gum health by thorough gum examinations at every appointment</li>
-            
-            <li>Detecting and removing plaque bacteria, tartar buildup, and stain from teeth</li>
-            
-            <li>Administering local anesthesia injections (numbing) when needed</li>
-            
-            <li>Administering nitrous oxide (laughing gas) when needed</li>
-            
-            <li>Performing laser bacterial debridement, if necessary</li>
-            
-            <li>Treating and preventing gingivitis and periodontal disease</li>
-            
-            <li>Communicating findings and collaborating with dentist to determine patient needs</li>
-            
-            <li>Adding items to patients’ treatment plan and explaining dental procedures</li>
-            
-            <li>Educating patients on their dental condition and giving recommendations to improve oral care at home</li>
-            
-            <li>Providing nutritional counseling, if necessary</li>
-            
-            <li>Explaining how oral health affects the overall health of the patient</li>
-            
-            <li>Applying fluoride varnish</li>
-            
-            <li>Placing dental sealants</li>
-            
-            <li>Practicing proper infection control by cleaning the operatory thoroughly</li>
-            
-            <li>Performing proper sterilization of instruments</li>
-            
-            <li>Documenting treatment in appointment notes</li>
-            
-            <li>Responding to medical emergencies within the dental office when necessary</li>
-            
-            <li>Following up with patients regarding follow up visits if not scheduled</li>
-        
+          <li>Assessing patient’s dental and medical histories</li>
+          <li>Understanding how a patient’s medical conditions and medications can affect their oral health</li>
+          <li>Assessing vitals and recognizing abnormal readings and signs of undiagnosed medical conditions</li>
+          <li>Recognizing any pathologic conditions of the head and neck</li>
+          <li>Assessing for oral cancer</li>
+          <li>Taking x-rays</li>
+          <li>Assessing x-rays for signs of cavities, bone loss, and recognizing any abnormalities</li>
+          <li>Updating patient’s hard tissue charting (missing teeth, existing restorations, etc.)</li>
+          <li>Assessing gum health by thorough gum examinations at every appointment</li>
+          <li>Detecting and removing plaque bacteria, tartar buildup, and stain from teeth</li>
+          <li>Administering local anesthesia injections (numbing) when needed</li>
+          <li>Administering nitrous oxide (laughing gas) when needed</li>
+          <li>Performing laser bacterial debridement, if necessary</li>
+          <li>Treating and preventing gingivitis and periodontal disease</li>
+          <li>Communicating findings and collaborating with dentist to determine patient needs</li>
+          <li>Adding items to patients’ treatment plan and explaining dental procedures</li>
+          <li>Educating patients on their dental condition and giving recommendations to improve oral care at home</li>
+          <li>Providing nutritional counseling, if necessary</li>
+          <li>Explaining how oral health affects the overall health of the patient</li>
+          <li>Applying fluoride varnish</li>
+          <li>Placing dental sealants</li>
+          <li>Practicing proper infection control by cleaning the operatory thoroughly</li>
+          <li>Performing proper sterilization of instruments</li>
+          <li>Documenting treatment in appointment notes</li>
+          <li>Responding to medical emergencies within the dental office when necessary</li>
+          <li>Following up with patients regarding follow up visits if not scheduled</li>
         </ul>
-        
         <br>
         <p>And most importantly, building a relationship and trust with patients!</p>
-        
-        
-        <button onclick="topFunction()" id="topBtn" title="Go to top">Back To Top</button>
-    
-    </div>
-    
+        <button hidden id="topBtn" title="Go to top">Back To Top</button>
+      </div>
+    </main>
     <footer>
-    
-        <p>&copy; 2024 Dental Hygienist Association. All rights reserved.</p>
-    
+      <p>&copy; 2024 Dental Hygienist Association. All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
-
-</body>
+    <script src="assets/js/main.js" defer></script>
+  </body>
 </html>

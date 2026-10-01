@@ -1,52 +1,56 @@
-# Tooth-Talk-With-Maddie-
+# Tooth Talk With Maddie
 
-Welcome to Tooth Talk With Maddie, a dental informational website dedicated to informing you about the importance of dental hygiene. Our goal is to provide you with all the information you need to achieve a healthier smile in a user-friendly manner.
+A static dental education website for Madison Migliore, RDH. Built with HTML, CSS, and JavaScript; no build step or package installation is required.
 
-Our website features a variety of pages that cover topics such as gum disease, oral issues, and the dental processes involved in maintaining good oral health. No matter what dental challenges you may be facing, we aim to provide solutions. Additionally, our product recommendations page offers detailed explanations of various products and their uses.
+## Run locally
 
-To make your experience even smoother, we have included a fully functional search bar. Simply type in keywords like "bad breath" from any page, and you'll instantly find the information and solutions you're looking for.
+From the project directory, run Python 3:
 
-Explore Tooth Talk With Maddie and take the first step towards a brighter, healthier smile!
+```sh
+python -m http.server 8000 --bind 127.0.0.1
+```
 
+Open http://localhost:8000. Use a local server: product search loads JSON with fetch and cannot reliably run from a file URL.
 
+## Project layout
 
-Project Overview
+```text
+index.html             Home and biography
+whd.html               Dental hygienist responsibilities
+sogd.html              Stages of gum disease
+hshy.html              Oral health and overall health
+cpd.html               Cavity prevention and decay
+pr.html                Product recommendations
+assets/css/styles.css  Shared responsive styles
+assets/js/main.js      Product search and back to top
+assets/images/         Site and product images
+data/products.json     Search catalog
+scripts/check_site.py  Structure and asset checks
+```
 
-Data Analysis and Display
-I analyzed data stored in arrays and objects to present information on my website. The 'searchProducts' function filters the 'products' array based on user input and displays the filtered results. This functionality enhances the user experience by providing relevant product information efficiently.
+Existing page URLs are retained for bookmarks and GitHub Pages. Untracked tire artwork in the root is unrelated and has been left in place.
 
-Data Storage and Retrieval
-I used arrays and objects to store and retrieve information displayed on the webpage. Specifically, the 'products' array is used to manage product details, which are populated by the 'fetchProducts' function from a JSON file.
+## Editing
 
-API Integration
-I retrieved data from a third-party API to display the world population on the "Healthier Smile, Healthier You" page. This real-time data fetch and display demonstrate the dynamic capabilities of the website.
+- Edit page content in its HTML file. Navigation is static so it works without JavaScript; update all six pages when adding a link.
+- Use the shared stylesheet for visual changes.
+- Update both data/products.json and the cards in pr.html when changing products. Image paths are relative to the site root.
+- Search matches names and categories, handles loading and failures, and closes with Escape or an outside click.
+- The unrelated world population widget and its external API request have been removed.
 
+## Verification
 
+```sh
+python scripts/check_site.py
+node --check assets/js/main.js
+```
 
-To run this project, follow these steps:
+The Python check validates nesting, unique IDs, landmarks, current navigation links, local file references, and product records. Also preview desktop and narrow layouts and try search, empty results, Escape, and back to top.
 
-Clone the Repository:
+## Deployment
 
-Navigate to the GitHub repository.
-Click on the green "Code" button.
-Copy the link under the HTTPS tab.
-Set Up Your Local Environment:
+The existing GitHub Actions workflow publishes static files to GitHub Pages on pushes to main. Relative paths support repository subdirectory hosting. Local preview does not deploy changes.
 
-Create a new folder on your computer.
-Open this folder in Git Bash.
-Clone the Repository Locally:
+## Content maintenance
 
-In Git Bash, paste the copied link and press "Enter":
-git clone https://github.com/Zanich01/Tooth-Talk-With-Maddie-.git
-Open the Project in Visual Studio Code:
-
-After the download is complete, open Visual Studio Code.
-Use the file explorer to open the folder where you cloned the repository.
-Run the Project:
-
-In Visual Studio Code, click on the "Run" tab at the top of the page.
-Enjoy exploring the project!
-
-
-
-Or just click the Link in the repo.
+The educational text and recommendations are existing author content. This reorganization does not medically review the claims or verify retailer availability and pricing.

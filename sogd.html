@@ -1,109 +1,67 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
-
-
-<head>
-
+  <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Stages Of Gum Disease | TTWM</title>
-    
-    <link rel="stylesheet" href="sogd.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
-
-</head>
-
-
-<body>
-
-
-    
-    <div class="navbar">
-      
-      <a href="index.html" class="logo"><img src="HSHYlogo1.png" alt="Logo"></a>
-      
-      <i class="fa fa-search"></i>
-      
-      <input type="text" id="search-bar" placeholder="Search for products..." oninput="searchProducts()">
-    
-      <a class="active" href="index.html"><i class="fa fa-home"></i> Home</a>
-    
-      <a href="whd.html"><i class="fa fa-info-circle"></i> What Hygienists Do</a>
-    
-      <a href="sogd.html"><i class="fa fa-heartbeat"></i> Stages Of Gum Disease</a>
-    
-      <a href="hshy.html"><i class="fa fa-smile-o"></i> Healthier Smile, Healthier You</a>
-    
-      <a href="cpd.html"><i class="fa fa-shield"></i> Cavity Prevention & Decay</a>
-    
-      <a href="pr.html"><i class="fa fa-thumbs-up"></i> Product Recommendations</a>
-    
-    </div>
-    
-
-    <div id="results"></div>
-
-
-    <div class="main-content">
-        <h1 style="color:rgb(0, 0, 0);"><strong>What Are the Stages of Gum Disease?</strong> </h1>
-      
-            <h2>Gum Health :</h2>    
-
-            <p id="gumhealth" style="color:rgb(0, 0, 0);font-size:100%;"background-color: Black;""> 
-                Healthy gums are characterized
-                by little to no bleeding and gum measurements of 3mm or less when probed by a hygienist. Healthy gums
-                typically appear pink or brown and tight to the tooth.
-            </p>
-            
-  
-            <h2>Gingivitis :</h2>
-
-            <p id="Gingivitis" style="color:rgb(0, 0, 0);font-size:100%;"background-color: Black;"">
-                Gingivitis is the first stage of gum disease in which inflammation is present in the gums. Gingivitis is characterized by bleeding and can result
-                in gum measurements of 4mm or less when probed by a hygienist. The inflammation is caused by the bacteria found in plaque buildup on the teeth. 
-                This stage of gum disease is reversible with improved oral hygiene and/or therapies in the dental office. These bacteria can cause the gum tissue
-                to become puffy and irritated in its presence, which can create deeper gum pockets that become harder to clean, resulting in the progression of gum disease. 
-                When inflammation is present for extended periods of time, permanent bone loss, or periodontitis, can occur.
-            </p>
-            
-  
-            <h2>Periodontitis :</h2>
-
-              <p style="color:rgb(0, 0, 0);font-size:100%;" background-color: Black;""> 
-                Periodontitis, or periodontal disease, is the result of chronic gum inflammation that gradually breaks down the bone that supports our teeth.
-                Periodontitis is characterized by excessive bleeding upon probing by a hygienist and can result in gum measurements of 5mm and above. Once bone 
-                loss begins, there is no way to reverse it, but it can be stabilized and controlled once treated. A procedure called Scaling and Root Planing
-                (SRP) is the go-to treatment for periodontal disease. Your hygienist may also call this “periodontal therapy” or “deep cleans,” because in simpler 
-                terms, they are the process of cleaning out the bacteria and any tartar buildup that may be present in these deeper pockets where bone loss has 
-                occurred. Typically these are done using numbing of some kind for ultimate comfort and sometimes localized antibiotics, gum tissue irrigation, and 
-                laser bacterial reduction are done in conjunction to ensure the best results. The bacteria that cause gum disease repopulate every 90 days, 
-                so your dental team may suggest a more frequent recall of maintenance cleanings following the periodontal therapy. If left untreated, periodontitis
-                can lead to significant bone loss, tooth mobility, and eventually tooth loss. The bacteria responsible for periodontitis can have detrimental 
-                effects on the rest of your body as well. For more information on this, see
-                <a href="hshy.html" style="color:rgb(0, 44, 83)"><em>Healthier Smile, Healthier You</em></a> ".
-              </p>
-            
-            
-            
-                <img class="pdimg" src="SOGD1.jpg" alt="pdbottom" width="100%" height="50%">
-            
-            </div>
-            
-            <button onclick="topFunction()" id="topBtn" title="Go to top">Back To Top</button>
-
-            <footer>
-
-              <p>&copy; 2024 Dental Hygienist Association. All rights reserved.</p>
-            
-            </footer>
-  
-          <script src="script.js"> </script>
-  
-    
-</body>
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header>
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="index.html" class="logo"><img src="assets/images/HSHYlogo1.png" alt=""><span>Tooth Talk<span class="brand-subtitle">with Maddie · RDH</span></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" hidden><span class="menu-icon" aria-hidden="true"></span><span class="menu-label">Menu</span></button>
+        <input type="search" id="search-bar" aria-label="Search products" aria-controls="results" placeholder="Search products…">
+        <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="whd.html">What Hygienists Do</a>
+        <a href="sogd.html" aria-current="page">Stages Of Gum Disease</a>
+        <a href="hshy.html">Healthier Smile, Healthier You</a>
+        <a href="cpd.html">Cavity Prevention & Decay</a>
+        <a href="pr.html">Product Recommendations</a>
+        </div>
+      </nav>
+    </header>
+    <section id="results" aria-label="Product search results" aria-live="polite" hidden></section>
+    <main id="main-content">
+      <div class="main-content">
+        <h1><strong>What Are the Stages of Gum Disease?</strong> </h1>
+        <h2>Gum Health :</h2>
+        <p id="gumhealth">
+          Healthy gums are characterized
+          by little to no bleeding and gum measurements of 3mm or less when probed by a hygienist. Healthy gums
+          typically appear pink or brown and tight to the tooth.
+        </p>
+        <h2>Gingivitis :</h2>
+        <p id="Gingivitis">
+          Gingivitis is the first stage of gum disease in which inflammation is present in the gums. Gingivitis is characterized by bleeding and can result
+          in gum measurements of 4mm or less when probed by a hygienist. The inflammation is caused by the bacteria found in plaque buildup on the teeth.
+          This stage of gum disease is reversible with improved oral hygiene and/or therapies in the dental office. These bacteria can cause the gum tissue
+          to become puffy and irritated in its presence, which can create deeper gum pockets that become harder to clean, resulting in the progression of gum disease.
+          When inflammation is present for extended periods of time, permanent bone loss, or periodontitis, can occur.
+        </p>
+        <h2>Periodontitis :</h2>
+        <p>
+          Periodontitis, or periodontal disease, is the result of chronic gum inflammation that gradually breaks down the bone that supports our teeth.
+          Periodontitis is characterized by excessive bleeding upon probing by a hygienist and can result in gum measurements of 5mm and above. Once bone
+          loss begins, there is no way to reverse it, but it can be stabilized and controlled once treated. A procedure called Scaling and Root Planing
+          (SRP) is the go-to treatment for periodontal disease. Your hygienist may also call this “periodontal therapy” or “deep cleans,” because in simpler
+          terms, they are the process of cleaning out the bacteria and any tartar buildup that may be present in these deeper pockets where bone loss has
+          occurred. Typically these are done using numbing of some kind for ultimate comfort and sometimes localized antibiotics, gum tissue irrigation, and
+          laser bacterial reduction are done in conjunction to ensure the best results. The bacteria that cause gum disease repopulate every 90 days,
+          so your dental team may suggest a more frequent recall of maintenance cleanings following the periodontal therapy. If left untreated, periodontitis
+          can lead to significant bone loss, tooth mobility, and eventually tooth loss. The bacteria responsible for periodontitis can have detrimental
+          effects on the rest of your body as well. For more information on this, see
+          <a href="hshy.html"><em>Healthier Smile, Healthier You</em></a> ".
+        </p>
+        <img class="pdimg" src="assets/images/SOGD1.jpg" alt="Diagram of the stages of gum disease">
+      </div>
+      <button hidden id="topBtn" title="Go to top">Back To Top</button>
+    </main>
+    <footer>
+      <p>&copy; 2024 Dental Hygienist Association. All rights reserved.</p>
+    </footer>
+    <script src="assets/js/main.js" defer> </script>
+  </body>
 </html>

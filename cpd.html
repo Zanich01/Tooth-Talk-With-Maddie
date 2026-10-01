@@ -1,90 +1,55 @@
-<DOCTYPE html>
-    
-  <html>
-  
-    <head>
-        
-      <meta charset="UTF-8">
-        
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-      <title>Tooth Talk With Maddie</title>
-        
-      <link rel="stylesheet" href="cpd.css">
-
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
-  
-    </head>
-  
-  
-    <body>
-
-    
-    <div class="navbar">
-      
-      <a href="index.html" class="logo"><img src="HSHYlogo1.png" alt="Logo"></a>
-      
-      <i class="fa fa-search"></i>
-      
-      <input type="text" id="search-bar" placeholder="Search for products..." oninput="searchProducts()">
-    
-      <a class="active" href="index.html"><i class="fa fa-home"></i> Home</a>
-    
-      <a href="whd.html"><i class="fa fa-info-circle"></i> What Hygienists Do</a>
-    
-      <a href="sogd.html"><i class="fa fa-heartbeat"></i> Stages Of Gum Disease</a>
-    
-      <a href="hshy.html"><i class="fa fa-smile-o"></i> Healthier Smile, Healthier You</a>
-    
-      <a href="cpd.html"><i class="fa fa-shield"></i> Cavity Prevention & Decay</a>
-    
-      <a href="pr.html"><i class="fa fa-thumbs-up"></i> Product Recommendations</a>
-    
-    </div>
-    
-
-    <div id="results"></div>
-    
-    <div class="main-content">
-
-      <h1>Cavity Prevention and Decay</h1>
-
-      <div class="brushingTeeth">
-
-      <img class="brushingTeeth" src="toothPaste.png" alt="Brushing teeth">
-
-      </div>
-
-        <p>Dental professionals typically use a CAMBRA assessment to determine what level of risk a patient is in 
-        developing cavities. Increased risk factors include poor oral hygiene, frequent snacking or drinking, high
-        sugar exposures, and dry mouth.</p>
-      
-        <p>Cavities occur when plaque bacteria build up in the mouth and begin breaking down tooth enamel. This 
-        process is called demineralization — the first signs that this is occurring are white-spot lesions that
-        appear on the teeth. At this stage, the enamel can be restored with a topical application of fluoride. Fluoride
-        is a naturally occurring mineral that when applied on the teeth, can speed up the reproduction of the tooth enamel’s 
-        hydroxyapatite crystals.</p>
-      
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooth Talk With Maddie</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header>
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="index.html" class="logo"><img src="assets/images/HSHYlogo1.png" alt=""><span>Tooth Talk<span class="brand-subtitle">with Maddie · RDH</span></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" hidden><span class="menu-icon" aria-hidden="true"></span><span class="menu-label">Menu</span></button>
+        <input type="search" id="search-bar" aria-label="Search products" aria-controls="results" placeholder="Search products…">
+        <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="whd.html">What Hygienists Do</a>
+        <a href="sogd.html">Stages Of Gum Disease</a>
+        <a href="hshy.html">Healthier Smile, Healthier You</a>
+        <a href="cpd.html" aria-current="page">Cavity Prevention & Decay</a>
+        <a href="pr.html">Product Recommendations</a>
+        </div>
+      </nav>
+    </header>
+    <section id="results" aria-label="Product search results" aria-live="polite" hidden></section>
+    <main id="main-content">
+      <div class="main-content">
+        <h1>Cavity Prevention and Decay</h1>
+        <div class="brushingTeeth">
+          <img class="brushingTeeth" src="assets/images/toothPaste.png" alt="Brushing teeth">
+        </div>
+        <p>Dental professionals typically use a CAMBRA assessment to determine what level of risk a patient is in
+          developing cavities. Increased risk factors include poor oral hygiene, frequent snacking or drinking, high
+          sugar exposures, and dry mouth.</p>
+        <p>Cavities occur when plaque bacteria build up in the mouth and begin breaking down tooth enamel. This
+          process is called demineralization — the first signs that this is occurring are white-spot lesions that
+          appear on the teeth. At this stage, the enamel can be restored with a topical application of fluoride. Fluoride
+          is a naturally occurring mineral that when applied on the teeth, can speed up the reproduction of the tooth enamel’s
+          hydroxyapatite crystals.</p>
         <p>If the decay is not halted at this stage, it can progress further into the tooth. Enamel decay will continue,
-           and will begin to appear as a light brown color. Eventually, this decay can process into the dentin, which is
-           the inner, softer layer of the tooth.</p>
-      
+          and will begin to appear as a light brown color. Eventually, this decay can process into the dentin, which is
+          the inner, softer layer of the tooth.</p>
         <p>The best way to prevent cavities from forming are to refrain from frequent, high sugar or acidic exposures on the
-           teeth, to maintain proper oral hygiene, and to use topical fluoride to help strengthen enamel and repair any incipient 
-           cavities.</p>
-     
-    </div>
-
-    <button onclick="topFunction()" id="topBtn" title="Go to top">Back To Top</button>
-      
-          <footer>
-
-            <p>&copy; 2024 Dental Hygienist Association. All rights reserved.</p>
-          
-          </footer>
-
-        <script src="script.js"> </script>
-
-    </body>
-
-  </html>
+          teeth, to maintain proper oral hygiene, and to use topical fluoride to help strengthen enamel and repair any incipient
+          cavities.</p>
+      </div>
+      <button hidden id="topBtn" title="Go to top">Back To Top</button>
+    </main>
+    <footer>
+      <p>&copy; 2024 Dental Hygienist Association. All rights reserved.</p>
+    </footer>
+    <script src="assets/js/main.js" defer> </script>
+  </body>
+</html>
