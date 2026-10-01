@@ -39,86 +39,88 @@ if (navigation && menuToggle && navigationLinks) {
 const searchBar = document.querySelector("#search-bar");
 const results = document.querySelector("#results");
 const topButton = document.querySelector("#topBtn");
-let productsPromise;
-
-function loadProducts() {
-  if (!productsPromise) {
-    productsPromise = fetch("data/products.json")
-      .then(response => {
-        if (!response.ok) throw new Error("Product data unavailable");
-        return response.json();
-      })
-      .catch(error => {
-        productsPromise = undefined;
-        throw error;
-      });
+const catalogCache = new Map();
+function loadCatalog(path) {
+  if (!catalogCache.has(path)) {
+    const request = fetch(path).then(response => {
+      if (!response.ok) throw new Error("Search data unavailable");
+      return response.json();
+    }).catch(error => { catalogCache.delete(path); throw error; });
+    catalogCache.set(path, request);
   }
-  return productsPromise;
-}
-
-function productLink(product) {
-  const link = document.createElement("a");
-  link.href = product.url;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-  return link;
+  return catalogCache.get(path);
 }
 
 let searchVersion = 0;
-async function searchProducts() {
+function dismissSearch() {
+  searchVersion++;
+  results.hidden = true;
+}
+function renderMatches(title, entries, external) {
+  if (!entries.length) return;
+  const heading = document.createElement("h2");
+  heading.textContent = title;
+  results.append(heading);
+  for (const entry of entries) {
+    const card = document.createElement("article");
+    card.className = external ? "product" : "topic-result";
+    const link = document.createElement("a");
+    link.href = entry.url;
+    link.textContent = entry.name;
+    if (external) {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      const image = document.createElement("img");
+      image.src = entry.image;
+      image.alt = "";
+      image.width = 64;
+      image.height = 80;
+      image.loading = "lazy";
+      card.append(image);
+    }
+    const info = document.createElement("div");
+    info.className = "product-info";
+    const detail = document.createElement("p");
+    detail.textContent = entry.description || entry.category;
+    info.append(link, detail);
+    card.append(info);
+    results.append(card);
+  }
+}
+async function searchSite() {
   const version = ++searchVersion;
   const query = searchBar.value.trim().toLowerCase();
   results.replaceChildren();
   results.hidden = !query;
   if (!query) return;
-  results.textContent = "Loading products…";
-
-  try {
-    const products = await loadProducts();
-    // Ignore old requests after typing, clearing, or dismissing the search.
-    if (version !== searchVersion) return;
-    const matches = products.filter(product =>
-      `${product.name} ${product.category}`.toLowerCase().includes(query)
-    );
-    results.replaceChildren();
-    const summary = document.createElement("p");
-    summary.textContent = matches.length
-      ? `${matches.length} product${matches.length === 1 ? "" : "s"} found`
-      : "No products found. Try a product name, gum disease, dry mouth, bad breath, or whitening.";
-    results.append(summary);
-    for (const product of matches) {
-      const card = document.createElement("article");
-      card.className = "product";
-      const imageLink = productLink(product);
-      const image = document.createElement("img");
-      image.src = product.image;
-      image.alt = product.name;
-      imageLink.append(image);
-      const info = document.createElement("div");
-      info.className = "product-info";
-      const name = productLink(product);
-      name.textContent = product.name;
-      const category = document.createElement("p");
-      category.textContent = product.category;
-      info.append(name, category);
-      card.append(imageLink, info);
-      results.append(card);
-    }
-  } catch {
-    if (version === searchVersion) {
-      results.textContent = "Products could not be loaded. Try searching again, or visit Product Recommendations.";
-    }
+  results.textContent = "Searching topics and products…";
+  const responses = await Promise.allSettled([
+    loadCatalog("data/topics.json"), loadCatalog("data/products.json")
+  ]);
+  if (version !== searchVersion) return;
+  const words = query.split(/\s+/);
+  const matches = responses.map(response => response.status === "fulfilled"
+    ? response.value.filter(entry => {
+      const searchable = [entry.name, entry.category, entry.description, entry.keywords].join(" ").toLowerCase();
+      return words.every(word => searchable.includes(word));
+    }) : []);
+  results.replaceChildren();
+  const count = matches[0].length + matches[1].length;
+  const summary = document.createElement("p");
+  summary.textContent = count ? `${count} result${count === 1 ? "" : "s"} found`
+    : "No results found. Try gums, cavities, dry mouth, or whitening.";
+  results.append(summary);
+  if (responses.some(response => response.status === "rejected")) {
+    const error = document.createElement("p");
+    error.textContent = "Some search results could not load. Try again or use the navigation links.";
+    results.append(error);
   }
+  renderMatches("Explore dental health", matches[0], false);
+  renderMatches("Oral care products", matches[1], true);
 }
-
-function dismissSearch() {
-  searchVersion++;
-  results.hidden = true;
-}
-
 if (searchBar && results) {
-  searchBar.addEventListener("input", searchProducts);
-  searchBar.addEventListener("focus", searchProducts);
+  searchBar.addEventListener("input", searchSite);
+  searchBar.addEventListener("focus", searchSite);
   document.addEventListener("keydown", event => {
     if (event.key === "Escape") {
       if (results.contains(document.activeElement)) searchBar.focus();
@@ -128,6 +130,30 @@ if (searchBar && results) {
   document.addEventListener("click", event => {
     if (!searchBar.contains(event.target) && !results.contains(event.target)) dismissSearch();
   });
+}
+
+const filters = document.querySelector(".product-filters");
+if (filters) {
+  const categories = [...document.querySelectorAll(".product-category")];
+  const status = document.querySelector("#filter-status");
+  filters.hidden = false;
+  status.hidden = false;
+  const applyFilter = value => {
+    let count = 0;
+    for (const category of categories) {
+      category.hidden = value !== "all" && category.dataset.category !== value;
+      if (!category.hidden) count += category.querySelectorAll(".product-item").length;
+    }
+    for (const button of filters.querySelectorAll("button")) {
+      button.setAttribute("aria-pressed", String(button.dataset.filter === value));
+    }
+    status.textContent = `${count} product listings shown`;
+  };
+  filters.addEventListener("click", event => {
+    const button = event.target.closest("button[data-filter]");
+    if (button) applyFilter(button.dataset.filter);
+  });
+  applyFilter("all");
 }
 
 if (topButton) {

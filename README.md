@@ -24,7 +24,8 @@ pr.html                Product recommendations
 assets/css/styles.css  Shared responsive styles
 assets/js/main.js      Product search and back to top
 assets/images/         Site and product images
-data/products.json     Search catalog
+data/products.json     Product search catalog
+data/topics.json       Educational search catalog
 scripts/check_site.py  Structure and asset checks
 ```
 
@@ -35,7 +36,7 @@ Existing page URLs are retained for bookmarks and GitHub Pages. Untracked tire a
 - Edit page content in its HTML file. Navigation is static so it works without JavaScript; update all six pages when adding a link.
 - Use the shared stylesheet for visual changes.
 - Update both data/products.json and the cards in pr.html when changing products. Image paths are relative to the site root.
-- Search matches names and categories, handles loading and failures, and closes with Escape or an outside click.
+- Search matches topics, names, categories, descriptions, and keywords. It handles partial loading failures and closes with Escape or an outside click. Update data/topics.json when changing a guide. Product filters progressively enhance the static catalog; all products remain readable without JavaScript.
 - The unrelated world population widget and its external API request have been removed.
 
 ## Verification
@@ -53,4 +54,6 @@ The existing GitHub Actions workflow publishes static files to GitHub Pages on p
 
 ## Content maintenance
 
-The educational text and recommendations are existing author content. This reorganization does not medically review the claims or verify retailer availability and pricing.
+Educational guides and product guidance were checked against the linked NIDCR, ADA, and BLS sources on October 1, 2026. This is an editorial source check, not clinician sign-off. Do not label it as reviewed by Maddie unless she reviews it. Retailer availability and pricing remain unverified.
+
+Optimized WebP assets are served where smaller, with original images retained. Images include dimensions; below-the-fold product images load lazily. See QUALITY.md for validation and remaining browser checks.

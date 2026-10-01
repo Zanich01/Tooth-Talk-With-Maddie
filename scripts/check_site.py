@@ -19,8 +19,12 @@ class Check(HTMLParser):
         if attrs.get('aria-current') == 'page': self.active.append(attrs.get('href'))
         for key in ('src', 'href'):
             url = urlsplit(attrs.get(key, ''))
-            if not url.scheme and not url.netloc and url.path:
-                assert (self.path.parent / unquote(url.path)).is_file(), url.path
+            if not url.scheme and not url.netloc:
+                target = self.path.parent / unquote(url.path) if url.path else self.path
+                assert target.is_file(), url.path
+                if url.fragment:
+                    import re
+                    assert re.search(r'id=[\"\x27]' + re.escape(url.fragment) + r'[\"\x27]', target.read_text(encoding='utf-8')), url.fragment
     def handle_endtag(self, tag):
         assert self.stack and self.stack[-1] == tag, f'{self.path}: unexpected {tag} in {self.stack}'
         self.stack.pop()
@@ -40,3 +44,8 @@ for product in products:
     assert (ROOT / product['image']).is_file()
     assert urlsplit(product['url']).scheme == 'https'
 print(f'PASS {len(products)} products and images')
+topics = json.loads((ROOT / 'data/topics.json').read_text())
+for topic in topics:
+    assert all(topic.get(key) for key in ('name', 'url', 'description', 'keywords'))
+    assert (ROOT / topic['url']).is_file()
+print(f'PASS {len(topics)} searchable guides')

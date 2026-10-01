@@ -263,3 +263,50 @@ footer p { margin: 0; }
   .topic-card { transition: none; }
   .topic-card:hover { transform: none; }
 }
+/* Learning guides */
+.guide-hero { display: grid; grid-template-columns: minmax(0, 1fr) 150px; gap: 2rem; align-items: center; padding-bottom: 2.5rem; }
+.breadcrumb { display: inline-block; margin-bottom: 2rem; font-size: .85rem; }
+.guide-hero h1 { max-width: 20ch; }
+.guide-intro { max-width: 58ch; font-size: 1.15rem; color: var(--muted); }
+.review-date { color: var(--muted); font-size: .8rem; margin: 0; }
+.guide-art { width: 100%; color: var(--teal); }
+.guide-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 2rem; align-items: start; }
+.guide-toc { position: sticky; top: 1.5rem; padding: 1.25rem; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); }
+.guide-toc nav { display: grid; gap: .5rem; }
+.guide-toc a { padding: .5rem 0; font-size: .875rem; line-height: 1.5; }
+.guide-body { min-width: 0; padding: clamp(1.25rem, 4vw, 3rem); border-radius: 22px; border: 1px solid var(--line); background: var(--paper); }
+.takeaway { background: #e6eee8; padding: 1.5rem; border-radius: 14px; }
+.takeaway p:last-child { margin: 0; font-size: 1.15rem; color: var(--deep); }
+.guide-section { padding-top: 2.5rem; margin-top: 2rem; border-top: 1px solid var(--line); scroll-margin-top: 1.5rem; }
+.step-number { display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: #e6eee8; color: var(--teal); font-size: .8rem; font-weight: 700; }
+.guide-section h2 { margin-top: 1rem; }
+.sources { margin-top: 3rem; border-top: 1px solid var(--line); font-size: .9rem; color: var(--muted); overflow-wrap: anywhere; }
+.sources h2 { font-size: 1.5rem; }
+.related-topics { margin-top: 4rem; }
+.related-topics h2 { margin-top: 0; }
+.related-topics > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.related-topics a { display: flex; justify-content: space-between; gap: 1rem; padding: 1.25rem; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); text-decoration: none; }
+.related-topics a:hover { background: #e6eee8; }
+.product-filters { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1rem; }
+.product-filters button { border: 1px solid var(--line); border-radius: 100px; padding: .65rem 1rem; min-height: 44px; background: white; color: var(--deep); cursor: pointer; }
+.product-filters button[aria-pressed="true"] { background: var(--deep); color: white; border-color: var(--deep); }
+.filter-status { font-size: .875rem; color: var(--muted); }
+.product-item .product-description { margin: 0 0 1rem; color: var(--muted); font-size: .85rem; }
+.product-item > p:last-child { margin-top: auto; width: 100%; }
+.topic-result { padding: 1rem 0; border-top: 1px solid var(--line); }
+#results h2 { margin-top: 1.5rem; font-size: 1.3rem; }
+@media (max-width: 799px) {
+  .guide-hero { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .guide-art { display: none; }
+  .guide-layout { grid-template-columns: minmax(0, 1fr); }
+  .guide-toc { position: static; }
+  .guide-toc nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+  .related-topics > div { grid-template-columns: minmax(0, 1fr); }
+}
+@media print {
+  .guide-toc, .product-filters, .filter-status, .related-topics { display: none !important; }
+  .guide-layout { display: block; }
+  .guide-body { padding: 0; border: 0; }
+}
+.nav-links a { overflow-wrap: anywhere; }
+.health-banner > span:first-child { min-width: 0; }
