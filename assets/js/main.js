@@ -26,7 +26,10 @@ if (navigation && menuToggle && navigationLinks) {
     }
   });
   document.addEventListener("click", event => {
-    if (!navigation.contains(event.target)) setMenu(false);
+    if (!menuToggle.contains(event.target) && !navigationLinks.contains(event.target)) setMenu(false);
+  });
+  document.addEventListener("focusin", event => {
+    if (!menuToggle.contains(event.target) && !navigationLinks.contains(event.target)) setMenu(false);
   });
   navigationLinks.addEventListener("click", event => {
     if (event.target.closest("a")) setMenu(false);
@@ -55,6 +58,7 @@ let searchVersion = 0;
 function dismissSearch() {
   searchVersion++;
   results.hidden = true;
+  searchBar.setAttribute("aria-expanded", "false");
 }
 function renderMatches(title, entries, external) {
   if (!entries.length) return;
@@ -92,6 +96,7 @@ async function searchSite() {
   const query = searchBar.value.trim().toLowerCase();
   results.replaceChildren();
   results.hidden = !query;
+  searchBar.setAttribute("aria-expanded", String(Boolean(query)));
   if (!query) return;
   results.textContent = "Searching topics and products…";
   const responses = await Promise.allSettled([
@@ -119,6 +124,7 @@ async function searchSite() {
   renderMatches("Oral care products", matches[1], true);
 }
 if (searchBar && results) {
+  searchBar.setAttribute("aria-expanded", "false");
   searchBar.addEventListener("input", searchSite);
   searchBar.addEventListener("focus", searchSite);
   document.addEventListener("keydown", event => {
@@ -130,7 +136,28 @@ if (searchBar && results) {
   document.addEventListener("click", event => {
     if (!searchBar.contains(event.target) && !results.contains(event.target)) dismissSearch();
   });
+  document.addEventListener("focusin", event => {
+    if (!searchBar.contains(event.target) && !results.contains(event.target)) dismissSearch();
+  });
 }
+
+// Disclosures close on click-away or Escape; clicks inside stay interactive.
+const disclosures = [...document.querySelectorAll(".routine-card, .faq-list details, .comparison-card, .buying-help")];
+const closeDisclosure = (detail, restoreFocus = false) => {
+  detail.open = false;
+  if (restoreFocus) detail.querySelector("summary").focus();
+};
+document.addEventListener("click", event => {
+  for (const detail of disclosures) {
+    if (detail.open && !detail.contains(event.target)) closeDisclosure(detail);
+  }
+});
+document.addEventListener("keydown", event => {
+  if (event.key !== "Escape") return;
+  for (const detail of disclosures) {
+    if (detail.open) closeDisclosure(detail, detail.contains(document.activeElement));
+  }
+});
 
 const filters = document.querySelector(".product-filters");
 if (filters) {
@@ -141,13 +168,18 @@ if (filters) {
   const applyFilter = value => {
     let count = 0;
     for (const category of categories) {
-      category.hidden = value !== "all" && category.dataset.category !== value;
-      if (!category.hidden) count += category.querySelectorAll(".product-item").length;
+      const cards = [...category.querySelectorAll(".product-item")];
+      for (const card of cards) {
+        const needs = (card.dataset.needs || category.dataset.category).split(" ");
+        card.hidden = value !== "all" && !needs.includes(value);
+        if (!card.hidden) count++;
+      }
+      category.hidden = cards.every(card => card.hidden);
     }
     for (const button of filters.querySelectorAll("button")) {
       button.setAttribute("aria-pressed", String(button.dataset.filter === value));
     }
-    status.textContent = `${count} product listings shown`;
+    status.textContent = `${count} products shown`;
   };
   filters.addEventListener("click", event => {
     const button = event.target.closest("button[data-filter]");

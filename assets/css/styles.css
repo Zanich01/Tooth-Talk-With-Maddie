@@ -310,3 +310,85 @@ footer p { margin: 0; }
 }
 .nav-links a { overflow-wrap: anywhere; }
 .health-banner > span:first-child { min-width: 0; }
+/* Shared brand and practical learning sections. */
+.routine-section, .faq-section { margin-top: clamp(3.5rem, 7vw, 6rem); }
+.routine-grid { display: grid; gap: 1rem; }
+.routine-card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 1.5rem; align-self: start; }
+.routine-card summary { cursor: pointer; list-style: none; }
+.routine-card summary::-webkit-details-marker { display: none; }
+.routine-card svg { width: 96px; height: 96px; margin-bottom: 1rem; color: var(--teal); }
+.routine-card h3 { font: 500 1.6rem/1.2 Georgia, serif; margin: .6rem 0; }
+.routine-card summary p { color: var(--muted); font-size: .9rem; }
+.routine-open { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 1rem; font-size: .85rem; font-weight: 650; }
+.routine-card[open] .routine-open span { transform: rotate(45deg); }
+.routine-card ol { padding-left: 1.25rem; font-size: .9rem; }
+.routine-card li { padding-left: .3rem; margin-bottom: .7rem; }
+.source-note { color: var(--muted); font-size: .8rem; margin-top: 1.25rem; }
+.faq-section { display: grid; gap: 2rem; padding: clamp(1.5rem, 4vw, 3rem); border-radius: 24px; background: #edf1e6; }
+.faq-section h2 { margin-top: 0; font-size: clamp(2rem, 3vw, 2.8rem); }
+.faq-section > div > p:not(.eyebrow) { color: var(--muted); }
+.faq-list { min-width: 0; }
+.faq-list details { border-bottom: 1px solid #cdd9c9; }
+.faq-list summary { cursor: pointer; padding: 1rem .25rem; font-weight: 650; line-height: 1.5; }
+.faq-list details p { font-size: .9rem; color: var(--muted); padding: 0 .25rem 1rem; margin: 0; }
+.today-action { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #c4d6ca; }
+.today-action strong { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--teal); }
+.takeaway .today-action p { margin: .5rem 0 0; font-size: .95rem; }
+.shelf-guide { margin-bottom: 2.5rem; padding: clamp(1.25rem, 3vw, 2rem); border-radius: 20px; border: 1px solid var(--line); background: #edf1e6; }
+.shelf-guide h2 { margin: 0 0 1rem; }
+.comparison-grid { display: grid; gap: 1rem; margin-top: 1.5rem; }
+.comparison-grid article { min-width: 0; padding: 1.25rem; border-radius: 14px; background: var(--paper); border: 1px solid var(--line); }
+.comparison-grid h3 { margin-top: 0; }
+.comparison-grid p { font-size: .85rem; color: var(--muted); }
+.comparison-grid p:last-child { margin-bottom: 0; }
+.comparison-grid strong, .product-detail-label { display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--teal); margin-bottom: .3rem; }
+@media (min-width: 700px) { .routine-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .comparison-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .faq-section { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 4rem; } }
+@media print { .routine-card { break-inside: avoid; } }
+/* A quieter product shelf: concise comparisons and consistent card spacing. */
+.products-page .header { text-align: left; padding: 0; margin-bottom: 2rem; }
+.products-page .header > p:last-child { max-width: 58ch; color: var(--muted); }
+.products-page .shelf-guide { padding: clamp(1.25rem, 3vw, 2rem); }
+.comparison-grid { gap: .65rem; }
+.comparison-card { padding: 0 1rem; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); align-self: start; }
+.comparison-card summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; cursor: pointer; list-style: none; font-size: .9rem; font-weight: 650; }
+.comparison-card summary::-webkit-details-marker { display: none; }
+.comparison-card[open] summary span { transform: rotate(45deg); }
+.comparison-card p { color: var(--muted); font-size: .85rem; }
+.comparison-card strong { display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--teal); margin-bottom: .3rem; }
+.products-page .product-category { padding: clamp(1.25rem, 3vw, 2rem); }
+.products-page .product-category > h2 { margin-top: 0; }
+.products-page .product-category > p { max-width: 80ch; font-size: .95rem; color: var(--muted); }
+.products-page .product-item { box-shadow: none; border: 1px solid var(--line); }
+.products-page .product-item h3 { font-size: 1rem; line-height: 1.4; }
+.products-page .product-item > p:last-child a { display: flex; justify-content: space-between; align-items: center; min-height: 44px; padding: .6rem .8rem; border-radius: 8px; background: #edf3ef; text-decoration: none; font-size: .85rem; }
+.products-page .product-item > p:last-child a::after { content: '\2197'; }
+.products-page .product-item > p:last-child a:hover { background: #dce9e0; }
+.product-filters button:hover { border-color: var(--teal); }
+.routine-card summary:hover .routine-open, .faq-list summary:hover, .comparison-card summary:hover { color: var(--teal); }
+.products-page .header { max-width: none; margin: 0 0 2rem; }
+.products-page .header h1 { margin-bottom: .75rem; }
+/* Clear routes into the library and a compact product landing page. */
+.page-shortcuts { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.25rem; padding: 1rem 0; margin-bottom: 2rem; border-bottom: 1px solid var(--line); font-size: .85rem; }
+.page-shortcuts > span { color: var(--muted); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; }
+.page-shortcuts a { padding: .35rem 0; }
+.library-secondary { display: grid; gap: 1rem; margin-top: 1rem; }
+.library-secondary a { display: block; padding: 1.25rem 1.5rem; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); text-decoration: none; }
+.library-secondary a:hover { background: #e6eee8; }
+.library-secondary strong { display: block; margin-bottom: .3rem; color: var(--deep); }
+.library-secondary span { color: var(--muted); font-size: .85rem; }
+.buying-help > summary { display: flex; justify-content: space-between; gap: 1rem; cursor: pointer; list-style: none; font-weight: 650; }
+.buying-help > summary::-webkit-details-marker { display: none; }
+.buying-help[open] > summary { margin-bottom: 1.5rem; }
+.buying-help[open] > summary > span { transform: rotate(45deg); }
+.products-page .buying-help:not([open]) { padding: 1rem 1.25rem; }
+.guide-toc a[aria-current="location"] { color: var(--deep); font-weight: 700; }
+@media (min-width: 700px) { .library-secondary { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Keep mobile pages focused on content instead of section navigation. */
+@media (max-width: 799px) {
+  .guide-toc, .page-shortcuts { display: none; }
+}
+/* Subtle search focus, with a distinct keyboard focus indicator. */
+#search-bar:focus { outline: none; border-color: var(--teal); box-shadow: none; }
+#search-bar:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+#search-bar::selection { background: #dce9e0; color: var(--deep); }

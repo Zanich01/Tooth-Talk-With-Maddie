@@ -36,7 +36,7 @@ Existing page URLs are retained for bookmarks and GitHub Pages. Untracked tire a
 - Edit page content in its HTML file. Navigation is static so it works without JavaScript; update all six pages when adding a link.
 - Use the shared stylesheet for visual changes.
 - Update both data/products.json and the cards in pr.html when changing products. Image paths are relative to the site root.
-- Search matches topics, names, categories, descriptions, and keywords. It handles partial loading failures and closes with Escape or an outside click. Update data/topics.json when changing a guide. Product filters progressively enhance the static catalog; all products remain readable without JavaScript.
+- Search matches topics, names, categories, descriptions, and keywords. It handles partial loading failures and closes with Escape or an outside click. Update data/topics.json when changing a guide. Product filters match each unique card to one or more care needs and progressively enhance the static catalog; all products remain readable without JavaScript.
 - The unrelated world population widget and its external API request have been removed.
 
 ## Verification
@@ -57,3 +57,7 @@ The existing GitHub Actions workflow publishes static files to GitHub Pages on p
 Educational guides and product guidance were checked against the linked NIDCR, ADA, and BLS sources on October 1, 2026. This is an editorial source check, not clinician sign-off. Do not label it as reviewed by Maddie unless she reviews it. Retailer availability and pricing remain unverified.
 
 Optimized WebP assets are served where smaller, with original images retained. Images include dimensions; below-the-fold product images load lazily. See QUALITY.md for validation and remaining browser checks.
+
+## Future Amazon affiliate links
+
+Current retailer links remain ordinary links. Before monetization, supply the approved Amazon Associates URLs for the exact products; do not invent a tracking tag or silently change product variants. Update both pr.html and data/products.json. Add a clear commission disclosure near shopping links and search product results, and prominently display: “As an Amazon Associate I earn from qualifying purchases.” Mark affiliate links with rel="sponsored noopener noreferrer". Verify product image rights and current Amazon program policies before launch. Compensation is for qualifying purchases under the program, not simply for clicks. See https://affiliate-program.amazon.com/help/node/topic/GPXFHVYZMTGPUMPE.

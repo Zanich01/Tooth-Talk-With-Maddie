@@ -2,6 +2,8 @@
 
 ## Implemented
 
+- Added illustrated routine disclosures, six common questions, product category comparisons, simple budget-conscious alternatives, guide action cards, and a shared vector tooth mark. New education links to ADA patient resources. No new personal endorsement, price claim, or clinician sign-off is implied.
+
 - Four educational guides share summaries, numbered sections, jump links, sources, and related reading.
 - Product categories have keyboard-operable filters and live listing counts. All listings remain available without JavaScript.
 - Search covers guides and products, matches all query words, and preserves available results if one catalog fails. Failed requests can be retried.
@@ -13,6 +15,8 @@
 
 ## Validation
 
+- New homepage brushing and FAQ disclosures verified in the in-app browser; desktop preview at 1275px has no horizontal overflow. Structure and JavaScript syntax checks pass. New sections still need narrow-screen visual verification.
+
 - All six pages checked at 320, 390, 768, 1024, and 1440 CSS pixels in the in-app browser: no horizontal overflow or clipped links/cards.
 - Text enlarged to 200% at phone and desktop widths. Fixed navigation word wrapping and the homepage banner's minimum width.
 - All six product filters checked, including the all-products reset. Counts reflect listings: the two toothbrushes appear in both gum care and cavity prevention.
@@ -20,6 +24,7 @@
 - Python structure checks cover nesting, IDs, landmarks, active navigation, local assets, fragment links, and both search catalogs. JavaScript syntax and Git whitespace checks pass.
 
 ## Remaining environment limitations
+
 
 Actual Safari and Firefox engine tests have not been run: Safari is unavailable on this Windows host and Firefox is not installed. Screen-reader testing on physical devices is also outstanding. Responsive emulation does not replace those checks.
 
@@ -30,3 +35,7 @@ python scripts/check_site.py
 node --check assets/js/main.js
 python -m http.server 8000 --bind 127.0.0.1
 ```
+
+## October 2 content refinement
+
+Restored the original logo on every page. Reduced homepage FAQ duplication, explained appointment flow and X-rays, expanded gum treatment, clarified cavity risk, and added medication-related dry mouth guidance. Product cards now appear once with shared category filters (13 unique products). Existing retailer links remain unchanged; affiliate launch instructions are in README.md. New content is editorially sourced, not clinician sign-off.
