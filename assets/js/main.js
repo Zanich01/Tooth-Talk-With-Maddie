@@ -193,7 +193,12 @@ if (topButton) {
   window.addEventListener("scroll", updateTopButton, { passive: true });
   topButton.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.querySelector(".skip-link")?.focus({ preventScroll: true });
+    const heading = document.querySelector("main h1");
+    if (heading) {
+      heading.setAttribute("tabindex", "-1");
+      heading.focus({ preventScroll: true });
+      heading.addEventListener("blur", () => heading.removeAttribute("tabindex"), { once: true });
+    }
   });
   updateTopButton();
 }
