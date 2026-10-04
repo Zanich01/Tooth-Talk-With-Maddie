@@ -33,5 +33,33 @@
     "category": "Product guide",
     "description": "Browse products by gum care, dry mouth, bad breath, whitening, or cavity prevention.",
     "keywords": "toothbrush toothpaste floss mouthwash whitening rinse"
+  },
+  {
+    "name": "Questions & answers",
+    "url": "questions.html",
+    "category": "Learning guide",
+    "description": "Brief answers and useful questions for your dental team.",
+    "keywords": "bleeding sensitivity sensitive nervous mouthwash x-rays treatment"
+  },
+  {
+    "name": "Your dentist question list",
+    "url": "visit-planner.html",
+    "category": "Learning guide",
+    "description": "Choose and print questions for your appointment.",
+    "keywords": "appointment treatment cost estimate questions checklist anxiety"
+  },
+  {
+    "name": "Understanding dry mouth",
+    "url": "dry-mouth.html",
+    "category": "Learning guide",
+    "description": "Learn about saliva, dryness, and what to discuss with your dental team.",
+    "keywords": "dry mouth saliva medicines medications"
+  },
+  {
+    "name": "A more comfortable dental visit",
+    "url": "dental-anxiety.html",
+    "category": "Learning guide",
+    "description": "Ways to talk with your dental team about anxiety and comfort.",
+    "keywords": "anxiety nervous scared embarrassed fear breaks"
   }
 ]

@@ -1,5 +1,111 @@
 "use strict";
 
+const embeddedChat = new URLSearchParams(window.location.search).get("embed") === "1" && window.location.pathname.endsWith("/questions.html");
+if (embeddedChat) document.documentElement.classList.add("chat-embedded");
+
+// Apply the same link behavior to page content, search results, and chat replies.
+function configureSiteLink(link) {
+  const url = new URL(link.href, window.location.href);
+  const external = /^https?:$/.test(url.protocol) && url.origin !== window.location.origin;
+  if (external) {
+    link.target = "_blank";
+    link.relList.add("noopener", "noreferrer");
+    if (!link.querySelector(".external-link-note")) {
+      const note = document.createElement("span");
+      note.className = "external-link-note";
+      note.textContent = " (opens in a new tab)";
+      link.append(note);
+    }
+  } else if (/^https?:$/.test(url.protocol)) {
+    if (embeddedChat) link.target = "_top";
+    else link.removeAttribute("target");
+  }
+}
+function configureLinks(root) {
+  if (root.matches?.("a[href]")) configureSiteLink(root);
+  root.querySelectorAll?.("a[href]").forEach(configureSiteLink);
+}
+configureLinks(document);
+new MutationObserver(records => {
+  for (const record of records) {
+    if (record.type === "attributes") configureSiteLink(record.target);
+    else for (const node of record.addedNodes) configureLinks(node);
+  }
+}).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
+
+// One launcher on each page. The Q&A page reuses its own conversation.
+if (!embeddedChat) {
+  const launcher = document.createElement("button");
+  launcher.type = "button";
+  launcher.className = "chat-launcher";
+  launcher.setAttribute("aria-label", "Open dental question chat");
+  launcher.setAttribute("aria-controls", "floating-chat");
+  launcher.setAttribute("aria-haspopup", "dialog");
+  launcher.setAttribute("aria-expanded", "false");
+  launcher.innerHTML = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 3v-3a2 2 0 0 1-2-2V6a2 2 0 0 1 3-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Ask a question</span>';
+  const dialog = document.createElement("dialog");
+  dialog.id = "floating-chat";
+  dialog.className = "floating-chat";
+  dialog.setAttribute("aria-labelledby", "floating-chat-title");
+  const header = document.createElement("div");
+  header.className = "floating-chat-header";
+  const title = document.createElement("h2");
+  title.id = "floating-chat-title";
+  title.textContent = "Your dental questions";
+  const close = document.createElement("button");
+  close.type = "button";
+  close.className = "floating-chat-close";
+  close.setAttribute("aria-label", "Close chat");
+  close.textContent = "×";
+  header.append(title, close);
+  const content = document.createElement("div");
+  content.className = "floating-chat-content";
+  dialog.append(header, content);
+  document.body.append(launcher, dialog);
+  let frame;
+  let placeholder;
+  let conversation;
+  function closeChat() {
+    dialog.close();
+    launcher.setAttribute("aria-expanded", "false");
+    if (conversation && placeholder) {
+      placeholder.replaceWith(conversation);
+      placeholder = null;
+    }
+    launcher.focus({ preventScroll: true });
+  }
+  launcher.addEventListener("click", () => {
+    if (dialog.open) { closeChat(); return; }
+    conversation = document.querySelector("main .chat-workspace");
+    if (conversation) {
+      placeholder = document.createElement("div");
+      conversation.before(placeholder);
+      content.append(conversation);
+    } else if (!frame) {
+      frame = document.createElement("iframe");
+      frame.title = "Dental question chat";
+      frame.src = "questions.html?embed=1";
+      content.append(frame);
+    }
+    dialog.show();
+    launcher.setAttribute("aria-expanded", "true");
+    close.focus({ preventScroll: true });
+  });
+  close.addEventListener("click", closeChat);
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && dialog.open) { event.preventDefault(); closeChat(); }
+  });
+  // Escape pressed inside the iframe must reach its parent page.
+  frame = null;
+  window.addEventListener("message", event => {
+    if (event.origin === window.location.origin && event.source === frame?.contentWindow && event.data === "close-dental-chat" && dialog.open) closeChat();
+  });
+} else {
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") window.parent.postMessage("close-dental-chat", window.location.origin);
+  });
+}
+
 // Progressive enhancement: navigation remains visible without JavaScript.
 const navigation = document.querySelector(".navbar");
 const menuToggle = document.querySelector(".menu-toggle");
@@ -41,7 +147,6 @@ if (navigation && menuToggle && navigationLinks) {
 // All page links and data paths are relative so subdirectory hosting works.
 const searchBar = document.querySelector("#search-bar");
 const results = document.querySelector("#results");
-const topButton = document.querySelector("#topBtn");
 const catalogCache = new Map();
 function loadCatalog(path) {
   if (!catalogCache.has(path)) {
@@ -188,17 +293,28 @@ if (filters) {
   applyFilter("all");
 }
 
-if (topButton) {
-  const updateTopButton = () => { topButton.hidden = window.scrollY < 200; };
-  window.addEventListener("scroll", updateTopButton, { passive: true });
-  topButton.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-    const heading = document.querySelector("main h1");
-    if (heading) {
-      heading.setAttribute("tabindex", "-1");
-      heading.focus({ preventScroll: true });
-      heading.addEventListener("blur", () => heading.removeAttribute("tabindex"), { once: true });
+const planner = document.querySelector('.planner-groups');
+if (planner) {
+  const panel = document.querySelector('#selected-questions');
+  const list = document.querySelector('#question-list');
+  const status = document.querySelector('#planner-status');
+  const update = () => {
+    const chosen = [...planner.querySelectorAll('input:checked')];
+    list.replaceChildren();
+    for (const input of chosen) {
+      const item = document.createElement('li');
+      item.textContent = input.value;
+      list.append(item);
     }
+    panel.hidden = false;
+    status.textContent = chosen.length ? `${chosen.length} questions selected. Bring this list to your dental team.` : 'Select questions above to build your list.';
+    document.querySelector('#print-questions').disabled = !chosen.length;
+  };
+  planner.addEventListener('change', update);
+  document.querySelector('#print-questions').addEventListener('click', () => window.print());
+  document.querySelector('#clear-questions').addEventListener('click', () => {
+    for (const input of planner.querySelectorAll('input')) input.checked = false;
+    update();
   });
-  updateTopButton();
+  update();
 }

@@ -4,13 +4,9 @@ A static dental education website for Madison Migliore, RDH. Built with HTML, CS
 
 ## Run locally
 
-From the project directory, run Python 3:
+Run `node server.cjs` from the project directory, then open http://127.0.0.1:8000. Node 22 or newer is sufficient; no package installation or AI credential is needed. The server provides both the site and the intent-based answer endpoint.
 
-```sh
-python -m http.server 8000 --bind 127.0.0.1
-```
-
-Open http://localhost:8000. Use a local server: product search loads JSON with fetch and cannot reliably run from a file URL.
+For a static-only preview, `python -m http.server 8000 --bind 127.0.0.1` still works. The chat automatically uses the identical engine in the browser when the backend is unavailable. Product search needs a local server to fetch JSON.
 
 ## Project layout
 
@@ -61,3 +57,29 @@ Optimized WebP assets are served where smaller, with original images retained. I
 ## Future Amazon affiliate links
 
 Current retailer links remain ordinary links. Before monetization, supply the approved Amazon Associates URLs for the exact products; do not invent a tracking tag or silently change product variants. Update both pr.html and data/products.json. Add a clear commission disclosure near shopping links and search product results, and prominently display: “As an Amazon Associate I earn from qualifying purchases.” Mark affiliate links with rel="sponsored noopener noreferrer". Verify product image rights and current Amazon program policies before launch. Compensation is for qualifying purchases under the program, not simply for clicks. See https://affiliate-program.amazon.com/help/node/topic/GPXFHVYZMTGPUMPE.
+
+## Dental question engine
+
+The Q&A chat uses 24 sourced answers in `data/answers.json`. The shared `assets/js/dental-engine.js` recognizes question intent, topic aliases, basic negation, and selected contextual follow-ups. It distinguishes appointment preparation from visit frequency, symptoms from routine questions, and adult from baby loose teeth. Close matches and incomplete questions can request clarification; unsupported questions receive a fallback instead of invented advice. This is a curated intent system, not generative AI or a diagnostic tool. Coverage remains limited and clinician review is pending.
+
+`server.cjs` provides `POST /api/answer` with `{question, context}` and returns an answer, clarification, or unknown result. Context includes only the last answer intent. The browser handles chat history and does not persist it. The local server does not log or save questions and makes no outside AI calls. It binds to loopback, limits body size and requests, checks origins, and only serves public website files. If it is unavailable, the browser resolves answers with the same engine and catalog.
+
+The existing GitHub Pages deployment runs the browser engine only. Hosting the Node backend publicly would require a server-capable host and deployment work; this local preview does not deploy it. Public hosting may cost money even though the engine has no API usage charges. The basic per-process rate limit is for local/small-instance use; shared deployment needs coordinated limits.
+
+Validation:
+
+```
+node scripts/check_answers.cjs
+node scripts/check_backend.cjs
+python scripts/check_site.py
+```
+
+Before changing answer wording, verify the linked clinical sources and obtain Maddie’s review. Add regression examples for each new intent, ambiguous wording, and unsupported requests. Do not call the system clinician-reviewed until that review happens.
+
+## Floating chat
+
+Every page has an “Ask a question” launcher in place of the former back-to-top button. It opens a nonmodal chat panel so the current guide stays visible. Closing and reopening preserves that page’s conversation; navigating or reloading starts a new session. The Q&A page moves its existing conversation into the panel and restores it on close, avoiding duplicate chats. Other pages load a compact same-origin Q&A view only when the launcher is opened. Close with the close button or Escape. The launcher and panel are excluded from print layouts.
+
+## Daily routine update
+
+The homepage presents Maddie’s floss-first preference alongside ADA guidance that either order is acceptable. Walkthroughs follow that sequence; water flossing is labeled as an alternative. The library now has 27 sourced answers, including technique, tool alternatives, and floss reuse. Regression checks ensure tool mentions do not override bleeding-gum or frequency questions. Clinician review remains pending.

@@ -88,8 +88,6 @@ img.brushingTeeth { max-height: 380px; object-fit: contain; }
 .product-info { min-width: 0; overflow-wrap: anywhere; }
 .product-info > a { font-weight: 600; }
 .product-info p { margin: .25rem 0 0; font-size: .875rem; color: var(--muted); }
-#topBtn { position: fixed; z-index: 5; bottom: 1rem; right: 1rem; max-width: calc(100% - 2rem); min-height: 44px; padding: .65rem 1rem; border: 1px solid #ffffff55; border-radius: 100px; background: var(--deep); color: white; box-shadow: 0 4px 16px #103f4326; font-size: .8rem; cursor: pointer; }
-#topBtn:hover { background: var(--teal); }
 footer { padding: 2rem 1.5rem 5rem; border-top: 1px solid var(--line); background: #e9efea; color: var(--muted); text-align: center; font-size: .8rem; }
 footer p { margin: 0; }
 @media (min-width: 600px) {
@@ -122,7 +120,7 @@ footer p { margin: 0; }
 }
 @media print {
   body { background: white; color: black; }
-  header, #results, #topBtn, .skip-link { display: none !important; }
+  header, #results, .skip-link { display: none !important; }
   main { width: 100%; margin: 0; }
   .main-content, .product-category { box-shadow: none; border: 0; padding: 0; }
   .product-item { break-inside: avoid; }
@@ -392,3 +390,180 @@ footer p { margin: 0; }
 #search-bar:focus { outline: none; border-color: var(--teal); box-shadow: none; }
 #search-bar:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 #search-bar::selection { background: #dce9e0; color: var(--deep); }
+
+/* Readable educational notices and disclaimer page. */
+footer .footer-disclaimer { max-width: 78ch; margin: .8rem auto 0; font-size: .875rem; line-height: 1.65; }
+.legal-page { max-width: 850px; padding: clamp(1.25rem, 4vw, 3rem); background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
+.legal-page h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
+.legal-page section { margin-top: 2rem; }
+.legal-page h2 { font-size: clamp(1.25rem, 3vw, 1.65rem); }
+.legal-intro { font-size: 1.1rem; }
+.legal-callout, .education-notice { padding: 1.25rem; border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: 10px; background: #edf3ef; }
+.education-notice { margin: 0 0 2rem; }
+/* Learning paths and practical appointment preparation. */
+.knowledge-page { max-width: 950px; }
+.knowledge-page > h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
+.knowledge-page > section { margin-top: 2rem; }
+.knowledge-callout { margin: 2rem 0; padding: clamp(1.25rem, 3vw, 2rem); background: #edf3ef; border: 1px solid var(--line); border-radius: 18px; }
+.knowledge-callout h2 { margin-top: 0; }
+.knowledge-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.knowledge-links a { padding: 1rem; border-radius: 10px; background: var(--paper); }
+.question-tools { padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+#answer-search { display: block; width: 100%; margin: .5rem 0 1rem; padding: .9rem; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); font: inherit; }
+#answer-search[hidden] { display: none; }
+.answer-list { display: grid; gap: .75rem; }
+.answer-card { padding: 0 1.25rem; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.answer-card summary { padding: 1.15rem 0; font-weight: 650; cursor: pointer; }
+.answer-card > div { padding-bottom: 1.25rem; }
+.ask-prompt { padding: 1rem; background: #edf3ef; border-radius: 10px; }
+.ask-prompt strong { display: block; margin-bottom: .4rem; }
+.planner-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.planner-groups fieldset { min-width: 0; padding: 1rem; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.planner-groups legend { padding: 0 .5rem; font-weight: 650; }
+.planner-option { display: flex; gap: .75rem; align-items: baseline; padding: .75rem 0; cursor: pointer; }
+.planner-option input { flex-shrink: 0; width: 1.1rem; height: 1.1rem; accent-color: var(--teal); }
+#selected-questions button { margin: .5rem .75rem .5rem 0; padding: .75rem 1rem; border: 1px solid var(--teal); border-radius: 8px; font: inherit; cursor: pointer; background: var(--paper); color: var(--deep); }
+@media (max-width: 600px) { .knowledge-links, .planner-groups { grid-template-columns: 1fr; } }
+@media print {
+ body:has(#selected-questions) header, body:has(#selected-questions) footer, body:has(#selected-questions) #results, body:has(#selected-questions) main > :not(#selected-questions), #selected-questions button { display: none !important; }
+ body:has(#selected-questions) main { width: 100%; margin: 0; }
+ #selected-questions { border: none; background: white; color: black; padding: 0; }
+}
+/* Natural-language questions lead to existing, sourced learning guides. */
+.answer-finder { padding: clamp(1.25rem, 4vw, 2rem); border-radius: 18px; border: 1px solid var(--line); background: #edf3ef; }
+.answer-finder[hidden] { display: none; }
+.answer-finder h2 { margin-top: 0; }
+#question-finder-form label { display: block; font-weight: 650; margin-bottom: .5rem; }
+#visitor-question { display: block; width: 100%; box-sizing: border-box; resize: vertical; padding: 1rem; font: inherit; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); margin-bottom: 1rem; }
+#question-finder-form button { font: inherit; cursor: pointer; border: none; }
+#finder-help, .finder-care { font-size: .875rem; line-height: 1.6; }
+.question-examples { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1rem 0; }
+.question-examples button { padding: .7rem .85rem; font: inherit; font-size: .85rem; border: 1px solid var(--line); border-radius: 20px; background: var(--paper); cursor: pointer; color: var(--deep); }
+#finder-results { display: grid; gap: 1rem; }
+.finder-answer { padding: 1.25rem; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.finder-answer h3 { margin-top: 0; }
+/* One focused question workspace, with answers brought into view. */
+.qa-page { max-width: 780px; margin-top: 1.5rem; }
+.qa-breadcrumb { font-size: .8rem; margin-bottom: 1.5rem; }
+.qa-heading { text-align: center; margin-bottom: 1.5rem; }
+.qa-heading .eyebrow { margin-bottom: .6rem; }
+.qa-heading h1 { font-size: clamp(2.6rem, 6vw, 4rem); margin-bottom: .75rem; }
+.qa-heading > p:last-child { color: var(--muted); font-size: 1rem; line-height: 1.6; margin-bottom: 0; }
+.qa-workspace.answer-finder { padding: clamp(1.15rem, 3vw, 1.75rem); border: 1px solid var(--line); background: var(--paper); box-shadow: var(--shadow); border-radius: 20px; }
+.qa-workspace #visitor-question { min-height: 95px; margin-bottom: .75rem; background: #f6f8f5; }
+.qa-submit-row { display: flex; gap: .75rem; align-items: center; justify-content: space-between; }
+#assistant-mode { font-size: .75rem; color: var(--muted); }
+.qa-submit-row .button-primary { min-height: 44px; font-size: .875rem !important; white-space: nowrap; padding: .7rem 1rem; }
+.qa-workspace #finder-help { margin: .8rem 0; font-size: .75rem; color: var(--muted); }
+.qa-workspace .question-examples { margin-bottom: 0; }
+.qa-workspace .question-examples button { font-size: .75rem; padding: .45rem .75rem; background: #f3f6f3; }
+.qa-answer-panel { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); scroll-margin-top: 1rem; }
+.qa-answer-panel:focus { outline: none; }
+.qa-result-top { display: flex; gap: .5rem; align-items: center; justify-content: space-between; }
+.qa-result-top p { margin: 0; }
+#new-question { border: none; background: transparent; color: var(--teal); text-decoration: underline; cursor: pointer; padding: .5rem 0 .5rem .75rem; font-size: .8rem; }
+.qa-answer-panel h2 { margin: .75rem 0; font-size: clamp(1.5rem, 4vw, 2rem); }
+#finder-status { font-size: .8rem; color: var(--muted); margin-bottom: 1rem; }
+.qa-answer-text { font-size: 1.05rem; line-height: 1.7; }
+.qa-dentist-prompt { padding: 1rem 1.25rem; background: #edf3ef; border-left: 3px solid var(--teal); border-radius: 10px; margin: 1rem 0; }
+.qa-dentist-prompt .eyebrow { display: block; margin-bottom: .4rem; }
+.qa-dentist-prompt p { margin: 0; font-size: .95rem; }
+.qa-guide-button { display: inline-block; padding: .5rem 0; font-weight: 600; font-size: .9rem; }
+.qa-followups { margin-top: 1rem; }
+.qa-followups p { margin-bottom: .35rem; }
+.qa-followups button { display: block; width: 100%; border: none; border-bottom: 1px solid var(--line); background: transparent; color: var(--teal); text-align: left; padding: .75rem 0; font-size: .85rem; cursor: pointer; }
+.qa-related { margin-top: 1rem; font-size: .85rem; }
+.qa-related summary { cursor: pointer; }
+.qa-related a { display: block; padding: .5rem 0; }
+.qa-secondary { display: grid; gap: .75rem; margin-top: 1.25rem; font-size: .85rem; }
+.qa-secondary > a { display: flex; justify-content: space-between; padding: .65rem 0; }
+.qa-secondary summary { cursor: pointer; color: var(--muted); }
+.qa-guide-links { display: flex; flex-wrap: wrap; gap: .6rem 1rem; margin: 1rem 0; }
+.qa-secondary details p { font-size: .8rem; color: var(--muted); margin: 0; }
+.qa-care-note { margin: 1.5rem 0 0; font-size: .75rem; color: var(--muted); line-height: 1.6; }
+@media (max-width: 480px) { .qa-submit-row { align-items: stretch; flex-direction: column; gap: .5rem; } .qa-submit-row .button-primary { justify-content: center; } }
+/* A messaging conversation with a fixed composer inside the card. */
+.chat-workspace.answer-finder { padding: 0; background: var(--paper); overflow: hidden; border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); }
+.chat-topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 1.25rem; border-bottom: 1px solid var(--line); }
+.chat-topbar > div { display: flex; gap: .75rem; align-items: center; }
+.chat-topbar strong { display: block; font-size: .9rem; }
+.chat-topbar small { display: block; font-size: .7rem; color: var(--muted); }
+.chat-avatar { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--deep); color: white; font: 1.2rem Georgia, serif; }
+.chat-messages { position: relative; height: clamp(260px, 43vh, 410px); overflow-y: auto; overscroll-behavior: contain; padding: 1.25rem; background: #f5f7f4; scrollbar-gutter: stable; }
+.chat-message { width: min(90%, 620px); margin: 0 0 1.25rem; }
+.chat-message:last-child { margin-bottom: 0; }
+.chat-sender { margin: 0 0 .3rem; font-size: .7rem; color: var(--muted); }
+.chat-bubble { padding: 1rem 1.15rem; border: 1px solid var(--line); border-radius: 4px 16px 16px; background: var(--paper); font-size: .925rem; line-height: 1.65; }
+.chat-bubble p { margin: 0 0 .75rem; }
+.chat-bubble p:last-child { margin-bottom: 0; }
+.chat-user { margin-left: auto; width: fit-content; max-width: 85%; }
+.chat-user .chat-sender { text-align: right; }
+.chat-user .chat-bubble { border-color: var(--deep); background: var(--deep); color: white; border-radius: 16px 4px 16px 16px; }
+.chat-guide-link { display: inline-block; margin-top: .25rem; font-weight: 600; font-size: .825rem; }
+.chat-evidence { margin-top: .75rem; font-size: .75rem; }
+.chat-evidence summary { cursor: pointer; color: var(--muted); padding: .25rem 0; }
+.chat-evidence a { display: block; margin-top: .5rem; }
+.chat-dentist-question { margin-top: .75rem !important; padding-left: .75rem; border-left: 2px solid var(--teal); }
+.chat-source-date { margin-top: .5rem !important; color: var(--muted); }
+.chat-suggestions { display: flex; flex-wrap: wrap; gap: .4rem; padding: .65rem 1.25rem; border-top: 1px solid var(--line); }
+.chat-suggestions:empty { display: none; }
+.chat-suggestions button { border: 1px solid var(--line); background: #f3f6f3; color: var(--deep); border-radius: 15px; padding: .45rem .65rem; font-size: .75rem; line-height: 1.4; cursor: pointer; }
+.chat-composer { padding: .8rem 1.25rem; border-top: 1px solid var(--line); }
+.chat-input-label { display: block; font-size: .75rem; font-weight: 600; margin-bottom: .35rem; }
+.chat-input-row { display: flex; align-items: center; gap: .75rem; }
+.chat-input-row #visitor-question { margin: 0; min-height: 60px; padding: .7rem; font-size: .9rem; flex: 1; }
+.chat-input-row button { min-height: 44px; padding: .7rem .9rem; cursor: pointer; border: none; font-size: .875rem; }
+.chat-composer #finder-help { margin: .5rem 0 0; font-size: .65rem; color: var(--muted); line-height: 1.5; }
+.chat-status { margin: .3rem 0 0 !important; font-size: .75rem; }
+@media (max-width: 480px) {
+ .chat-topbar, .chat-composer { padding: .75rem; }
+ .chat-messages { padding: .9rem; height: 340px; }
+ .chat-message { width: 96%; }
+ .chat-user { width: fit-content; max-width: 88%; }
+ .chat-suggestions { padding: .6rem .75rem; }
+ .chat-bubble { padding: .85rem; }
+}
+/* Match text entry focus and selection to the search bar. */
+textarea:focus, input[type="text"]:focus, input[type="search"]:focus { outline: none; border-color: var(--teal); box-shadow: none; }
+textarea:focus-visible, input[type="text"]:focus-visible, input[type="search"]:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+textarea::selection, input[type="text"]::selection, input[type="search"]::selection { background: #dce9e0; color: var(--deep); }
+/* A brief typing bubble while an answer is being retrieved. */
+.chat-message.chat-typing { width: fit-content; }
+.chat-typing .chat-bubble { padding: .9rem 1.1rem; }
+.typing-dots { display: flex; align-items: center; gap: 5px; min-height: 20px; }
+.typing-dots span { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; opacity: .4; animation: chat-dot 1s ease-in-out infinite; }
+.typing-dots span:nth-child(2) { animation-delay: .15s; }
+.typing-dots span:nth-child(3) { animation-delay: .3s; }
+@keyframes chat-dot { 0%, 70%, 100% { opacity: .4; transform: translateY(0); } 35% { opacity: 1; transform: translateY(-3px); } }
+@media (prefers-reduced-motion: reduce) { .typing-dots span { animation: none; opacity: .65; } }
+/* Chat is available beside every guide without navigating away. */
+.chat-launcher { position: fixed; z-index: 70; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); display: flex; gap: .6rem; align-items: center; min-height: 50px; padding: .8rem 1.1rem; background: var(--deep); color: white; border: 1px solid #ffffff55; border-radius: 100px; box-shadow: 0 5px 24px #103f4333; cursor: pointer; font-size: .85rem; }
+.chat-launcher:hover { background: var(--teal); }
+.chat-launcher svg { width: 22px; height: 22px; }
+.floating-chat { position: fixed; z-index: 80; inset: auto max(1rem, env(safe-area-inset-right)) calc(80px + env(safe-area-inset-bottom)) auto; margin: 0; padding: 0; width: min(430px, calc(100% - 2rem)); height: min(660px, calc(100dvh - 110px)); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 14px 60px #103f4340; background: var(--paper); color: var(--ink); overflow: hidden; }
+.floating-chat[open] { display: flex; flex-direction: column; }
+.floating-chat-header { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .5rem .9rem; border-bottom: 1px solid var(--line); }
+.floating-chat-header h2 { margin: 0; font: 600 .85rem system-ui, sans-serif; }
+.floating-chat-close { border: none; background: transparent; color: var(--deep); cursor: pointer; min-width: 40px; min-height: 40px; font-size: 1.5rem; }
+.floating-chat-content { flex: 1; min-height: 0; overflow: hidden; }
+.floating-chat iframe { width: 100%; height: 100%; display: block; border: none; }
+.floating-chat-content .chat-workspace { display: flex; flex-direction: column; height: 100%; border: none; border-radius: 0; box-shadow: none; }
+.floating-chat-content .chat-messages { flex: 1; min-height: 100px; height: auto; }
+.floating-chat-content .chat-topbar, .floating-chat-content .chat-composer { padding: .75rem; }
+.floating-chat-content .chat-suggestions { padding: .5rem .75rem; }
+.chat-embedded, .chat-embedded body { height: 100%; min-height: 0; overflow: hidden; }
+.chat-embedded header, .chat-embedded footer, .chat-embedded #results, .chat-embedded .skip-link, .chat-embedded main > :not(.chat-workspace) { display: none !important; }
+.chat-embedded .qa-page { width: 100%; max-width: none; height: 100%; margin: 0; }
+.chat-embedded .chat-workspace { display: flex; flex-direction: column; height: 100%; border: none; border-radius: 0; box-shadow: none; }
+.chat-embedded .chat-messages { flex: 1; min-height: 100px; height: auto; }
+.chat-embedded .chat-topbar, .chat-embedded .chat-composer { flex-shrink: 0; padding: .75rem; }
+.chat-embedded .chat-suggestions { flex-shrink: 0; padding: .5rem .75rem; }
+@media (max-width: 480px) { .chat-launcher { right: .75rem; bottom: .75rem; } .floating-chat { right: .75rem; bottom: 78px; width: calc(100% - 1.5rem); height: min(620px, calc(100dvh - 100px)); } }
+@media print { .chat-launcher, .floating-chat { display: none !important; } }
+
+/* New-tab links announce their behavior without adding visual clutter. */
+.external-link-note { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+.routine-tip { margin: 1.5rem 0; padding: 1.25rem 1.5rem; background: #e6efea; border-left: 3px solid var(--teal); border-radius: 0 14px 14px 0; }
+.routine-tip p { margin: 0 0 .5rem; }
+.routine-tip p:last-child { margin-bottom: 0; }

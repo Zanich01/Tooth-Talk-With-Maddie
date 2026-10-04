@@ -1,0 +1,779 @@
+[
+  {
+    "question": "Why do my gums bleed?",
+    "answer": "Bleeding can signal gum inflammation. An examination can help identify the cause; it is not something to diagnose from a website.",
+    "prompt": "“What is causing the bleeding, and can you show me how to clean these areas?”",
+    "url": "sogd.html",
+    "terms": [
+      "gum",
+      "gums",
+      "bleed",
+      "bleeding",
+      "gingivitis",
+      "periodontitis",
+      "swollen",
+      "floss blood",
+      "blood",
+      "puffy",
+      "inflamed"
+    ],
+    "followups": [
+      "Can mouthwash replace flossing?",
+      "How often should I come back?"
+    ],
+    "sources": [
+      {
+        "title": "NIDCR: Gum disease",
+        "url": "https://www.nidcr.nih.gov/health-info/gum-disease"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "id": "bleeding-gums"
+  },
+  {
+    "question": "Does a sensitive tooth mean I have a cavity?",
+    "answer": "Sensitivity alone does not confirm a cavity. Tell your dentist what triggers it and how long it lasts so they can assess the cause.",
+    "prompt": "“What could be causing this sensitivity, and what should I do next?”",
+    "url": "cpd.html",
+    "terms": [
+      "sensitive",
+      "sensitivity",
+      "cold",
+      "hot",
+      "sweets",
+      "sensitive tooth"
+    ],
+    "followups": [
+      "How do I understand a treatment recommendation?",
+      "Do I need X-rays at every visit?"
+    ],
+    "sources": [
+      {
+        "title": "NIDCR: Tooth decay",
+        "url": "https://www.nidcr.nih.gov/health-info/tooth-decay"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "id": "sensitivity"
+  },
+  {
+    "question": "Why is my mouth always dry?",
+    "answer": "Medicines and health conditions can contribute to dry mouth. Persistent dryness deserves an assessment, because saliva helps protect your teeth.",
+    "prompt": "“Could my medications or health history explain this dryness?”",
+    "url": "dry-mouth.html",
+    "terms": [
+      "dry mouth",
+      "dry",
+      "dryness",
+      "saliva",
+      "xerostomia",
+      "medication",
+      "medications"
+    ],
+    "followups": [
+      "Does a sensitive tooth mean I have a cavity?",
+      "Can mouthwash replace flossing?"
+    ],
+    "sources": [
+      {
+        "title": "NIDCR: Dry mouth",
+        "url": "https://www.nidcr.nih.gov/health-info/dry-mouth"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "id": "dry-mouth"
+  },
+  {
+    "question": "Do I need X-rays at every visit?",
+    "answer": "X-rays are chosen based on your history, examination, and the information your dentist needs. Ask what a recommended image will help them evaluate.",
+    "prompt": "“What will these X-rays show, and how will that affect my care?”",
+    "url": "whd.html#appointment",
+    "terms": [
+      "xray",
+      "xrays",
+      "x ray",
+      "x rays",
+      "radiograph",
+      "radiation"
+    ],
+    "followups": [
+      "How do I understand a treatment recommendation?",
+      "What if I feel embarrassed or nervous?"
+    ],
+    "sources": [
+      {
+        "title": "ADA: X-rays",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/x-rays"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "id": "xrays"
+  },
+  {
+    "question": "What if I feel embarrassed or nervous?",
+    "answer": "Tell the office before your appointment. Ask for explanations, breaks, and a signal to pause. You can start the conversation without having all the answers.",
+    "prompt": "“Can we agree on a pause signal and talk through each step?”",
+    "url": "dental-anxiety.html",
+    "terms": [
+      "anxiety",
+      "anxious",
+      "nervous",
+      "scared",
+      "afraid",
+      "fear",
+      "embarrassed",
+      "panic",
+      "embarrassment",
+      "dental phobia"
+    ],
+    "followups": [
+      "How do I understand a treatment recommendation?",
+      "How often should I come back?"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Dental anxiety",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/anxiety"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "id": "anxiety"
+  },
+  {
+    "question": "Can mouthwash replace flossing?",
+    "answer": "A rinse can be an addition to your routine. It does not replace brushing or cleaning between teeth.",
+    "prompt": "“Which between-teeth tool fits my mouth and is easiest for me to use?”",
+    "url": "pr.html",
+    "terms": [
+      "mouthwash",
+      "mouth wash",
+      "rinse",
+      "replace flossing",
+      "instead of flossing"
+    ],
+    "followups": [
+      "Why do my gums bleed?",
+      "How often should I come back?"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Mouthwash",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/mouthwash"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "id": "mouthwash"
+  },
+  {
+    "question": "How often should I come back?",
+    "answer": "Ask your dental team to recommend a schedule based on your individual oral health and risk factors.",
+    "prompt": "“When should I return, and why is that interval right for me?”",
+    "url": "whd.html",
+    "terms": [
+      "checkup",
+      "checkups",
+      "six months",
+      "6 months",
+      "cleaning",
+      "cleanings",
+      "return",
+      "visit frequency",
+      "how often visit",
+      "how often dentist"
+    ],
+    "followups": [
+      "Do I need X-rays at every visit?",
+      "How do I understand a treatment recommendation?"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Visiting the dentist",
+        "url": "https://www.mouthhealthy.org/dental-care/questions-about-going-to-the-dentist"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "id": "visit-frequency"
+  },
+  {
+    "question": "How do I understand a treatment recommendation?",
+    "answer": "Ask your dentist to explain the finding, show you what they see, and discuss the options, benefits, risks, timing, and costs.",
+    "prompt": "“What are my options, and what happens if I wait?”",
+    "url": "visit-planner.html",
+    "terms": [
+      "treatment",
+      "options",
+      "cost",
+      "costs",
+      "expensive",
+      "estimate",
+      "second opinion",
+      "recommendation"
+    ],
+    "followups": [
+      "Do I need X-rays at every visit?",
+      "What if I feel embarrassed or nervous?"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Visiting the dentist",
+        "url": "https://www.mouthhealthy.org/dental-care/questions-about-going-to-the-dentist"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "id": "treatment-options"
+  },
+  {
+    "question": "Why is my tooth loose?",
+    "answer": "It depends on whether it is a baby tooth or a permanent tooth. Baby teeth loosen as children grow. A loose permanent tooth needs a dental assessment: gum disease can damage its supporting tissues, and an injury can also affect a tooth. Contact your dentist promptly, especially if it became loose after an injury. A website cannot tell you the cause.",
+    "prompt": "Is this a baby or permanent tooth, and what is affecting its support?",
+    "url": "sogd.html",
+    "terms": [
+      "loose",
+      "wobbly",
+      "wiggly",
+      "moving tooth",
+      "tooth moves",
+      "tooth wiggles",
+      "tooth movement",
+      "looseness"
+    ],
+    "sources": [
+      {
+        "title": "NIDCR: Gum disease",
+        "url": "https://www.nidcr.nih.gov/health-info/gum-disease"
+      },
+      {
+        "title": "ADA: Baby teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/baby-teeth.aspx/"
+      },
+      {
+        "title": "ADA: Dental emergencies",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "My adult tooth is loose",
+      "My child has a loose baby tooth"
+    ],
+    "id": "loose-tooth"
+  },
+  {
+    "question": "My adult tooth is loose",
+    "answer": "A loose permanent tooth should be assessed by a dentist promptly. Gum disease can damage the tissues and bone holding teeth in place; injury is another possibility. An examination is needed to determine the cause and treatment. If this followed an injury, seek urgent dental care.",
+    "prompt": "What is making the tooth loose, and what treatment might help?",
+    "url": "sogd.html",
+    "terms": [
+      "adult tooth loose",
+      "adult tooth is loose",
+      "permanent tooth loose",
+      "permanent tooth is loose"
+    ],
+    "sources": [
+      {
+        "title": "NIDCR: Gum disease",
+        "url": "https://www.nidcr.nih.gov/health-info/gum-disease"
+      },
+      {
+        "title": "ADA: Dental emergencies",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "Why do my gums bleed?",
+      "What should I do after a tooth injury?"
+    ],
+    "matchGroups": [
+      [
+        "adult",
+        "permanent"
+      ],
+      [
+        "loose",
+        "wiggly",
+        "wobbly",
+        "moving"
+      ]
+    ],
+    "id": "loose-adult"
+  },
+  {
+    "question": "My child has a loose baby tooth",
+    "answer": "Losing baby teeth is a normal part of growing up. A loose tooth following an injury, or a tooth with pain or swelling, should be checked by a dentist. If you are not sure it is a baby tooth or that it is ready to fall out, ask your child’s dentist.",
+    "prompt": "Is this normal tooth replacement, or does my child need an examination?",
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/baby-teeth.aspx/",
+    "terms": [
+      "loose baby tooth",
+      "loose baby teeth",
+      "loose milk tooth"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Baby teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/baby-teeth.aspx/"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "When should my child first see a dentist?",
+      "What should I do after a tooth injury?"
+    ],
+    "matchGroups": [
+      [
+        "baby",
+        "child",
+        "childs",
+        "kid",
+        "kids",
+        "milk"
+      ],
+      [
+        "loose",
+        "wiggly",
+        "wobbly"
+      ]
+    ],
+    "id": "loose-baby"
+  },
+  {
+    "question": "What should I do after a tooth injury?",
+    "answer": "Contact a dentist urgently after a tooth injury. If a permanent tooth has been knocked out, hold it by the crown rather than the root, keep it moist, and seek dental care immediately. If it cannot be put back in its socket, milk can be used to keep it moist. Do not reinsert a baby tooth. For a medical emergency, call your local emergency number.",
+    "prompt": "What care does this injury need now?",
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies",
+    "terms": [
+      "injury",
+      "injured",
+      "knocked out",
+      "knocked tooth",
+      "broken tooth",
+      "chipped",
+      "cracked",
+      "hit tooth",
+      "fell out"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Dental emergencies",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies"
+      },
+      {
+        "title": "South Carolina DPH: Dental emergencies",
+        "url": "https://dph.sc.gov/sites/scdph/files/Library/ML-025253.pdf"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [],
+    "id": "injury"
+  },
+  {
+    "question": "How often and how long should I brush?",
+    "answer": "Brush twice a day for two minutes with a soft-bristled brush and fluoride toothpaste. Brush gently and cover the outside, inside, and chewing surfaces. Your hygienist can demonstrate the technique for your mouth.",
+    "prompt": "Can you check whether I am reaching all the surfaces?",
+    "url": "index.html#daily-routine",
+    "terms": [
+      "brush",
+      "brushing",
+      "brush teeth",
+      "brush my teeth",
+      "two minutes",
+      "2 minutes",
+      "how long brush"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Brushing your teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "Do I need an electric toothbrush?",
+      "How often should I replace my toothbrush?"
+    ],
+    "id": "brushing"
+  },
+  {
+    "question": "Do I need an electric toothbrush?",
+    "answer": "You can clean effectively with a manual or powered brush. Choose a soft-bristled brush you can use comfortably and consistently, and ask your hygienist to show you the technique for that brush.",
+    "prompt": "Which brush will be easiest for me to use well?",
+    "url": "pr.html",
+    "terms": [
+      "electric",
+      "powered brush",
+      "manual brush",
+      "electric toothbrush"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Home oral care",
+        "url": "https://www.ada.org/resources/ada-library/oral-health-topics/home-oral-care/"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "How often and how long should I brush?",
+      "How often should I replace my toothbrush?"
+    ],
+    "id": "electric-brush"
+  },
+  {
+    "question": "How often should I replace my toothbrush?",
+    "answer": "Replace your toothbrush about every three to four months, or sooner if its bristles are frayed. Check the manufacturer’s directions for replacing an electric brush head.",
+    "prompt": "Are my bristles worn, and is this head suitable for my brush?",
+    "url": "pr.html",
+    "terms": [
+      "replace toothbrush",
+      "replace my toothbrush",
+      "replace brush",
+      "change toothbrush",
+      "change my toothbrush",
+      "brush head",
+      "frayed",
+      "new toothbrush"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Brushing your teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "How often and how long should I brush?"
+    ],
+    "id": "replace-brush"
+  },
+  {
+    "question": "How often should I floss?",
+    "answer": "Clean between your teeth daily. Floss is one option; interdental brushes or a water flosser may work better for some people. Ask your hygienist which tool fits your spaces and dental work.",
+    "prompt": "Which between-teeth tool fits me, and can you show me how to use it?",
+    "url": "index.html#daily-routine",
+    "terms": [
+      "floss",
+      "flossing",
+      "interdental",
+      "water flosser",
+      "water flossing"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Flossing",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "Should I floss before or after brushing?",
+      "Why do my gums bleed?"
+    ],
+    "id": "flossing"
+  },
+  {
+    "question": "Should I floss before or after brushing?",
+    "answer": "Maddie prefers flossing first, then brushing—think of sweeping before you mop! Either order is acceptable if you clean between your teeth thoroughly every day. Choose a routine you can stick with.",
+    "prompt": "Can you check my flossing technique?",
+    "url": "index.html#daily-routine",
+    "terms": [
+      "before brushing",
+      "after brushing",
+      "before or after",
+      "floss first",
+      "brush first"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Flossing",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "How often should I floss?"
+    ],
+    "id": "floss-order"
+  },
+  {
+    "question": "What is the difference between plaque and tartar?",
+    "answer": "Plaque is a sticky film on teeth. Plaque that is not removed can harden into tartar, also called calculus. Brushing and cleaning between teeth help remove plaque; hardened tartar needs professional removal.",
+    "prompt": "Where is tartar building up, and how can I clean those areas better?",
+    "url": "sogd.html",
+    "terms": [
+      "plaque",
+      "tartar",
+      "calculus",
+      "hard buildup",
+      "scrape teeth"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Flossing",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "How often should I floss?",
+      "Why do my gums bleed?"
+    ],
+    "id": "plaque"
+  },
+  {
+    "question": "Why do I have bad breath?",
+    "answer": "Food, bacteria, dry mouth, tobacco, and gum disease can contribute to bad breath. Brush and clean between teeth consistently. If bad breath continues, book a dental assessment rather than only covering it with mouthwash.",
+    "prompt": "Could dry mouth or gum disease be contributing to my breath?",
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/bad-breath",
+    "terms": [
+      "bad breath",
+      "breath smells",
+      "stinky breath",
+      "halitosis",
+      "mouth smells"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Bad breath",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/bad-breath"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "Why is my mouth always dry?",
+      "Can mouthwash replace flossing?"
+    ],
+    "matchGroups": [
+      [
+        "breath",
+        "mouth"
+      ],
+      [
+        "smell",
+        "smells",
+        "stinks",
+        "odor",
+        "odour"
+      ]
+    ],
+    "id": "bad-breath"
+  },
+  {
+    "question": "Can a cavity go away on its own?",
+    "answer": "Early mineral loss can sometimes be reversed with saliva and fluoride before a hole forms. Once decay has made a cavity, it needs dental treatment. A dentist can tell which stage applies.",
+    "prompt": "Is this early mineral loss or a cavity, and what treatment is needed?",
+    "url": "cpd.html",
+    "terms": [
+      "cavity",
+      "cavities",
+      "decay",
+      "reverse cavity",
+      "heal cavity",
+      "go away"
+    ],
+    "sources": [
+      {
+        "title": "NIDCR: Tooth decay",
+        "url": "https://www.nidcr.nih.gov/health-info/tooth-decay"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "Why does my tooth hurt?",
+      "How do I understand a treatment recommendation?"
+    ],
+    "id": "cavity"
+  },
+  {
+    "question": "Why does my tooth hurt?",
+    "answer": "Tooth pain can have different causes; decay is one possibility. Tell your dentist when it started, what triggers it, and how long it lasts. Arrange an assessment rather than guessing the cause. For significant pain, swelling, or an injury, contact your dentist promptly.",
+    "prompt": "What is causing this pain, and how soon do I need care?",
+    "url": "cpd.html#get-help",
+    "terms": [
+      "toothache",
+      "tooth pain",
+      "hurts",
+      "hurt",
+      "aching",
+      "ache",
+      "painful",
+      "sore tooth"
+    ],
+    "sources": [
+      {
+        "title": "NIDCR: Tooth decay",
+        "url": "https://www.nidcr.nih.gov/health-info/tooth-decay"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "Does a sensitive tooth mean I have a cavity?",
+      "What should I do after a tooth injury?"
+    ],
+    "id": "pain"
+  },
+  {
+    "question": "What is a root canal?",
+    "answer": "Root canal treatment removes infected or damaged tissue from inside a tooth, then cleans and seals the space. A filling or crown may be needed afterward to restore the tooth. Your dentist can explain why it is recommended and discuss alternatives.",
+    "prompt": "Why is root canal treatment recommended for this tooth, and how will it be restored?",
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/root-canals",
+    "terms": [
+      "root canal",
+      "root canals",
+      "endodontic"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Root canals",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/root-canals"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "How do I understand a treatment recommendation?"
+    ],
+    "id": "root-canal"
+  },
+  {
+    "question": "When should my child first see a dentist?",
+    "answer": "Schedule the first dental visit after the first tooth appears, and no later than the first birthday. The visit checks your child’s teeth and gives you guidance for home care.",
+    "prompt": "How should I clean my child’s teeth and prevent cavities?",
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/baby-teeth.aspx/",
+    "terms": [
+      "first dental visit",
+      "first dentist",
+      "baby dentist",
+      "child dentist",
+      "first birthday",
+      "first appointment baby"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Baby teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/baby-teeth.aspx/"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "My child has a loose baby tooth"
+    ],
+    "id": "first-child-visit"
+  },
+  {
+    "id": "visit-questions",
+    "question": "What questions should I ask at my next dental visit?",
+    "answer": "Start with what matters to you: understanding your oral health, making home care easier, and knowing the next steps. You can bring these questions to your appointment:",
+    "bullets": [
+      "What did you find, and can you show me?",
+      "What is my risk for cavities or gum disease?",
+      "Can you check my brushing and flossing technique?",
+      "What are my treatment options, benefits, risks, and costs?",
+      "When should I return, and what should I watch for between visits?"
+    ],
+    "prompt": "What is the most useful change I can make to my daily routine?",
+    "url": "visit-planner.html",
+    "terms": [
+      "questions to ask",
+      "ask my dentist",
+      "ask the dentist",
+      "ask my hygienist",
+      "next dental visit",
+      "prepare for appointment",
+      "prepare for visit",
+      "what to ask"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Questions about going to the dentist",
+        "url": "https://www.mouthhealthy.org/dental-care/questions-about-going-to-the-dentist"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "How do I understand a treatment recommendation?",
+      "What if I feel embarrassed or nervous?",
+      "Do I need X-rays at every visit?"
+    ]
+  },
+  {
+    "id": "floss-technique",
+    "question": "How do I floss properly?",
+    "answer": "Guide the floss gently; avoid snapping it into your gums. Here is the basic technique:",
+    "bullets": [
+      "Curve the floss into a C shape against one tooth and move it gently up and down.",
+      "Clean the neighboring tooth too. Repeat around your mouth, including the backs of the last teeth."
+    ],
+    "prompt": "Can you demonstrate the flossing technique for my teeth?",
+    "url": "index.html#daily-routine",
+    "terms": [
+      "how to floss",
+      "how do i floss",
+      "floss technique",
+      "floss properly",
+      "c shape",
+      "floss correctly"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Flossing",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "Should I floss before or after brushing?",
+      "Why do my gums bleed?"
+    ]
+  },
+  {
+    "id": "floss-alternatives",
+    "question": "What if string floss is difficult to use?",
+    "answer": "Floss holders, interdental brushes, or water flossers may make cleaning between teeth easier. Ask your hygienist which tool fits your spaces and dental work, and how to use it. Keep brushing too.",
+    "prompt": "Which between-teeth cleaner can I use comfortably and effectively?",
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing",
+    "terms": [
+      "floss holder",
+      "interdental brush",
+      "string floss difficult",
+      "cannot use floss",
+      "cant use floss",
+      "floss alternatives",
+      "water flosser",
+      "waterpik"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Interdental cleaners",
+        "url": "https://www.ada.org/resources/ada-library/oral-health-topics/floss"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "How often should I floss?",
+      "How do I floss properly?"
+    ]
+  },
+  {
+    "id": "reuse-floss",
+    "question": "Can I reuse dental floss?",
+    "answer": "Use a fresh piece of floss each time. Used floss can fray, lose effectiveness, or transfer bacteria back to your mouth. For reusable device parts, follow the manufacturer’s cleaning and replacement instructions.",
+    "prompt": "How should I clean or replace the parts of my between-teeth cleaner?",
+    "url": "https://www.ada.org/resources/ada-library/oral-health-topics/floss",
+    "terms": [
+      "reuse floss",
+      "reuse dental floss",
+      "reusing floss",
+      "same piece of floss",
+      "wash floss"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Can I rinse and reuse floss?",
+        "url": "https://www.ada.org/resources/ada-library/oral-health-topics/floss"
+      }
+    ],
+    "checked": "October 4, 2026",
+    "followups": [
+      "How do I floss properly?",
+      "What if string floss is difficult to use?"
+    ]
+  }
+]
