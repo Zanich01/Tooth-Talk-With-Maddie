@@ -370,7 +370,7 @@
     "question": "How often and how long should I brush?",
     "answer": "Brush twice a day for two minutes with a soft-bristled brush and fluoride toothpaste. Brush gently and cover the outside, inside, and chewing surfaces. Your hygienist can demonstrate the technique for your mouth.",
     "prompt": "Can you check whether I am reaching all the surfaces?",
-    "url": "index.html#daily-routine",
+    "url": "homecare-routine.html#daily-routine",
     "terms": [
       "brush",
       "brushing",
@@ -446,9 +446,9 @@
   },
   {
     "question": "How often should I floss?",
-    "answer": "Clean between your teeth daily. Floss is one option; interdental brushes may work better for some people. A water flosser can be an additional tool for more thorough cleaning beneath the gums. Ask your hygienist which tool fits your spaces and dental work.",
+    "answer": "Clean between your teeth daily. Floss is one option; interdental brushes may work better for some people. A water flosser can be an additional tool for more thorough cleaning beneath the gums. Maddie recommends using a water flosser as additional gum care, alongside daily string flossing—not as a replacement for it. Ask your hygienist which tool fits your spaces and dental work.",
     "prompt": "Which between-teeth tool fits me, and can you show me how to use it?",
-    "url": "index.html#daily-routine",
+    "url": "homecare-routine.html#daily-routine",
     "terms": [
       "floss",
       "flossing",
@@ -473,7 +473,7 @@
     "question": "Should I floss before or after brushing?",
     "answer": "Maddie prefers flossing first, then brushing—think of sweeping before you mop! Clean between your teeth thoroughly every day. Choose a routine you can stick with.",
     "prompt": "Can you check my flossing technique?",
-    "url": "index.html#daily-routine",
+    "url": "homecare-routine.html#daily-routine",
     "terms": [
       "before brushing",
       "after brushing",
@@ -702,7 +702,7 @@
       "Clean the neighboring tooth too. Repeat around your mouth, including the backs of the last teeth."
     ],
     "prompt": "Can you demonstrate the flossing technique for my teeth?",
-    "url": "index.html#daily-routine",
+    "url": "homecare-routine.html#daily-routine",
     "terms": [
       "how to floss",
       "how do i floss",
@@ -726,7 +726,7 @@
   {
     "id": "floss-alternatives",
     "question": "What if string floss is difficult to use?",
-    "answer": "Floss holders or interdental brushes may make cleaning between teeth easier. A water flosser can be an additional tool for more thorough cleaning beneath the gums. Ask your hygienist which tool fits your spaces and dental work, and how to use it. Keep brushing too.",
+    "answer": "Floss holders or interdental brushes may make cleaning between teeth easier. A water flosser can be an additional tool for more thorough cleaning beneath the gums. Maddie recommends using a water flosser as additional gum care, alongside daily string flossing—not as a replacement for it. Ask your hygienist which tool fits your spaces and dental work, and how to use it. Keep brushing too.",
     "prompt": "Which between-teeth cleaner can I use comfortably and effectively?",
     "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing",
     "terms": [

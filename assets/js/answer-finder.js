@@ -65,7 +65,7 @@ if (finder) {
         } catch { useBackend = false; }
       }
       if (!result) {
-        const answers = await loadCatalog('data/answers.json?v=20261004-cleanup');
+        const answers = await loadCatalog('data/answers.json?v=20261004-water-care');
         result = DentalEngine.resolve(question, answers, context);
       }
       await loadingBeat;
