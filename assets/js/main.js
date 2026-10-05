@@ -74,6 +74,19 @@ if (!embeddedChat) {
   let frame;
   let placeholder;
   let conversation;
+  const chatMobile = window.matchMedia("(max-width: 959px)");
+  const syncChatViewport = () => {
+    if (chatMobile.matches && window.visualViewport) {
+      dialog.style.setProperty("--chat-viewport-height", `${window.visualViewport.height}px`);
+      dialog.style.setProperty("--chat-viewport-top", `${window.visualViewport.offsetTop}px`);
+    } else {
+      dialog.style.removeProperty("--chat-viewport-height");
+      dialog.style.removeProperty("--chat-viewport-top");
+    }
+  };
+  window.visualViewport?.addEventListener("resize", syncChatViewport);
+  window.visualViewport?.addEventListener("scroll", syncChatViewport);
+  chatMobile.addEventListener("change", syncChatViewport);
   const loading = document.createElement("p");
   loading.className = "chat-loading";
   loading.setAttribute("role", "status");
@@ -92,6 +105,7 @@ if (!embeddedChat) {
     // Open the container before loading the iframe so mobile browsers lay out
     // the first conversation in a visible viewport.
     dialog.show();
+    syncChatViewport();
     launcher.setAttribute("aria-expanded", "true");
     conversation = document.querySelector("main .chat-workspace");
     if (conversation) {

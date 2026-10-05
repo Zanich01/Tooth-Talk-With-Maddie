@@ -563,7 +563,22 @@ textarea::selection, input[type="text"]::selection, input[type="search"]::select
 .chat-embedded .chat-messages { flex: 1; min-height: 100px; height: auto; }
 .chat-embedded .chat-topbar, .chat-embedded .chat-composer { flex-shrink: 0; padding: .75rem; }
 .chat-embedded .chat-suggestions { flex-shrink: 0; padding: .5rem .75rem; }
-@media (max-width: 480px) { .chat-launcher { right: .75rem; bottom: .75rem; } .floating-chat { right: .75rem; bottom: 78px; width: calc(100% - 1.5rem); height: min(620px, calc(100dvh - 100px)); } }
+@media (max-width: 959px) {
+  .chat-launcher { right: .75rem; bottom: .75rem; }
+  .floating-chat {
+    inset: var(--chat-viewport-top, 0px) 0 auto;
+    width: 100%;
+    max-width: none;
+    height: var(--chat-viewport-height, 100dvh);
+    max-height: none;
+    border: none;
+    border-radius: 0;
+  }
+  .floating-chat-header { padding-top: max(.5rem, env(safe-area-inset-top)); }
+  .floating-chat-content { padding-bottom: env(safe-area-inset-bottom); }
+  body:has(.floating-chat[open]) { overflow: hidden; }
+  body:has(.floating-chat[open]) .chat-launcher { visibility: hidden; }
+}
 @media print { .chat-launcher, .floating-chat { display: none !important; } }
 
 /* New-tab links announce their behavior without adding visual clutter. */
