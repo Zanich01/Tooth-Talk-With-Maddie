@@ -184,7 +184,10 @@ if (!embeddedChat) {
   });
   close.addEventListener("click", closeChat);
   document.addEventListener("click", event => {
-    if (dialog.open && !dialog.contains(event.target) && !launcher.contains(event.target)) closeChat(false);
+    // Suggestions can remove themselves while handling the click. The original
+    // event path still identifies that click as coming from inside the chat.
+    const path = event.composedPath();
+    if (dialog.open && !path.includes(dialog) && !path.includes(launcher)) closeChat(false);
   });
   document.addEventListener("keydown", event => {
     if (event.key === "Escape" && dialog.open) { event.preventDefault(); closeChat(); }
