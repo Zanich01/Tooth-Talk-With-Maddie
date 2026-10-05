@@ -20,7 +20,15 @@
     "category": "Gum Disease",
     "url": "https://www.walgreens.com/store/c/oral-b-water-flosser-advanced,-portable-oral-irrigator-handle-with-2-nozzles/ID=300411189-product",
     "image": "assets/images/oralbWaterFlosser-optimized.webp",
-    "description": "A water flosser option for more thorough cleaning beneath the gums. Maddie recommends using a water flosser as additional gum care, alongside daily string flossing—not as a replacement for it."
+    "description": "A water flosser option for more thorough cleaning beneath the gums. Maddie recommends using a water flosser as additional gum care, alongside daily string flossing\u2014not as a replacement for it."
+  },
+  {
+    "name": "Philips Countertop Waterflosser",
+    "category": "Gum Disease",
+    "url": "https://a.co/d/03bvKCGX",
+    "image": "assets/images/philips-countertop-waterflosser.webp",
+    "description": "A countertop water flosser option for additional gum care alongside daily brushing and string flossing. Ask your hygienist which technique and pressure setting suit your gums.",
+    "keywords": "philips sonicare countertop water flosser power flosser 5000 gum health gum care"
   },
   {
     "name": "TheraBreath Healthy Gums Oral Rinse",
@@ -48,7 +56,7 @@
     "category": "Dry Mouth",
     "url": "https://www.amazon.com/XyliMelts-Moisturizing-Adhering-Stimulates-Non-Acidic/dp/B007XEVQ8G",
     "image": "assets/images/xyliMelts-optimized.webp",
-    "description": "Adhering dry mouth tablets; follow the product’s use and safety directions."
+    "description": "Adhering dry mouth tablets; follow the product\u2019s use and safety directions."
   },
   {
     "name": "Metal Tongue Scraper",
