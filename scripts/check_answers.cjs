@@ -87,7 +87,7 @@ for (const question of [
 ]) {
   const result = engine.resolve(question, answers, {}, products);
   assert.equal(result.entries[0].id, 'water-floss-order', question);
-  assert.match(result.entries[0].answer, /string floss first, water floss next, then brush/);
+  assert.match(result.entries[0].answer, /string floss first, water floss next, then mouthwash, and finally brush/);
 }
 const recommendationContext = engine.resolve('Electric toothbrush recommendations', answers, {}, products).context;
 assert.equal(engine.resolve('Compare those two', answers, recommendationContext, products).entries[0].products.length, 2);
@@ -98,3 +98,19 @@ assert.equal(engine.resolve('Compare Philips countertop water flossers', answers
 assert.equal(engine.resolve('Recommend something', answers, {}, products).type, 'clarify');
 assert.equal(engine.resolve('Why do my gums bleed with my Philips water flosser?', answers, {}, products).entries[0].id, 'bleeding-gums');
 console.log('PASS product recommendations, descriptions, comparisons, format constraints, context, and water-floss order');
+
+for (const question of [
+  'When should I floss?', 'When should I be flossing?', 'When is the best time to floss?',
+  'At what point in my routine should I floss?', 'Should flossing come before brushing?',
+  'Should I brush then floss?', 'Is it better to floss in the morning or at night?',
+  'Do I floss after brushing my teeth?', 'What time should I floss?',
+]) {
+  const result = engine.resolve(question, answers, {}, products);
+  assert.equal(result.entries[0].id, 'floss-order', question);
+  assert.match(result.entries[0].answer, /think of sweeping before you mop/);
+}
+const flossRoutine = engine.resolve('Should I floss or water floss first?', answers, {}, products).entries[0].answer;
+assert.match(flossRoutine, /water floss next, then mouthwash, and finally brush/);
+assert.equal(engine.resolve('How often should I floss?', answers, {}, products).entries[0].id, 'flossing');
+assert.equal(engine.resolve('When I floss my gums bleed', answers, {}, products).entries[0].id, 'bleeding-gums');
+console.log('PASS floss timing paraphrases, mouthwash sequence, frequency, and symptom routing');

@@ -66,8 +66,8 @@ if (finder) {
       }
       if (!result) {
         const [answers, products] = await Promise.all([
-          loadCatalog('data/answers.json?v=20261005-product-chat'),
-          loadCatalog('data/products.json?v=20261005-product-chat')
+          loadCatalog('data/answers.json?v=20261005-floss-timing'),
+          loadCatalog('data/products.json?v=20261005-floss-timing')
         ]);
         result = DentalEngine.resolve(question, answers, context, products);
       }

@@ -163,15 +163,15 @@ if (!embeddedChat) {
         document.body.append(script);
       });
       chatLoading = (async () => {
-        const response = await fetch("questions.html?v=20261005-product-chat");
+        const response = await fetch("questions.html?v=20261005-floss-timing");
         if (!response.ok) throw new Error("Chat unavailable");
         const page = new DOMParser().parseFromString(await response.text(), "text/html");
         const workspace = page.querySelector(".chat-workspace");
         if (!workspace) throw new Error("Chat unavailable");
-        if (!window.DentalEngine) await loadScript("assets/js/dental-engine.js?v=20261005-product-chat");
+        if (!window.DentalEngine) await loadScript("assets/js/dental-engine.js?v=20261005-floss-timing");
         content.append(document.importNode(workspace, true));
         placeCloseButton();
-        await loadScript("assets/js/answer-finder.js?v=20261005-product-chat");
+        await loadScript("assets/js/answer-finder.js?v=20261005-floss-timing");
         loading.remove();
       })().catch(() => {
         dialog.prepend(close);

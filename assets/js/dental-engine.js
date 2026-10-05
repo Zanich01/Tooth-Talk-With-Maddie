@@ -57,7 +57,8 @@
     if (any('injury', 'injured', 'knocked out', 'chipped', 'cracked', 'broken tooth')) boost('injury', 85);
     if (any('brush') && any('how long', 'how often', 'minutes', 'times', 'daily', 'day', 'frequency')) boost('brushing', 35);
     if (any('floss') && any('how often', 'daily', 'day', 'times', 'frequency')) boost('flossing', 35);
-    if (any('floss') && any('before', 'after', 'first', 'order')) boost('floss-order', 45);
+    const flossTiming = any('before', 'after', 'first', 'order', 'when', 'what time', 'best time', 'morning', 'night', 'bedtime', 'timing', 'then', 'what point', 'what stage');
+    if (any('floss') && flossTiming && !any('how often', 'how many times', 'frequency', 'bleed', 'blood', 'hurt', 'pain')) boost('floss-order', 65);
     if (any('water floss', 'water flosser', 'waterpik', 'oral irrigator') && any('before', 'after', 'first', 'order', 'then') &&
         (any('string floss', 'dental floss', 'regular floss') || q.tokens.filter(token => token === 'floss').length > 1 || any('brush'))) boost('water-floss-order', 100);
     if (any('floss') && any('how do i', 'how to', 'properly', 'correctly', 'technique', 'c shape') && !any('before', 'after', 'first', 'order')) boost('floss-technique', 45);
@@ -143,7 +144,7 @@
     }
     const matches = rank(question, answers);
     // Sequencing and symptom questions take precedence over product descriptions.
-    if (matches[0]?.entry.id !== 'water-floss-order' && !q.any('bleed', 'blood', 'hurt', 'pain', 'swelling', 'injury', 'knocked out')) {
+    if (!['water-floss-order', 'floss-order'].includes(matches[0]?.entry.id) && !q.any('bleed', 'blood', 'hurt', 'pain', 'swelling', 'injury', 'knocked out')) {
       const recommendation = productAnswer(question, products, context);
       if (recommendation) return recommendation;
     }
