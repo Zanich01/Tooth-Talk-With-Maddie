@@ -1,5 +1,14 @@
 "use strict";
 
+// Text inputs can match :focus-visible after a pointer click. Track keyboard
+// navigation explicitly so pointer focus stays plain on every control.
+document.addEventListener("keydown", event => {
+  if (event.key === "Tab") document.documentElement.dataset.keyboardNavigation = "true";
+});
+document.addEventListener("pointerdown", () => {
+  delete document.documentElement.dataset.keyboardNavigation;
+});
+
 const embeddedChat = new URLSearchParams(window.location.search).get("embed") === "1" && window.location.pathname.endsWith("/questions.html");
 if (embeddedChat) document.documentElement.classList.add("chat-embedded");
 
@@ -147,6 +156,46 @@ if (navigation && menuToggle && navigationLinks) {
 // All page links and data paths are relative so subdirectory hosting works.
 const searchBar = document.querySelector("#search-bar");
 const results = document.querySelector("#results");
+// Keep search available without JavaScript; collapse it only on enhanced mobile headers.
+if (navigation && menuToggle && searchBar && results) {
+  const mobileSearch = window.matchMedia("(max-width: 959px)");
+  const searchToggle = document.createElement("button");
+  searchToggle.type = "button";
+  searchToggle.className = "search-toggle";
+  searchToggle.setAttribute("aria-label", "Open search");
+  searchToggle.setAttribute("aria-controls", "search-bar results");
+  searchToggle.setAttribute("aria-expanded", "false");
+  searchToggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+  menuToggle.before(searchToggle);
+  const setSearch = (open, returnFocus = false) => {
+    searchToggle.setAttribute("aria-expanded", String(open));
+    searchToggle.setAttribute("aria-label", open ? "Close search" : "Open search");
+    searchBar.hidden = mobileSearch.matches && !open;
+    if (searchBar.hidden) results.hidden = true;
+    if (returnFocus) searchToggle.focus();
+  };
+  searchToggle.addEventListener("click", () => {
+    const open = searchToggle.getAttribute("aria-expanded") !== "true";
+    setSearch(open);
+    if (open) {
+      searchBar.focus();
+      if (searchBar.value.trim()) searchBar.dispatchEvent(new Event("input"));
+    }
+  });
+  searchBar.addEventListener("keydown", event => {
+    if (event.key === "Escape" && mobileSearch.matches) {
+      event.preventDefault();
+      setSearch(false, true);
+    }
+  });
+  const syncSearch = () => {
+    const returnFocus = mobileSearch.matches && document.activeElement === searchBar;
+    searchToggle.hidden = !mobileSearch.matches;
+    setSearch(false, returnFocus);
+  };
+  mobileSearch.addEventListener("change", syncSearch);
+  syncSearch();
+}
 const catalogCache = new Map();
 function loadCatalog(path) {
   if (!catalogCache.has(path)) {
@@ -239,10 +288,10 @@ if (searchBar && results) {
     }
   });
   document.addEventListener("click", event => {
-    if (!searchBar.contains(event.target) && !results.contains(event.target)) dismissSearch();
+    if (!searchBar.contains(event.target) && !results.contains(event.target) && !event.target.closest(".search-toggle")) dismissSearch();
   });
   document.addEventListener("focusin", event => {
-    if (!searchBar.contains(event.target) && !results.contains(event.target)) dismissSearch();
+    if (!searchBar.contains(event.target) && !results.contains(event.target) && !event.target.closest(".search-toggle")) dismissSearch();
   });
 }
 

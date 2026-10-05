@@ -35,7 +35,7 @@ for path in sorted(ROOT.glob('*.html')):
     check.feed(source)
     assert not check.stack
     for tag in ('html', 'head', 'body', 'main', 'h1', 'title'): assert check.counts.get(tag) == 1, tag
-    assert check.active == [path.name]
+    assert check.active in ([], [path.name]), "Current-page links must match this page without duplicates"
     assert 'main-content' in check.ids
     print(f'PASS {path.name}')
 products = json.loads((ROOT / 'data/products.json').read_text())

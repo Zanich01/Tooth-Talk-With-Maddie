@@ -20,27 +20,27 @@
     "category": "Gum Disease",
     "url": "https://www.walgreens.com/store/c/oral-b-water-flosser-advanced,-portable-oral-irrigator-handle-with-2-nozzles/ID=300411189-product",
     "image": "assets/images/oralbWaterFlosser-optimized.webp",
-    "description": "A water flosser option for cleaning between teeth."
+    "description": "A water flosser option for more thorough cleaning beneath the gums."
   },
   {
-    "name": "iO Rinse",
+    "name": "TheraBreath Healthy Gums Oral Rinse",
     "category": "Gum Disease",
-    "url": "https://www.physicsforceps.com/molecular-iodine-mouthwash?product_id=513",
-    "image": "assets/images/ioRinse-optimized.webp",
+    "url": "https://www.therabreath.com/products/healthy-gums-oral-rinse-clean-mint",
+    "image": "assets/images/healthy-gums-oral-rinse-clean-mint.jpg",
     "description": "A mouthrinse to discuss with your dental team before choosing."
   },
   {
-    "name": "Biotene Oral Rinse",
+    "name": "TheraBreath Dry Mouth Oral Rinse",
     "category": "Dry Mouth",
-    "url": "https://www.cvs.com/shop/biotene-oral-rinse-mouthwash-for-dry-mouth-alcohol-free-fresh-mint-prodid-795989",
-    "image": "assets/images/bioteneOralrinse-optimized.webp",
+    "url": "https://www.therabreath.com/products/dry-mouth-oral-rinse-tingling-mint",
+    "image": "assets/images/dry-mouth-oral-rinse-tingling-mint.jpg",
     "description": "An oral rinse marketed for dry mouth comfort."
   },
   {
-    "name": "Biotene Dry Mouth Lozenges",
+    "name": "TheraBreath Dry Mouth Lozenges",
     "category": "Dry Mouth",
-    "url": "https://www.kroger.com/p/biotene-dry-mouth-refreshing-mint-lozenges/0004858215942",
-    "image": "assets/images/bioteneLozenges-optimized.webp",
+    "url": "https://www.therabreath.com/products/dry-mouth-lozenges-tart-berry",
+    "image": "assets/images/dry-mouth-lozenges-tart-berry.png",
     "description": "Lozenges marketed for dry mouth comfort; check the package directions."
   },
   {
@@ -48,7 +48,7 @@
     "category": "Dry Mouth",
     "url": "https://www.amazon.com/XyliMelts-Moisturizing-Adhering-Stimulates-Non-Acidic/dp/B007XEVQ8G",
     "image": "assets/images/xyliMelts-optimized.webp",
-    "description": "Adhering dry mouth tablets; follow the product\u2019s use and safety directions."
+    "description": "Adhering dry mouth tablets; follow the product’s use and safety directions."
   },
   {
     "name": "Metal Tongue Scraper",
@@ -63,13 +63,6 @@
     "url": "https://www.walmart.com/ip/TheraBreath-Deep-Clean-Mouthwash-Alcohol-Free-Fresh-Mint-16-fl-oz/3784750828",
     "image": "assets/images/theraBreathDeepClean-optimized.webp",
     "description": "A mouthrinse option; check the label for its intended use."
-  },
-  {
-    "name": "Listerine Antiseptic Cool Mint",
-    "category": "Bad Breath",
-    "url": "https://www.walmart.com/ip/Listerine-Cool-Mint-Antiseptic-Mouthwash-for-Bad-Breath-250-mL/10294065",
-    "image": "assets/images/listerineAntiseptic-optimized.webp",
-    "description": "An antiseptic rinse option; check the label and suitability."
   },
   {
     "name": "Opalescence Whitening Gel 15% Syringes",

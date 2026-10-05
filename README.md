@@ -11,7 +11,10 @@ For a static-only preview, `python -m http.server 8000 --bind 127.0.0.1` still w
 ## Project layout
 
 ```text
-index.html             Home and biography
+index.html             Home
+about.html             Biography and full-size logo
+faq.html               Common oral care questions
+homecare-routine.html  Daily care techniques
 whd.html               Dental hygienist responsibilities
 sogd.html              Stages of gum disease
 hshy.html              Oral health and overall health
@@ -29,7 +32,7 @@ Existing page URLs are retained for bookmarks and GitHub Pages. Untracked tire a
 
 ## Editing
 
-- Edit page content in its HTML file. Navigation is static so it works without JavaScript; update all six pages when adding a link.
+- Edit page content in its HTML file. Navigation is static so it works without JavaScript; update all HTML pages when adding a link.
 - Use the shared stylesheet for visual changes.
 - Update both data/products.json and the cards in pr.html when changing products. Image paths are relative to the site root.
 - Search matches topics, names, categories, descriptions, and keywords. It handles partial loading failures and closes with Escape or an outside click. Update data/topics.json when changing a guide. Product filters match each unique card to one or more care needs and progressively enhance the static catalog; all products remain readable without JavaScript.
@@ -82,4 +85,4 @@ Every page has an “Ask a question” launcher in place of the former back-to-t
 
 ## Daily routine update
 
-The homepage presents Maddie’s floss-first preference alongside ADA guidance that either order is acceptable. Walkthroughs follow that sequence; water flossing is labeled as an alternative. The library now has 27 sourced answers, including technique, tool alternatives, and floss reuse. Regression checks ensure tool mentions do not override bleeding-gum or frequency questions. Clinician review remains pending.
+The Homecare Routine and FAQ pages present Maddie’s preference to floss first, then brush. Walkthroughs follow that sequence; water flossing is described as additional gum care. The library now has 27 sourced answers, including technique, tool alternatives, and floss reuse. Regression checks ensure tool mentions do not override bleeding-gum or frequency questions. Clinician review remains pending.

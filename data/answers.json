@@ -446,7 +446,7 @@
   },
   {
     "question": "How often should I floss?",
-    "answer": "Clean between your teeth daily. Floss is one option; interdental brushes or a water flosser may work better for some people. Ask your hygienist which tool fits your spaces and dental work.",
+    "answer": "Clean between your teeth daily. Floss is one option; interdental brushes may work better for some people. A water flosser can be an additional tool for more thorough cleaning beneath the gums. Ask your hygienist which tool fits your spaces and dental work.",
     "prompt": "Which between-teeth tool fits me, and can you show me how to use it?",
     "url": "index.html#daily-routine",
     "terms": [
@@ -471,7 +471,7 @@
   },
   {
     "question": "Should I floss before or after brushing?",
-    "answer": "Maddie prefers flossing first, then brushing—think of sweeping before you mop! Either order is acceptable if you clean between your teeth thoroughly every day. Choose a routine you can stick with.",
+    "answer": "Maddie prefers flossing first, then brushing—think of sweeping before you mop! Clean between your teeth thoroughly every day. Choose a routine you can stick with.",
     "prompt": "Can you check my flossing technique?",
     "url": "index.html#daily-routine",
     "terms": [
@@ -726,7 +726,7 @@
   {
     "id": "floss-alternatives",
     "question": "What if string floss is difficult to use?",
-    "answer": "Floss holders, interdental brushes, or water flossers may make cleaning between teeth easier. Ask your hygienist which tool fits your spaces and dental work, and how to use it. Keep brushing too.",
+    "answer": "Floss holders or interdental brushes may make cleaning between teeth easier. A water flosser can be an additional tool for more thorough cleaning beneath the gums. Ask your hygienist which tool fits your spaces and dental work, and how to use it. Keep brushing too.",
     "prompt": "Which between-teeth cleaner can I use comfortably and effectively?",
     "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing",
     "terms": [
