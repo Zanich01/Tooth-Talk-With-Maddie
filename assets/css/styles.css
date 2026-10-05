@@ -331,6 +331,9 @@ footer p { margin: 0; }
 .routine-card li { padding-left: .3rem; margin-bottom: .7rem; }
 .source-note { color: var(--muted); font-size: .8rem; margin-top: 1.25rem; }
 .faq-section { display: grid; gap: 2rem; padding: clamp(1.5rem, 4vw, 3rem); border-radius: 24px; background: #edf1e6; }
+.faq-page > .section-intro { margin-bottom: 1.5rem; }
+.faq-page .section-intro h1 { margin: 0; }
+.faq-page > .faq-section { margin-top: 0; }
 .faq-section h2 { margin-top: 0; font-size: clamp(2rem, 3vw, 2.8rem); }
 .faq-section > div > p:not(.eyebrow) { color: var(--muted); }
 .faq-list { min-width: 0; }
