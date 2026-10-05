@@ -775,5 +775,34 @@
       "How do I floss properly?",
       "What if string floss is difficult to use?"
     ]
+  },
+  {
+    "id": "water-floss-order",
+    "question": "Should I string floss or water floss first?",
+    "answer": "Maddie recommends string floss first, water floss next, then brush with fluoride toothpaste. String floss cleans along the sides of your teeth; the water flosser is an additional step in Maddie’s routine. Follow your device directions and any advice from your hygienist.",
+    "prompt": "Can you show me how to combine string floss and a water flosser in my routine?",
+    "url": "homecare-routine.html#daily-routine",
+    "terms": [
+      "water floss first",
+      "water flosser first",
+      "waterpik first",
+      "string floss before water",
+      "water floss before string floss"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Flossing",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing"
+      },
+      {
+        "title": "ADA: Interdental cleaners",
+        "url": "https://www.ada.org/resources/ada-library/oral-health-topics/floss"
+      }
+    ],
+    "checked": "October 5, 2026",
+    "followups": [
+      "How do I floss properly?",
+      "How often should I floss?"
+    ]
   }
 ]

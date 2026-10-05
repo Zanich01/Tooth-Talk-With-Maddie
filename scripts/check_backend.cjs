@@ -18,6 +18,12 @@ async function main() {
     assert.equal(answer.entries[0].bullets.length, 5);
     const contextual = await post({ question: 'It is an adult tooth', context: { lastIntent: 'loose-tooth' } });
     assert.equal((await contextual.json()).entries[0].id, 'loose-adult');
+    const recommended = await (await post({ question: 'Electric toothbrush recommendations' })).json();
+    assert.equal(recommended.entries[0].products.length, 2);
+    const compared = await (await post({ question: 'Compare those two', context: recommended.context })).json();
+    assert.equal(compared.entries[0].products.length, 2);
+    const sequence = await (await post({ question: 'Should I floss or water floss first?' })).json();
+    assert.equal(sequence.entries[0].id, 'water-floss-order');
     assert.equal((await post({ question: '' })).status, 400);
     assert.equal((await post({ question: 'x'.repeat(501) })).status, 400);
     assert.equal((await post({ question: 'x'.repeat(5000) })).status, 413);

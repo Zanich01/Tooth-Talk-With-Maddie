@@ -58,3 +58,43 @@ assert.equal(engine.resolve('It is an adult tooth', answers, {lastIntent:'loose-
 assert.equal(engine.resolve('What should I ask?', answers, {lastIntent:'dry-mouth'}).entries[0].bullets[0], answers.find(entry=>entry.id==='dry-mouth').prompt);
 assert.equal(engine.resolve('Is that normal?', answers).type, 'clarify');
 console.log('PASS ambiguity, negation, and contextual follow-ups');
+
+const products = JSON.parse(fs.readFileSync(path.join(root, 'data/products.json'), 'utf8'));
+const productCases = [
+  ['Electric toothbrush recommendations', ['Oral B iO Electric Toothbrush', 'Sonicare ProtectiveClean']],
+  ['Compare Oral-B iO and Sonicare electric toothbrushes', ['Oral B iO Electric Toothbrush', 'Sonicare ProtectiveClean']],
+  ['Compare Oral-B cordless and Philips Sonicare countertop water flossers', ['Oral B Cordless Waterflosser', 'Philips Countertop Waterflosser']],
+  ['Compare countertop versus cordless water flossers', ['Oral B Cordless Waterflosser', 'Philips Countertop Waterflosser']],
+  ['I need a portable water flosser to take when I travel. What do you recommend?', ['Oral B Cordless Waterflosser']],
+  ['I want a waterflosser that sits on my bathroom counter, preferably Philips', ['Philips Countertop Waterflosser']],
+  ['Tell me about the Philips countertop waterflosser', ['Philips Countertop Waterflosser']],
+  ['Recommend a rinse for dry mouth', ['TheraBreath Dry Mouth Oral Rinse']],
+  ['Recommend dry mouth lozenges', ['TheraBreath Dry Mouth Lozenges']],
+  ['Compare whitening strips and trays', ['Opalescence Go Trays', 'Crest 3D White Strips']],
+  ['Recommend prescription fluoride toothpaste', ['Fluoridex']],
+];
+for (const [question, expected] of productCases) {
+  const result = engine.resolve(question, answers, {}, products);
+  assert.equal(result.type, 'answer', question);
+  assert.deepEqual(result.entries[0].products.map(product => product.name), expected, question);
+  for (const product of result.entries[0].products) assert.ok(products.some(p => p.url === product.url));
+}
+for (const question of [
+  'Should I floss or water floss first?',
+  'Should I water floss before string floss?',
+  'Should I use a waterpik before or after regular floss?',
+  'Should I string floss then use the waterflosser then brush?',
+]) {
+  const result = engine.resolve(question, answers, {}, products);
+  assert.equal(result.entries[0].id, 'water-floss-order', question);
+  assert.match(result.entries[0].answer, /string floss first, water floss next, then brush/);
+}
+const recommendationContext = engine.resolve('Electric toothbrush recommendations', answers, {}, products).context;
+assert.equal(engine.resolve('Compare those two', answers, recommendationContext, products).entries[0].products.length, 2);
+const waterContext = engine.resolve('Recommend a water flosser', answers, {}, products).context;
+assert.equal(engine.resolve('Which is portable?', answers, waterContext, products).entries[0].products[0].name, 'Oral B Cordless Waterflosser');
+assert.equal(engine.resolve('Recommend Philips whitening strips', answers, {}, products).type, 'unknown');
+assert.equal(engine.resolve('Compare Philips countertop water flossers', answers, {}, products).type, 'clarify');
+assert.equal(engine.resolve('Recommend something', answers, {}, products).type, 'clarify');
+assert.equal(engine.resolve('Why do my gums bleed with my Philips water flosser?', answers, {}, products).entries[0].id, 'bleeding-gums');
+console.log('PASS product recommendations, descriptions, comparisons, format constraints, context, and water-floss order');

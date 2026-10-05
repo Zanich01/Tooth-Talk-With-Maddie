@@ -5,7 +5,15 @@
     "url": "https://www.target.com/p/oral-b-io3-electric-toothbrush-light-blue/-/A-87153883",
     "image": "assets/images/oralbToothbrush-optimized.webp",
     "description": "An electric toothbrush option for your daily brushing routine.",
-    "keywords": "cavity prevention brushing electric toothbrush"
+    "keywords": "cavity prevention brushing electric toothbrush",
+    "chatTags": [
+      "electric toothbrush",
+      "powered brush",
+      "oral b",
+      "oralb",
+      "io",
+      "io3"
+    ]
   },
   {
     "name": "Sonicare ProtectiveClean",
@@ -13,85 +21,166 @@
     "url": "https://www.amazon.com/Philips-Sonicare-ProtectiveClean-Rechargeable-HX6857/dp/B078GVMVRJ",
     "image": "assets/images/phillipsSonicare-optimized.webp",
     "description": "Another electric toothbrush option to discuss with your hygienist.",
-    "keywords": "cavity prevention brushing electric toothbrush"
+    "keywords": "cavity prevention brushing electric toothbrush",
+    "chatTags": [
+      "electric toothbrush",
+      "powered brush",
+      "sonicare",
+      "philips",
+      "protectiveclean"
+    ]
   },
   {
     "name": "Oral B Cordless Waterflosser",
     "category": "Gum Disease",
     "url": "https://www.walgreens.com/store/c/oral-b-water-flosser-advanced,-portable-oral-irrigator-handle-with-2-nozzles/ID=300411189-product",
     "image": "assets/images/oralbWaterFlosser-optimized.webp",
-    "description": "A water flosser option for more thorough cleaning beneath the gums. Maddie recommends using a water flosser as additional gum care, alongside daily string flossing\u2014not as a replacement for it."
+    "description": "A cordless, portable water flosser option for additional gum care. Compare it with a countertop unit if counter space or travel matters to you. Maddie recommends water flossing alongside daily string flossing and brushing. Follow the device directions and ask your hygienist about technique and pressure.",
+    "chatTags": [
+      "water flosser",
+      "water floss",
+      "oral b",
+      "oralb",
+      "cordless",
+      "portable",
+      "travel"
+    ]
   },
   {
     "name": "Philips Countertop Waterflosser",
     "category": "Gum Disease",
     "url": "https://a.co/d/03bvKCGX",
     "image": "assets/images/philips-countertop-waterflosser.webp",
-    "description": "A countertop water flosser option for additional gum care alongside daily brushing and string flossing. Ask your hygienist which technique and pressure setting suit your gums.",
-    "keywords": "philips sonicare countertop water flosser power flosser 5000 gum health gum care"
+    "description": "Philips Sonicare Countertop Power Flosser 5000: a countertop unit with a separate water reservoir and handle. The linked model includes two nozzles, two cleaning modes, and ten intensity settings. An additional gum-care option alongside daily brushing and string flossing; follow the device directions and ask your hygienist about technique and pressure.",
+    "keywords": "philips sonicare countertop water flosser power flosser 5000 gum health gum care",
+    "chatTags": [
+      "water flosser",
+      "water floss",
+      "philips",
+      "sonicare",
+      "countertop",
+      "counter top",
+      "power flosser",
+      "5000"
+    ]
   },
   {
     "name": "TheraBreath Healthy Gums Oral Rinse",
     "category": "Gum Disease",
     "url": "https://www.therabreath.com/products/healthy-gums-oral-rinse-clean-mint",
     "image": "assets/images/healthy-gums-oral-rinse-clean-mint.jpg",
-    "description": "A mouthrinse to discuss with your dental team before choosing."
+    "description": "A mouthrinse to discuss with your dental team before choosing.",
+    "chatTags": [
+      "mouthwash",
+      "rinse",
+      "gum care",
+      "gum health",
+      "therabreath"
+    ]
   },
   {
     "name": "TheraBreath Dry Mouth Oral Rinse",
     "category": "Dry Mouth",
     "url": "https://www.therabreath.com/products/dry-mouth-oral-rinse-tingling-mint",
     "image": "assets/images/dry-mouth-oral-rinse-tingling-mint.jpg",
-    "description": "An oral rinse marketed for dry mouth comfort."
+    "description": "An oral rinse marketed for dry mouth comfort.",
+    "chatTags": [
+      "dry mouth",
+      "rinse",
+      "mouthwash",
+      "therabreath"
+    ]
   },
   {
     "name": "TheraBreath Dry Mouth Lozenges",
     "category": "Dry Mouth",
     "url": "https://www.therabreath.com/products/dry-mouth-lozenges-tart-berry",
     "image": "assets/images/dry-mouth-lozenges-tart-berry.png",
-    "description": "Lozenges marketed for dry mouth comfort; check the package directions."
+    "description": "Lozenges marketed for dry mouth comfort; check the package directions.",
+    "chatTags": [
+      "dry mouth",
+      "lozenge",
+      "lozenges",
+      "therabreath"
+    ]
   },
   {
     "name": "Xylimelts",
     "category": "Dry Mouth",
     "url": "https://www.amazon.com/XyliMelts-Moisturizing-Adhering-Stimulates-Non-Acidic/dp/B007XEVQ8G",
     "image": "assets/images/xyliMelts-optimized.webp",
-    "description": "Adhering dry mouth tablets; follow the product\u2019s use and safety directions."
+    "description": "Adhering dry mouth tablets; follow the product\u2019s use and safety directions.",
+    "chatTags": [
+      "dry mouth",
+      "tablet",
+      "tablets",
+      "xylimelts",
+      "xyli melts"
+    ]
   },
   {
     "name": "Metal Tongue Scraper",
     "category": "Bad Breath",
     "url": "https://www.walmart.com/ip/GuruNanda-Stainless-Steel-Spoon-Tongue-Scraper-2pk/2112475696",
     "image": "assets/images/metalToungeScraper-optimized.webp",
-    "description": "A tool for gentle tongue cleaning."
+    "description": "A tool for gentle tongue cleaning.",
+    "chatTags": [
+      "tongue scraper",
+      "tongue cleaner",
+      "bad breath",
+      "metal"
+    ]
   },
   {
     "name": "Therabreath Deep Clean",
     "category": "Bad Breath",
     "url": "https://www.walmart.com/ip/TheraBreath-Deep-Clean-Mouthwash-Alcohol-Free-Fresh-Mint-16-fl-oz/3784750828",
     "image": "assets/images/theraBreathDeepClean-optimized.webp",
-    "description": "A mouthrinse option; check the label for its intended use."
+    "description": "A mouthrinse option; check the label for its intended use.",
+    "chatTags": [
+      "bad breath",
+      "rinse",
+      "mouthwash",
+      "therabreath"
+    ]
   },
   {
     "name": "Opalescence Whitening Gel 15% Syringes",
     "category": "Whitening",
     "url": "https://www.amazon.com/Opalescence-Teeth-Whitening-Flavor-Syringes/dp/B00VQTM43A",
     "image": "assets/images/opalesceneWhite-optimized.webp",
-    "description": "Whitening gel: ask your dentist about trays, suitability, and wear time."
+    "description": "Whitening gel: ask your dentist about trays, suitability, and wear time.",
+    "chatTags": [
+      "whitening",
+      "gel",
+      "opalescence"
+    ]
   },
   {
     "name": "Opalescence Go Trays",
     "category": "Whitening",
     "url": "https://www.walmart.com/ip/Opalescence-Go-Prefilled-Teeth-Whitening-Trays-15-Hydrogen-Peroxide-Mint/2097180240",
     "image": "assets/images/oplasceneGoWhite-optimized.webp",
-    "description": "Prefilled whitening trays: follow the specific package schedule."
+    "description": "Prefilled whitening trays: follow the specific package schedule.",
+    "chatTags": [
+      "whitening",
+      "tray",
+      "trays",
+      "opalescence go"
+    ]
   },
   {
     "name": "Crest 3D White Strips",
     "category": "Whitening",
     "url": "https://www.target.com/p/crest-3dwhitestrips-classic-white-at-home-teeth-whitening-kit-10-treatments/-/A-80137822",
     "image": "assets/images/crest3DWhiteStrips-optimized.webp",
-    "description": "Whitening strips: follow the directions for this exact formulation."
+    "description": "Whitening strips: follow the directions for this exact formulation.",
+    "chatTags": [
+      "whitening",
+      "strip",
+      "strips",
+      "crest"
+    ]
   },
   {
     "name": "Fluoridex",
@@ -99,7 +188,14 @@
     "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5fd60635-4b66-15e3-e053-2991aa0ab23a",
     "image": "assets/images/prescription-toothpaste.svg",
     "category": "Cavity Prevention",
-    "keywords": "prescription only fluoride cavity prevention enamel dentist"
+    "keywords": "prescription only fluoride cavity prevention enamel dentist",
+    "chatTags": [
+      "prescription",
+      "fluoride",
+      "toothpaste",
+      "fluoridex",
+      "cavity prevention"
+    ]
   },
   {
     "name": "Fluoride Varnish",
@@ -107,6 +203,14 @@
     "url": "https://www.colgateprofessional.com/products/prescription-only-products/colgate-prevident-varnish-prescription-strength",
     "image": "assets/images/fluoride-varnish.svg",
     "category": "Cavity Prevention",
-    "keywords": "prescription only fluoride cavity prevention enamel dentist"
+    "keywords": "prescription only fluoride cavity prevention enamel dentist",
+    "chatTags": [
+      "prescription",
+      "fluoride",
+      "varnish",
+      "in office",
+      "professionally applied",
+      "cavity prevention"
+    ]
   }
 ]

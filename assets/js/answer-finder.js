@@ -65,8 +65,11 @@ if (finder) {
         } catch { useBackend = false; }
       }
       if (!result) {
-        const answers = await loadCatalog('data/answers.json?v=20261004-water-care');
-        result = DentalEngine.resolve(question, answers, context);
+        const [answers, products] = await Promise.all([
+          loadCatalog('data/answers.json?v=20261005-product-chat'),
+          loadCatalog('data/products.json?v=20261005-product-chat')
+        ]);
+        result = DentalEngine.resolve(question, answers, context, products);
       }
       await loadingBeat;
       if(request!==version)return;
@@ -82,6 +85,14 @@ if (finder) {
       } else {
         for(const entry of result.entries) {
           reply.bubble.append(element('p',entry.answer));
+          for (const product of entry.products || []) {
+            const card = element('section', null, 'chat-product');
+            card.append(element('h3', product.name), element('p', product.description));
+            const link = element('a', 'View product →', 'chat-guide-link');
+            link.href = product.url;
+            card.append(link);
+            reply.bubble.append(card);
+          }
           if(entry.bullets?.length) {
             const list = element('ul',null,'chat-answer-list');
             for(const bullet of entry.bullets) list.append(element('li',bullet));

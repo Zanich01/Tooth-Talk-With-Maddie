@@ -4,7 +4,7 @@ const path = require('node:path');
 const engine = require('./assets/js/dental-engine.js');
 const root = __dirname;
 const mime = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml' };
-function createServer({ answers, publicFiles }) {
+function createServer({ answers, products = [], publicFiles }) {
   let recentRequests = 0;
   let windowStart = Date.now();
   function json(res, status, body) {
@@ -29,9 +29,13 @@ function createServer({ answers, publicFiles }) {
         let data;
         try { data = JSON.parse(body); } catch { return json(res, 400, { error: 'Invalid JSON' }); }
         if (typeof data.question !== 'string' || !data.question.trim() || data.question.length > 500) return json(res, 400, { error: 'Enter a question of 1–500 characters' });
-        const context = typeof data.context?.lastIntent === 'string' ? { lastIntent: data.context.lastIntent.slice(0, 80) } : {};
+        const context = typeof data.context?.lastIntent === 'string' ? {
+          lastIntent: data.context.lastIntent.slice(0, 80),
+          productGroup: typeof data.context.productGroup === 'string' ? data.context.productGroup.slice(0, 80) : undefined,
+          productNames: Array.isArray(data.context.productNames) ? data.context.productNames.filter(name => typeof name === 'string').slice(0, 4) : []
+        } : {};
         // No request text is logged or written to disk. Context belongs to the browser session.
-        return json(res, 200, engine.resolve(data.question.trim(), answers, context));
+        return json(res, 200, engine.resolve(data.question.trim(), answers, context, products));
       }
       if (!['GET', 'HEAD'].includes(req.method)) return json(res, 405, { error: 'Method not allowed' });
       const file = decodeURIComponent(url.pathname).replace(/^\//, '') || 'index.html';
@@ -46,6 +50,7 @@ function createServer({ answers, publicFiles }) {
 }
 async function loadApplication() {
   const answers = JSON.parse(await fs.readFile(path.join(root, 'data/answers.json'), 'utf8'));
+  const products = JSON.parse(await fs.readFile(path.join(root, 'data/products.json'), 'utf8'));
   const publicFiles = new Set((await fs.readdir(root)).filter(file => file.endsWith('.html')));
   async function addDirectory(directory) {
     for (const item of await fs.readdir(path.join(root, directory), { withFileTypes: true })) {
@@ -56,7 +61,7 @@ async function loadApplication() {
   }
   await addDirectory('assets');
   for (const name of ['answers.json', 'products.json', 'topics.json']) publicFiles.add(`data/${name}`);
-  return { answers, publicFiles };
+  return { answers, products, publicFiles };
 }
 if (require.main === module) {
   loadApplication().then(application => {
