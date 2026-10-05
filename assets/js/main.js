@@ -55,21 +55,27 @@ if (!embeddedChat) {
   const dialog = document.createElement("dialog");
   dialog.id = "floating-chat";
   dialog.className = "floating-chat";
-  dialog.setAttribute("aria-labelledby", "floating-chat-title");
-  const header = document.createElement("div");
-  header.className = "floating-chat-header";
-  const title = document.createElement("h2");
-  title.id = "floating-chat-title";
-  title.textContent = "Your dental questions";
+  dialog.setAttribute("aria-label", "Dental question chat");
   const close = document.createElement("button");
   close.type = "button";
   close.className = "floating-chat-close";
   close.setAttribute("aria-label", "Close chat");
   close.textContent = "×";
-  header.append(title, close);
   const content = document.createElement("div");
   content.className = "floating-chat-content";
-  dialog.append(header, content);
+  dialog.append(close, content);
+  const placeCloseButton = () => {
+    const newChat = content.querySelector("#new-question");
+    if (!newChat) return;
+    let actions = newChat.closest(".chat-header-actions");
+    if (!actions) {
+      actions = document.createElement("div");
+      actions.className = "chat-header-actions";
+      newChat.before(actions);
+      actions.append(newChat);
+    }
+    actions.append(close);
+  };
   document.body.append(launcher, dialog);
   let chatLoading;
   let placeholder;
@@ -123,16 +129,17 @@ if (!embeddedChat) {
   loading.className = "chat-loading";
   loading.setAttribute("role", "status");
   loading.textContent = "Loading your conversation…";
-  function closeChat() {
+  function closeChat(returnFocus = true) {
     if (dialog.contains(document.activeElement)) document.activeElement.blur();
     dialog.close();
     syncPageLock();
     launcher.setAttribute("aria-expanded", "false");
     if (conversation && placeholder) {
+      dialog.prepend(close);
       placeholder.replaceWith(conversation);
       placeholder = null;
     }
-    launcher.focus({ preventScroll: true });
+    if (returnFocus) launcher.focus({ preventScroll: true });
   }
   launcher.addEventListener("click", () => {
     if (dialog.open) { closeChat(); return; }
@@ -145,6 +152,7 @@ if (!embeddedChat) {
       placeholder = document.createElement("div");
       conversation.before(placeholder);
       content.append(conversation);
+      placeCloseButton();
     } else if (!content.querySelector(".chat-workspace") && !chatLoading) {
       content.append(loading);
       const loadScript = src => new Promise((resolve, reject) => {
@@ -155,16 +163,18 @@ if (!embeddedChat) {
         document.body.append(script);
       });
       chatLoading = (async () => {
-        const response = await fetch("questions.html?v=20261004-inline-chat");
+        const response = await fetch("questions.html?v=20261004-chat-logo");
         if (!response.ok) throw new Error("Chat unavailable");
         const page = new DOMParser().parseFromString(await response.text(), "text/html");
         const workspace = page.querySelector(".chat-workspace");
         if (!workspace) throw new Error("Chat unavailable");
         if (!window.DentalEngine) await loadScript("assets/js/dental-engine.js?v=20261004-inline-chat");
         content.append(document.importNode(workspace, true));
+        placeCloseButton();
         await loadScript("assets/js/answer-finder.js?v=20261004-inline-chat");
         loading.remove();
       })().catch(() => {
+        dialog.prepend(close);
         content.querySelector(".chat-workspace")?.remove();
         loading.textContent = "Chat could not load. Close and reopen it to try again.";
         chatLoading = null;
@@ -173,6 +183,9 @@ if (!embeddedChat) {
     close.focus({ preventScroll: true });
   });
   close.addEventListener("click", closeChat);
+  document.addEventListener("click", event => {
+    if (dialog.open && !dialog.contains(event.target) && !launcher.contains(event.target)) closeChat(false);
+  });
   document.addEventListener("keydown", event => {
     if (event.key === "Escape" && dialog.open) { event.preventDefault(); closeChat(); }
   });
@@ -254,6 +267,10 @@ if (navigation && menuToggle && searchBar && results) {
       event.preventDefault();
       setSearch(false, true);
     }
+  });
+  document.addEventListener("click", event => {
+    if (mobileSearch.matches && !searchToggle.contains(event.target) &&
+        !searchBar.contains(event.target) && !results.contains(event.target)) setSearch(false);
   });
   const syncSearch = () => {
     const returnFocus = mobileSearch.matches && document.activeElement === searchBar;
@@ -363,19 +380,18 @@ if (searchBar && results) {
 }
 
 // Disclosures close on click-away or Escape; clicks inside stay interactive.
-const disclosures = [...document.querySelectorAll(".routine-card, .faq-list details, .comparison-card, .buying-help")];
 const closeDisclosure = (detail, restoreFocus = false) => {
   detail.open = false;
   if (restoreFocus) detail.querySelector("summary").focus();
 };
 document.addEventListener("click", event => {
-  for (const detail of disclosures) {
+  for (const detail of document.querySelectorAll("details[open]")) {
     if (detail.open && !detail.contains(event.target)) closeDisclosure(detail);
   }
 });
 document.addEventListener("keydown", event => {
   if (event.key !== "Escape") return;
-  for (const detail of disclosures) {
+  for (const detail of document.querySelectorAll("details[open]")) {
     if (detail.open) closeDisclosure(detail, detail.contains(document.activeElement));
   }
 });

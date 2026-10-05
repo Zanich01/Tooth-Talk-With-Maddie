@@ -489,7 +489,7 @@ footer .footer-disclaimer { max-width: 78ch; margin: .8rem auto 0; font-size: .8
 .chat-topbar > div { display: flex; gap: .75rem; align-items: center; }
 .chat-topbar strong { display: block; font-size: .9rem; }
 .chat-topbar small { display: block; font-size: .7rem; color: var(--muted); }
-.chat-avatar { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--deep); color: white; font: 1.2rem Georgia, serif; }
+.chat-avatar { display: block; width: 48px; height: 50px; object-fit: contain; flex-shrink: 0; }
 .chat-messages { position: relative; height: clamp(260px, 43vh, 410px); overflow-y: auto; overscroll-behavior: contain; padding: 1.25rem; background: #f5f7f4; scrollbar-gutter: stable; }
 .chat-message { width: min(90%, 620px); margin: 0 0 1.25rem; }
 .chat-message:last-child { margin-bottom: 0; }
@@ -547,8 +547,8 @@ textarea::selection, input[type="text"]::selection, input[type="search"]::select
 .chat-launcher svg { width: 22px; height: 22px; }
 .floating-chat { position: fixed; z-index: 80; inset: auto max(1rem, env(safe-area-inset-right)) calc(80px + env(safe-area-inset-bottom)) auto; margin: 0; padding: 0; width: min(430px, calc(100% - 2rem)); height: min(660px, calc(100dvh - 110px)); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 14px 60px #103f4340; background: var(--paper); color: var(--ink); overflow: hidden; }
 .floating-chat[open] { display: flex; flex-direction: column; }
-.floating-chat-header { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .5rem .9rem; border-bottom: 1px solid var(--line); }
-.floating-chat-header h2 { margin: 0; font: 600 .85rem system-ui, sans-serif; }
+.chat-topbar > .chat-header-actions { gap: .4rem; flex-shrink: 0; }
+.floating-chat > .floating-chat-close { position: absolute; top: .5rem; right: .5rem; }
 .floating-chat-close { border: none; background: transparent; color: var(--deep); cursor: pointer; min-width: 40px; min-height: 40px; font-size: 1.5rem; }
 .floating-chat-content { flex: 1; min-height: 0; overflow: hidden; }
 .floating-chat, .floating-chat textarea, .floating-chat .chat-messages { overscroll-behavior: contain; }
@@ -577,7 +577,7 @@ html.chat-page-locked { overflow: hidden; overscroll-behavior: none; }
     border: none;
     border-radius: 0;
   }
-  .floating-chat-header { padding-top: max(.5rem, env(safe-area-inset-top)); }
+  .floating-chat-content .chat-topbar { padding-top: max(.75rem, env(safe-area-inset-top)); }
   .floating-chat-content { padding-bottom: env(safe-area-inset-bottom); }
   body:has(.floating-chat[open]) { overflow: hidden; }
   body:has(.floating-chat[open]) .chat-launcher { visibility: hidden; }
