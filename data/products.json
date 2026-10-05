@@ -84,5 +84,21 @@
     "url": "https://www.target.com/p/crest-3dwhitestrips-classic-white-at-home-teeth-whitening-kit-10-treatments/-/A-80137822",
     "image": "assets/images/crest3DWhiteStrips-optimized.webp",
     "description": "Whitening strips: follow the directions for this exact formulation."
+  },
+  {
+    "name": "Fluoridex",
+    "description": "Prescription only. A 1.1% sodium fluoride toothpaste for additional cavity protection. Ask your dentist whether it fits your cavity risk and follow the prescription directions.",
+    "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5fd60635-4b66-15e3-e053-2991aa0ab23a",
+    "image": "assets/images/prescription-toothpaste.svg",
+    "category": "Cavity Prevention",
+    "keywords": "prescription only fluoride cavity prevention enamel dentist"
+  },
+  {
+    "name": "Fluoride Varnish",
+    "description": "Prescription only; professionally applied. A fluoride coating applied by your dental team for additional cavity prevention. Ask whether treatment fits your needs and follow the aftercare instructions.",
+    "url": "https://www.colgateprofessional.com/products/prescription-only-products/colgate-prevident-varnish-prescription-strength",
+    "image": "assets/images/fluoride-varnish.svg",
+    "category": "Cavity Prevention",
+    "keywords": "prescription only fluoride cavity prevention enamel dentist"
   }
 ]

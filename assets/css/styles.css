@@ -348,7 +348,7 @@ footer p { margin: 0; }
 .comparison-grid p { font-size: .85rem; color: var(--muted); }
 .comparison-grid p:last-child { margin-bottom: 0; }
 .comparison-grid strong, .product-detail-label { display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--teal); margin-bottom: .3rem; }
-@media (min-width: 700px) { .routine-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .comparison-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 700px) { .routine-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .comparison-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1000px) { .faq-section { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 4rem; } }
 @media print { .routine-card { break-inside: avoid; } }
 /* A quieter product shelf: concise comparisons and consistent card spacing. */

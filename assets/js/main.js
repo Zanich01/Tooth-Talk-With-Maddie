@@ -414,7 +414,7 @@ if (filters) {
       }
       category.hidden = cards.every(card => card.hidden);
       const showingCavityPrevention = value === "cavity-prevention" && category.dataset.category === "gum-care";
-      category.querySelector("h2").textContent = showingCavityPrevention ? "Cavity prevention" : categoryHeadings.get(category);
+      category.querySelector("h2").textContent = showingCavityPrevention ? "Cavity Prevention" : categoryHeadings.get(category);
       category.querySelector(":scope > p").hidden = showingCavityPrevention;
       const cavityIntro = category.querySelector("[data-cavity-intro]");
       if (cavityIntro) cavityIntro.hidden = !showingCavityPrevention;
