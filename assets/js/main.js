@@ -74,6 +74,10 @@ if (!embeddedChat) {
   let frame;
   let placeholder;
   let conversation;
+  const loading = document.createElement("p");
+  loading.className = "chat-loading";
+  loading.setAttribute("role", "status");
+  loading.textContent = "Loading your conversation…";
   function closeChat() {
     dialog.close();
     launcher.setAttribute("aria-expanded", "false");
@@ -85,6 +89,10 @@ if (!embeddedChat) {
   }
   launcher.addEventListener("click", () => {
     if (dialog.open) { closeChat(); return; }
+    // Open the container before loading the iframe so mobile browsers lay out
+    // the first conversation in a visible viewport.
+    dialog.show();
+    launcher.setAttribute("aria-expanded", "true");
     conversation = document.querySelector("main .chat-workspace");
     if (conversation) {
       placeholder = document.createElement("div");
@@ -93,11 +101,16 @@ if (!embeddedChat) {
     } else if (!frame) {
       frame = document.createElement("iframe");
       frame.title = "Dental question chat";
+      frame.loading = "eager";
+      frame.hidden = true;
+      content.append(loading);
+      frame.addEventListener("load", () => {
+        frame.hidden = false;
+        loading.remove();
+      }, { once: true });
       frame.src = "questions.html?embed=1";
       content.append(frame);
     }
-    dialog.show();
-    launcher.setAttribute("aria-expanded", "true");
     close.focus({ preventScroll: true });
   });
   close.addEventListener("click", closeChat);
