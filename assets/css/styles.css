@@ -217,6 +217,8 @@ footer p { margin: 0; }
 .button-secondary:hover { background: white; }
 .welcome-note { margin: 0; font-size: .8rem; color: var(--muted); }
 .welcome-portrait { position: relative; margin: 0; padding: 0 0 1.5rem; }
+.welcome-profile { min-width: 0; }
+.portrait-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
 .welcome-portrait > img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; border-radius: 100px 24px 24px 24px; background: #dce7dd; }
 .welcome-portrait figcaption { position: relative; display: flex; align-items: center; gap: .9rem; margin: -3rem 1rem 0; padding: 1rem; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); box-shadow: var(--shadow); }
 .portrait-mark { display: grid; place-items: center; flex: 0 0 44px; height: 44px; border-radius: 50%; background: #e5eee8; color: var(--teal); font: italic 1.4rem Georgia, serif; }

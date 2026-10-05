@@ -399,6 +399,7 @@ document.addEventListener("keydown", event => {
 const filters = document.querySelector(".product-filters");
 if (filters) {
   const categories = [...document.querySelectorAll(".product-category")];
+  const categoryHeadings = new Map(categories.map(category => [category, category.querySelector("h2").textContent]));
   const status = document.querySelector("#filter-status");
   filters.hidden = false;
   status.hidden = false;
@@ -412,6 +413,9 @@ if (filters) {
         if (!card.hidden) count++;
       }
       category.hidden = cards.every(card => card.hidden);
+      const showingCavityPrevention = value === "cavity-prevention" && category.dataset.category === "gum-care";
+      category.querySelector("h2").textContent = showingCavityPrevention ? "Cavity prevention" : categoryHeadings.get(category);
+      category.querySelector(":scope > p").hidden = showingCavityPrevention;
     }
     for (const button of filters.querySelectorAll("button")) {
       button.setAttribute("aria-pressed", String(button.dataset.filter === value));
