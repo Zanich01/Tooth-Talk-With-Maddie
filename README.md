@@ -81,7 +81,7 @@ Before changing answer wording, verify the linked clinical sources and obtain Ma
 
 ## Floating chat
 
-Every page has an “Ask a question” launcher in place of the former back-to-top button. It opens a nonmodal chat panel so the current guide stays visible. Closing and reopening preserves that page’s conversation; navigating or reloading starts a new session. The Q&A page moves its existing conversation into the panel and restores it on close, avoiding duplicate chats. Other pages load a compact same-origin Q&A view only when the launcher is opened. Close with the close button or Escape. The launcher and panel are excluded from print layouts.
+Every page has an “Ask a question” launcher in place of the former back-to-top button. It opens a nonmodal chat panel so the current guide stays visible. Closing and reopening preserves that page’s conversation; navigating or reloading starts a new session. The Q&A page moves its existing conversation into the panel and restores it on close, avoiding duplicate chats. Other pages load the conversation markup and scripts directly into the page when the launcher is opened, avoiding a separate iframe viewport on mobile. Close with the close button or Escape. The launcher and panel are excluded from print layouts.
 
 ## Daily routine update
 

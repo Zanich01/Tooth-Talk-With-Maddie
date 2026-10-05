@@ -512,7 +512,7 @@ footer .footer-disclaimer { max-width: 78ch; margin: .8rem auto 0; font-size: .8
 .chat-composer { padding: .8rem 1.25rem; border-top: 1px solid var(--line); }
 .chat-input-label { display: block; font-size: .75rem; font-weight: 600; margin-bottom: .35rem; }
 .chat-input-row { display: flex; align-items: center; gap: .75rem; }
-.chat-input-row #visitor-question { margin: 0; min-height: 60px; padding: .7rem; font-size: .9rem; flex: 1; }
+.chat-input-row #visitor-question { margin: 0; min-width: 0; min-height: 60px; padding: .7rem; font-size: max(16px, 1rem); flex: 1; }
 /* Mobile browsers may zoom focused inputs whose text is smaller than 16px. */
 @media (max-width: 959px) {
   input[type="text"], input[type="search"], textarea, select,
@@ -551,10 +551,10 @@ textarea::selection, input[type="text"]::selection, input[type="search"]::select
 .floating-chat-header h2 { margin: 0; font: 600 .85rem system-ui, sans-serif; }
 .floating-chat-close { border: none; background: transparent; color: var(--deep); cursor: pointer; min-width: 40px; min-height: 40px; font-size: 1.5rem; }
 .floating-chat-content { flex: 1; min-height: 0; overflow: hidden; }
-.floating-chat iframe { width: 100%; height: 100%; display: block; border: none; }
 .floating-chat-content .chat-workspace { display: flex; flex-direction: column; height: 100%; border: none; border-radius: 0; box-shadow: none; }
 .floating-chat-content .chat-messages { flex: 1; min-height: 100px; height: auto; }
 .floating-chat-content .chat-topbar, .floating-chat-content .chat-composer { padding: .75rem; }
+.floating-chat-content .chat-topbar, .floating-chat-content .chat-composer, .floating-chat-content .chat-suggestions { flex-shrink: 0; }
 .floating-chat-content .chat-suggestions { padding: .5rem .75rem; }
 .chat-embedded, .chat-embedded body { height: 100%; min-height: 0; overflow: hidden; }
 .chat-embedded header, .chat-embedded footer, .chat-embedded #results, .chat-embedded .skip-link, .chat-embedded main > :not(.chat-workspace) { display: none !important; }

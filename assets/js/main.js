@@ -71,7 +71,7 @@ if (!embeddedChat) {
   content.className = "floating-chat-content";
   dialog.append(header, content);
   document.body.append(launcher, dialog);
-  let frame;
+  let chatLoading;
   let placeholder;
   let conversation;
   const chatMobile = window.matchMedia("(max-width: 959px)");
@@ -102,8 +102,7 @@ if (!embeddedChat) {
   }
   launcher.addEventListener("click", () => {
     if (dialog.open) { closeChat(); return; }
-    // Open the container before loading the iframe so mobile browsers lay out
-    // the first conversation in a visible viewport.
+    // Keep the composer in the top-level viewport, including on mobile.
     dialog.show();
     syncChatViewport();
     launcher.setAttribute("aria-expanded", "true");
@@ -112,29 +111,36 @@ if (!embeddedChat) {
       placeholder = document.createElement("div");
       conversation.before(placeholder);
       content.append(conversation);
-    } else if (!frame) {
-      frame = document.createElement("iframe");
-      frame.title = "Dental question chat";
-      frame.loading = "eager";
-      frame.hidden = true;
+    } else if (!content.querySelector(".chat-workspace") && !chatLoading) {
       content.append(loading);
-      frame.addEventListener("load", () => {
-        frame.hidden = false;
+      const loadScript = src => new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = () => { script.remove(); reject(new Error("Chat script unavailable")); };
+        document.body.append(script);
+      });
+      chatLoading = (async () => {
+        const response = await fetch("questions.html?v=20261004-inline-chat");
+        if (!response.ok) throw new Error("Chat unavailable");
+        const page = new DOMParser().parseFromString(await response.text(), "text/html");
+        const workspace = page.querySelector(".chat-workspace");
+        if (!workspace) throw new Error("Chat unavailable");
+        if (!window.DentalEngine) await loadScript("assets/js/dental-engine.js?v=20261004-inline-chat");
+        content.append(document.importNode(workspace, true));
+        await loadScript("assets/js/answer-finder.js?v=20261004-inline-chat");
         loading.remove();
-      }, { once: true });
-      frame.src = "questions.html?embed=1";
-      content.append(frame);
+      })().catch(() => {
+        content.querySelector(".chat-workspace")?.remove();
+        loading.textContent = "Chat could not load. Close and reopen it to try again.";
+        chatLoading = null;
+      });
     }
     close.focus({ preventScroll: true });
   });
   close.addEventListener("click", closeChat);
   document.addEventListener("keydown", event => {
     if (event.key === "Escape" && dialog.open) { event.preventDefault(); closeChat(); }
-  });
-  // Escape pressed inside the iframe must reach its parent page.
-  frame = null;
-  window.addEventListener("message", event => {
-    if (event.origin === window.location.origin && event.source === frame?.contentWindow && event.data === "close-dental-chat" && dialog.open) closeChat();
   });
 } else {
   document.addEventListener("keydown", event => {
