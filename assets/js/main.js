@@ -75,7 +75,22 @@ if (!embeddedChat) {
   let placeholder;
   let conversation;
   const chatMobile = window.matchMedia("(max-width: 959px)");
+  let savedPagePosition = null;
+  const syncPageLock = () => {
+    if (dialog.open && chatMobile.matches && !savedPagePosition) {
+      savedPagePosition = { x: window.scrollX, y: window.scrollY };
+      document.body.style.setProperty("--chat-page-top", `${-savedPagePosition.y}px`);
+      document.documentElement.classList.add("chat-page-locked");
+    } else if ((!dialog.open || !chatMobile.matches) && savedPagePosition) {
+      const position = savedPagePosition;
+      savedPagePosition = null;
+      document.documentElement.classList.remove("chat-page-locked");
+      document.body.style.removeProperty("--chat-page-top");
+      window.scrollTo({ left: position.x, top: position.y, behavior: "instant" });
+    }
+  };
   const syncChatViewport = () => {
+    syncPageLock();
     if (chatMobile.matches && window.visualViewport) {
       dialog.style.setProperty("--chat-viewport-height", `${window.visualViewport.height}px`);
       dialog.style.setProperty("--chat-viewport-top", `${window.visualViewport.offsetTop}px`);
@@ -87,12 +102,31 @@ if (!embeddedChat) {
   window.visualViewport?.addEventListener("resize", syncChatViewport);
   window.visualViewport?.addEventListener("scroll", syncChatViewport);
   chatMobile.addEventListener("change", syncChatViewport);
+  // Stop a swipe at a chat scroll boundary from reaching the page on iOS.
+  let touchY = 0;
+  dialog.addEventListener("touchstart", event => {
+    if (event.touches.length === 1) touchY = event.touches[0].clientY;
+  }, { passive: true });
+  dialog.addEventListener("touchmove", event => {
+    if (!chatMobile.matches || event.touches.length !== 1) return;
+    const nextY = event.touches[0].clientY;
+    const delta = nextY - touchY;
+    touchY = nextY;
+    const scroller = event.target.closest("textarea, .chat-messages");
+    const canScroll = scroller && (
+      (delta > 0 && scroller.scrollTop > 0) ||
+      (delta < 0 && scroller.scrollTop + scroller.clientHeight < scroller.scrollHeight - 1)
+    );
+    if (!canScroll && event.cancelable) event.preventDefault();
+  }, { passive: false });
   const loading = document.createElement("p");
   loading.className = "chat-loading";
   loading.setAttribute("role", "status");
   loading.textContent = "Loading your conversation…";
   function closeChat() {
+    if (dialog.contains(document.activeElement)) document.activeElement.blur();
     dialog.close();
+    syncPageLock();
     launcher.setAttribute("aria-expanded", "false");
     if (conversation && placeholder) {
       placeholder.replaceWith(conversation);

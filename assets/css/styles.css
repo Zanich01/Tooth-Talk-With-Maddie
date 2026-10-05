@@ -551,6 +551,9 @@ textarea::selection, input[type="text"]::selection, input[type="search"]::select
 .floating-chat-header h2 { margin: 0; font: 600 .85rem system-ui, sans-serif; }
 .floating-chat-close { border: none; background: transparent; color: var(--deep); cursor: pointer; min-width: 40px; min-height: 40px; font-size: 1.5rem; }
 .floating-chat-content { flex: 1; min-height: 0; overflow: hidden; }
+.floating-chat, .floating-chat textarea, .floating-chat .chat-messages { overscroll-behavior: contain; }
+html.chat-page-locked { overflow: hidden; overscroll-behavior: none; }
+.chat-page-locked body { position: fixed; top: var(--chat-page-top, 0px); left: 0; width: 100%; overflow: hidden; }
 .floating-chat-content .chat-workspace { display: flex; flex-direction: column; height: 100%; border: none; border-radius: 0; box-shadow: none; }
 .floating-chat-content .chat-messages { flex: 1; min-height: 100px; height: auto; }
 .floating-chat-content .chat-topbar, .floating-chat-content .chat-composer { padding: .75rem; }
