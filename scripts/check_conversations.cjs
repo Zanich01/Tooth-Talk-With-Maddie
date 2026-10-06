@@ -58,6 +58,57 @@ const brushNames = ['Oral B iO Electric Toothbrush', 'Sonicare ProtectiveClean']
 const waterNames = ['Oral B Cordless Waterflosser', 'Philips Countertop Waterflosser'];
 
 for (const question of [
+  'What water flosser should I get?',
+  'What waterflosser should I get',
+  'Which water flosser should I buy?',
+  'What water flosser should I choose?',
+  'Which waterpik would you recommend?',
+  'What kind of water flosser should I use?',
+]) {
+  check(`product-choice wording: ${question}`, () => {
+    assert.deepEqual(productNames(ask(question)), waterNames);
+  });
+}
+
+for (const question of [
+  'What electric toothbrush should I get?',
+  'Which electric toothbrush should I buy?',
+  'What powered toothbrush should I choose?',
+  'What toothbrush would you recommend?',
+]) {
+  check(`toothbrush-choice wording: ${question}`, () => {
+    assert.deepEqual(productNames(ask(question)), brushNames);
+  });
+}
+
+for (const [question, expected] of [
+  ['What countertop water flosser should I get?', ['Philips Countertop Waterflosser']],
+  ['What cordless water flosser should I buy?', ['Oral B Cordless Waterflosser']],
+  ['Which portable waterflosser should I choose for travel?', ['Oral B Cordless Waterflosser']],
+]) {
+  check(`product-choice format: ${question}`, () => {
+    assert.deepEqual(productNames(ask(question)), expected);
+  });
+}
+
+for (const question of ['Do I need a water flosser?', 'Should I use a water flosser?', 'Do I need an electric toothbrush?']) {
+  check(`necessity wording remains advice: ${question}`, () => {
+    const result = ask(question);
+    assert.equal(result.type, 'answer');
+    noSales(result);
+  });
+}
+
+for (const question of ['What water flosser should I get?', 'What electric toothbrush should I choose?', 'Which cordless water flosser should I buy?']) {
+  check(`product-choice data unavailable: ${question}`, () => {
+    const result = engine.resolve(question, answers, {}, []);
+    assert.equal(result.type, 'unknown');
+    noSales(result);
+    assert.match(replyText(result), /unavailable|couldn.t load|try again/i);
+  });
+}
+
+for (const question of [
   'Do I need an electric toothbrush?',
   'Should I use a powered toothbrush?',
   'Are electric toothbrushes worth it?',

@@ -137,24 +137,30 @@
   }
   function productAnswer(question, products, context, matches) {
     const q = analyze(question);
+    const text = normalize(question);
+    // The product name can sit between 'what' and 'should I get'. Match the
+    // request structure rather than requiring one exact contiguous phrase.
+    const purchaseQuestion = /\b(?:what|which)\b.*\b(?:should|could|would|can) (?:i|we) (?:get|buy|choose|pick|purchase)\b/.test(text) ||
+      /\b(?:what|which)\b.*\b(?:is|are) (?:the )?best\b/.test(text) ||
+      /\b(?:what|which) (?:\w+ ){0,5}(?:flosser|toothbrush|mouthwash|rinse|brand|model|product) (?:should|could|would|can) (?:i|we) use\b/.test(text);
     const compare = q.any('compare', 'comparison', 'versus', 'vs', 'difference', 'better');
-    const shop = q.any('recommend', 'recommendation', 'suggest', 'suggestions', 'buy', 'purchase', 'looking for', 'pick', 'product options', 'products', 'show', 'options', 'what should i get', 'i want');
+    const shop = purchaseQuestion || q.any('recommend', 'recommendation', 'suggest', 'suggestions', 'buy', 'purchase', 'looking for', 'pick', 'choose', 'product options', 'products', 'show', 'options', 'what should i get', 'i want');
     const detail = q.any('tell me about', 'describe', 'description', 'details', 'features', 'specifications', 'what does', 'how does');
     let group = productGroups.find(([, terms]) => terms.some(q.contains))?.[0];
     if (!products.length) {
-      if (group && (q.any('show', 'buy', 'recommendation', 'product options', 'compare') || /^recommend /.test(normalize(question)))) return { type: 'unknown', message: 'The product details are unavailable right now. Please try again shortly. I can still help with your daily-care questions.', suggestions: ['Do I need an electric toothbrush?', 'When should I floss?'], context: {} };
+      if (group && (purchaseQuestion || q.any('show', 'buy', 'choose', 'recommendation', 'product options', 'compare') || /^recommend /.test(text))) return { type: 'unknown', message: 'The product details are unavailable right now. Please try again shortly. I can still help with your daily-care questions.', suggestions: ['Do I need an electric toothbrush?', 'When should I floss?'], context: {} };
       return null;
     }
     const named = products.filter(product => q.contains(product.name) || q.contains(product.shortName || product.name) || (product.chatTags || []).some(tag =>
       ['protectiveclean', 'fluoridex', 'xylimelts', 'xyli melts', 'opalescence go', 'io', 'io3', 'crest', 'therabreath'].includes(tag) && q.contains(tag)));
     const negativePreference = /\b(?:do not want|dont want|not .+ instead)\b/.test(normalize(question));
-    const referBack = negativePreference || q.any('these', 'those', 'them', 'the two', 'the 2', 'both', 'one', 'it', 'that', 'heads', 'head shape', 'bristles', 'pressure', 'timer', 'battery', 'cleaning action', 'format') ||
+    const referBack = negativePreference || /^what should i (?:get|buy|choose|pick|purchase)$/.test(text) || q.any('these', 'those', 'them', 'the two', 'the 2', 'both', 'one', 'it', 'that', 'heads', 'head shape', 'bristles', 'pressure', 'timer', 'battery', 'cleaning action', 'format') ||
       /^(compare|what is the difference|how are they different|show (?:me )?(?:the |some )?options|tell me more|which (?:is|has|costs) .+|how much(?: do they cost)?|i travel(?: a lot)?|recommend something|what do you recommend)$/.test(normalize(question));
     const contextual = !named.length && context.productGroup && referBack && (!group || group === 'mouthwash') && (!matches.length || matches[0].score < 15 || q.any('options') && context.pending === 'product-options');
     if (contextual) group = context.productGroup;
     // Asking whether a tool is needed or useful is advice, even if 'need' or 'recommended' appears.
     const needAdvice = /\b(do i (?:really )?need|do i have to|should i (?:use|switch|buy|get)|is .+ (?:necessary|worth|recommended)|are .+ (?:necessary|worth|recommended)|would you recommend switching)\b/.test(normalize(question)) || /^do you recommend (?:an? |using )?(?:electric|powered|manual)/.test(normalize(question));
-    if (needAdvice && !named.length && !q.any('which', 'what brand', 'what model', 'show', 'compare', 'vs', 'versus')) return null;
+    if (needAdvice && !purchaseQuestion && !named.length && !q.any('which', 'what brand', 'what model', 'show', 'compare', 'vs', 'versus')) return null;
     if (group === 'electric toothbrush' && q.any('manual')) {
       if (shop && !compare) return { type: 'unknown', message: 'Maddie’s current product list has electric brushes, but no specific manual toothbrush. For a manual brush, look for soft bristles and a head size you can use comfortably.', suggestions: ['Do I need an electric toothbrush?', 'How often and how long should I brush?'], context: {} };
       return null;

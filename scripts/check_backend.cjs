@@ -28,6 +28,8 @@ async function main() {
     assert.equal((await contextual.json()).entries[0].id, 'loose-adult');
     const recommended = await (await post({ question: 'Electric toothbrush recommendations' })).json();
     assert.equal(recommended.entries[0].products.length, 2);
+    const waterChoices = await (await post({ question: 'What water flosser should I get' })).json();
+    assert.deepEqual(waterChoices.entries[0].products.map(product => product.name), ['Oral B Cordless Waterflosser', 'Philips Countertop Waterflosser']);
     const compared = await (await post({ question: 'Compare those two', context: recommended.context })).json();
     assert.equal(compared.entries[0].products.length, 2);
     const sequence = await (await post({ question: 'Should I floss or water floss first?' })).json();

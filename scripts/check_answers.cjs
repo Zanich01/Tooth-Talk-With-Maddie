@@ -114,3 +114,10 @@ assert.match(flossRoutine, /water floss next, then mouthwash, and finally brush/
 assert.equal(engine.resolve('How often should I floss?', answers, {}, products).entries[0].id, 'flossing');
 assert.equal(engine.resolve('When I floss my gums bleed', answers, {}, products).entries[0].id, 'bleeding-gums');
 console.log('PASS floss timing paraphrases, mouthwash sequence, frequency, and symptom routing');
+
+for (const question of ['What water flosser is best?', 'Help me choose a water flosser', 'Which water flosser is the best option?', 'What electric toothbrush is best?']) {
+  const result = engine.resolve(question, answers, {}, products);
+  assert.equal(result.entries?.[0]?.id, 'product-recommendations', question);
+  assert.equal(result.entries[0].products.length, 2, question);
+}
+console.log('PASS best-option and help-me-choose product requests');
