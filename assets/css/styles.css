@@ -507,6 +507,14 @@ footer .footer-disclaimer { max-width: 78ch; margin: .8rem auto 0; font-size: .8
 .chat-user .chat-bubble { border-color: var(--deep); background: var(--deep); color: white; border-radius: 16px 4px 16px 16px; }
 .chat-guide-link { display: inline-block; margin-top: .25rem; font-weight: 600; font-size: .825rem; }
 .chat-evidence { margin-top: .75rem; font-size: .75rem; }
+.chat-product { padding-top: .8rem; margin-top: .8rem; border-top: 1px solid var(--line); }
+.chat-product h3 { margin: 0 0 .5rem; font-size: .95rem; }
+.chat-comparison { width: 100%; table-layout: fixed; border-collapse: collapse; margin: 1rem 0; font-size: .8rem; line-height: 1.5; }
+.chat-comparison caption { text-align: left; font-weight: 650; color: var(--deep); padding-bottom: .6rem; }
+.chat-comparison th, .chat-comparison td { text-align: left; vertical-align: top; padding: .7rem .45rem; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.chat-comparison thead th { background: #edf3ef; color: var(--deep); }
+.chat-comparison th:first-child { width: 25%; }
+.chat-comparison tbody th { font-weight: 600; }
 .chat-evidence summary { cursor: pointer; color: var(--muted); padding: .25rem 0; }
 .chat-evidence a { display: block; margin-top: .5rem; }
 .chat-dentist-question { margin-top: .75rem !important; padding-left: .75rem; border-left: 2px solid var(--teal); }

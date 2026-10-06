@@ -16,6 +16,14 @@ async function main() {
     const answer = await result.json();
     assert.equal(answer.entries[0].id, 'visit-questions');
     assert.equal(answer.entries[0].bullets.length, 5);
+    const brushAdvice = await (await post({ question: 'Do I need an electric toothbrush?' })).json();
+    assert.equal(brushAdvice.entries[0].id, 'electric-brush');
+    assert.ok(!brushAdvice.entries[0].products?.length);
+    const accepted = await (await post({ question: 'Yes please', context: brushAdvice.context })).json();
+    assert.equal(accepted.entries[0].products.length, 2);
+    const declined = await (await post({ question: 'No thanks', context: brushAdvice.context })).json();
+    assert.equal(declined.entries[0].id, 'acknowledgement');
+    assert.ok(!declined.context.pending);
     const contextual = await post({ question: 'It is an adult tooth', context: { lastIntent: 'loose-tooth' } });
     assert.equal((await contextual.json()).entries[0].id, 'loose-adult');
     const recommended = await (await post({ question: 'Electric toothbrush recommendations' })).json();

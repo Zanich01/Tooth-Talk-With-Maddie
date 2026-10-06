@@ -65,11 +65,13 @@ if (finder) {
         } catch { useBackend = false; }
       }
       if (!result) {
-        const [answers, products] = await Promise.all([
-          loadCatalog('data/answers.json?v=20261005-floss-timing'),
-          loadCatalog('data/products.json?v=20261005-floss-timing')
+        const [answerLibrary, productLibrary] = await Promise.allSettled([
+          loadCatalog('data/answers.json?v=20261006-chat-quality'),
+          loadCatalog('data/products.json?v=20261006-chat-quality')
         ]);
-        result = DentalEngine.resolve(question, answers, context, products);
+        if (answerLibrary.status !== 'fulfilled') throw answerLibrary.reason;
+        result = DentalEngine.resolve(question, answerLibrary.value, context,
+          productLibrary.status === 'fulfilled' ? productLibrary.value : []);
       }
       await loadingBeat;
       if(request!==version)return;
@@ -78,17 +80,41 @@ if (finder) {
       reply.bubble.replaceChildren();
       if(result.type !== 'answer') {
         reply.bubble.append(element('p',result.message));
-        if(result.type === 'unknown') {
-          const link=element('a','Build a question list for your dentist →');link.href='visit-planner.html';reply.bubble.append(link);
-        }
         setSuggestions(result.suggestions || []);
       } else {
         for(const entry of result.entries) {
           reply.bubble.append(element('p',entry.answer));
+          if (entry.comparison?.rows.length) {
+            const table = element('table', null, 'chat-comparison');
+            table.append(element('caption', entry.comparison.caption || 'How these options differ'));
+            const head = element('thead');
+            const header = element('tr');
+            const criterion = element('th', 'Feature');
+            criterion.scope = 'col';
+            header.append(criterion);
+            for (const product of entry.comparison.products) {
+              const cell = element('th', product.comparisonName || product.shortName || product.name);
+              cell.scope = 'col';
+              header.append(cell);
+            }
+            head.append(header);
+            const body = element('tbody');
+            const labels = { 'Cleaning action': 'Motion', 'Brush head': 'Head shape', 'Replacement heads': 'Head fit', 'Counter space': 'Space', 'Cleaning settings': 'Settings', 'Included nozzles': 'Nozzles', 'How it is used': 'Use', 'Tray setup': 'Setup', 'Where it is used': 'Use', 'Practical fit': 'Fits your routine' };
+            for (const row of entry.comparison.rows) {
+              const line = element('tr');
+              const label = element('th', labels[row.label] || row.label);
+              label.scope = 'row';
+              line.append(label);
+              for (const value of row.values) line.append(element('td', value));
+              body.append(line);
+            }
+            table.append(head, body);
+            reply.bubble.append(table);
+          }
           for (const product of entry.products || []) {
             const card = element('section', null, 'chat-product');
-            card.append(element('h3', product.name), element('p', product.description));
-            const link = element('a', 'View product →', 'chat-guide-link');
+            if (!entry.comparison) card.append(element('h3', product.name), element('p', product.description));
+            const link = element('a', entry.comparison ? `View ${product.shortName || product.name} →` : 'View product →', 'chat-guide-link');
             link.href = product.url;
             card.append(link);
             reply.bubble.append(card);
@@ -98,15 +124,21 @@ if (finder) {
             for(const bullet of entry.bullets) list.append(element('li',bullet));
             reply.bubble.append(list);
           }
-          const link=element('a',entry.url.startsWith('https:')?'Read more from the source':'Explore the full guide →','chat-guide-link');link.href=entry.url;reply.bubble.append(link);
-          const details=element('details',null,'chat-evidence');
-          details.append(element('summary','Sources & a question for your dentist'));
-          details.append(element('p',entry.prompt,'chat-dentist-question'));
-          for(const source of entry.sources || []) {
-            const sourceLink=element('a',source.title);sourceLink.href=source.url;details.append(sourceLink);
+          if (entry.url) {
+            const label = entry.guideLabel || (entry.url.startsWith('https:') ? 'Read more from the source' : 'Explore the full guide →');
+            const link=element('a',label,'chat-guide-link');link.href=entry.url;reply.bubble.append(link);
           }
-          details.append(element('p',`Sources checked ${entry.checked || 'October 4, 2026'}. Clinician review pending.`,'chat-source-date'));
-          reply.bubble.append(details);
+          if (entry.prompt || entry.sources?.length) {
+            const details=element('details',null,'chat-evidence');
+            details.append(element('summary','Sources & a question for your dentist'));
+            if (entry.prompt) details.append(element('p',entry.prompt,'chat-dentist-question'));
+            for(const source of entry.sources || []) {
+              const sourceLink=element('a',source.title);sourceLink.href=source.url;details.append(sourceLink);
+            }
+            if (entry.checked) details.append(element('p',`Sources checked ${entry.checked}. Clinician review pending.`,'chat-source-date'));
+            else if (entry.sourceNote) details.append(element('p',entry.sourceNote,'chat-source-date'));
+            reply.bubble.append(details);
+          }
         }
         setSuggestions(result.entries[0].followups || []);
       }

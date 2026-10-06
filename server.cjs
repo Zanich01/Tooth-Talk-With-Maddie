@@ -32,6 +32,7 @@ function createServer({ answers, products = [], publicFiles }) {
         const context = typeof data.context?.lastIntent === 'string' ? {
           lastIntent: data.context.lastIntent.slice(0, 80),
           productGroup: typeof data.context.productGroup === 'string' ? data.context.productGroup.slice(0, 80) : undefined,
+          pending: data.context.pending === 'product-options' ? 'product-options' : undefined,
           productNames: Array.isArray(data.context.productNames) ? data.context.productNames.filter(name => typeof name === 'string').slice(0, 4) : []
         } : {};
         // No request text is logged or written to disk. Context belongs to the browser session.

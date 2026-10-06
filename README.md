@@ -63,9 +63,9 @@ Current retailer links remain ordinary links. Before monetization, supply the ap
 
 ## Dental question engine
 
-The Q&A chat uses 24 sourced answers in `data/answers.json`. The shared `assets/js/dental-engine.js` recognizes question intent, topic aliases, basic negation, and selected contextual follow-ups. It distinguishes appointment preparation from visit frequency, symptoms from routine questions, and adult from baby loose teeth. Close matches and incomplete questions can request clarification; unsupported questions receive a fallback instead of invented advice. This is a curated intent system, not generative AI or a diagnostic tool. Coverage remains limited and clinician review is pending.
+The Q&A chat uses 33 sourced answers in `data/answers.json`. The shared `assets/js/dental-engine.js` recognizes question intent, topic aliases, basic negation, and selected contextual follow-ups. It distinguishes appointment preparation from visit frequency, symptoms from routine questions, and adult from baby loose teeth. Close matches and incomplete questions can request clarification; unsupported questions receive a fallback instead of invented advice. This is a curated intent system, not generative AI or a diagnostic tool. Coverage remains limited and clinician review is pending.
 
-`server.cjs` provides `POST /api/answer` with `{question, context}` and returns an answer, clarification, or unknown result. Context includes only the last answer intent. The browser handles chat history and does not persist it. The local server does not log or save questions and makes no outside AI calls. It binds to loopback, limits body size and requests, checks origins, and only serves public website files. If it is unavailable, the browser resolves answers with the same engine and catalog.
+`server.cjs` provides `POST /api/answer` with `{question, context}` and returns an answer, clarification, or unknown result. Context records the last answer intent, the current product category and options, and whether the visitor was offered product recommendations. The browser handles chat history and does not persist it. The local server does not log or save questions and makes no outside AI calls. It binds to loopback, limits body size and requests, checks origins, and only serves public website files. If it is unavailable, the browser resolves answers with the same engine and catalog.
 
 The existing GitHub Pages deployment runs the browser engine only. Hosting the Node backend publicly would require a server-capable host and deployment work; this local preview does not deploy it. Public hosting may cost money even though the engine has no API usage charges. The basic per-process rate limit is for local/small-instance use; shared deployment needs coordinated limits.
 
@@ -73,6 +73,7 @@ Validation:
 
 ```
 node scripts/check_answers.cjs
+node scripts/check_conversations.cjs
 node scripts/check_backend.cjs
 python scripts/check_site.py
 ```
@@ -86,3 +87,9 @@ Every page has an “Ask a question” launcher in place of the former back-to-t
 ## Daily routine update
 
 The Homecare Routine and FAQ pages present Maddie’s preference to floss first, then brush. Walkthroughs follow that sequence; water flossing is described as additional gum care. The library now has 27 sourced answers, including technique, tool alternatives, and floss reuse. Regression checks ensure tool mentions do not override bleeding-gum or frequency questions. Clinician review remains pending.
+
+## Advice and product comparisons
+
+Care questions receive educational answers first. Maddie’s electric-toothbrush advice offers to explore products, but purchase cards appear only after a request or an accepted offer. Product questions use `data/products.json`; `comparisonFacts` provides recorded differences, `shortName`/`comparisonName` labels the table, and `factSources` links product records. Avoid adding unverified specifications or live price claims. A missing feature is acknowledged rather than guessed.
+
+Comparison follow-ups retain the products already shown. A new educational topic clears that product context. Suggested questions stay relevant to the current subject. The engine and optional backend share these rules and make no outside AI calls. `scripts/check_conversations.cjs` covers advice, accepted and declined offers, actual comparison rows, topic changes, constraints, and unsupported requests.

@@ -395,9 +395,9 @@
   },
   {
     "question": "Do I need an electric toothbrush?",
-    "answer": "You can clean effectively with a manual or powered brush. Choose a soft-bristled brush you can use comfortably and consistently, and ask your hygienist to show you the technique for that brush.",
+    "answer": "Maddie highly recommends electric toothbrushes. They do the brushing movement for you and can make a consistent routine easier. A soft manual brush can also clean effectively when used well, so an electric brush is a recommendation rather than a requirement. Would you like me to show you the options Maddie recommends or compare how they differ?",
     "prompt": "Which brush will be easiest for me to use well?",
-    "url": "pr.html",
+    "url": "homecare-routine.html#daily-routine",
     "terms": [
       "electric",
       "powered brush",
@@ -804,5 +804,127 @@
       "How do I floss properly?",
       "How often should I floss?"
     ]
+  },
+  {
+    "id": "mouthwash-order",
+    "question": "When should I use mouthwash?",
+    "answer": "In Maddie’s routine, use mouthwash after flossing and before brushing. The order is string floss, water floss if you use it, mouthwash, then brush with fluoride toothpaste—think of sweeping before you mop! Follow the directions for your rinse, especially if it is prescribed.",
+    "prompt": "Which mouthwash fits my needs, and when should I use it?",
+    "url": "homecare-routine.html#daily-routine",
+    "terms": [
+      "mouthwash before brushing",
+      "mouthwash after flossing",
+      "rinse order",
+      "when mouthwash"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Mouthwash",
+        "url": "https://www.ada.org/resources/ada-library/oral-health-topics/mouthrinse-mouthwash"
+      }
+    ],
+    "checked": "October 6, 2026",
+    "followups": [
+      "Should I string floss or water floss first?",
+      "Can mouthwash replace flossing?"
+    ]
+  },
+  {
+    "id": "fluoride-basics",
+    "question": "What does fluoride do?",
+    "answer": "Fluoride helps strengthen enamel and prevent cavities. Maddie recommends brushing twice a day with fluoride toothpaste. Prescription-strength fluoride toothpaste and in-office varnish are different options your dental team may recommend based on your cavity risk.",
+    "prompt": "Which fluoride toothpaste or treatment fits my cavity risk?",
+    "url": "cpd.html",
+    "terms": [
+      "what is fluoride",
+      "what does fluoride",
+      "fluoride toothpaste necessary",
+      "fluoride toothpaste benefits"
+    ],
+    "followups": [
+      "How often and how long should I brush?",
+      "Can a cavity go away on its own?"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Fluoride",
+        "url": "https://www.ada.org/resources/ada-library/oral-health-topics/fluoride-topical-and-systemic-supplements"
+      }
+    ],
+    "checked": "October 6, 2026"
+  },
+  {
+    "id": "cavity-prevention-basics",
+    "question": "How does brushing help prevent cavities?",
+    "answer": "Brushing removes plaque, the sticky bacterial film on your teeth. Fluoride toothpaste helps strengthen enamel against acid attacks. Brush twice a day for two minutes and clean between your teeth daily. Your dentist can advise you about other cavity-prevention steps based on your needs.",
+    "prompt": "Which areas am I missing, and what else can lower my cavity risk?",
+    "url": "cpd.html",
+    "terms": [
+      "brushing prevent cavities",
+      "brush prevent cavities",
+      "how prevent cavities",
+      "prevent tooth decay",
+      "avoid cavities"
+    ],
+    "followups": [
+      "How often and how long should I brush?",
+      "What does fluoride do?"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Brushing your teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth"
+      }
+    ],
+    "checked": "October 6, 2026"
+  },
+  {
+    "id": "water-floss-basics",
+    "question": "What is water flossing?",
+    "answer": "A water flosser sends a stream of water along the gumline and between teeth. Maddie recommends it as additional gum care alongside string flossing and brushing. Her routine is string floss first, water floss next, mouthwash, then brushing. If you would like, I can explain the countertop and cordless options.",
+    "prompt": "Can you show me how to use a water flosser for my gums and dental work?",
+    "url": "homecare-routine.html#daily-routine",
+    "terms": [
+      "what is water flossing",
+      "what is water flosser",
+      "how does water flosser work",
+      "what does water flosser do"
+    ],
+    "followups": [
+      "Should I string floss or water floss first?",
+      "How often should I floss?"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Interdental cleaners",
+        "url": "https://www.ada.org/resources/ada-library/oral-health-topics/floss"
+      }
+    ],
+    "checked": "October 6, 2026"
+  },
+  {
+    "id": "brush-pressure",
+    "question": "How hard should I brush?",
+    "answer": "Brush gently with soft bristles. Pressing harder is not the goal and can irritate gums. With an electric toothbrush, guide the head along each tooth and follow the model’s instructions; let the bristles do the movement. Ask your hygienist to check your technique.",
+    "prompt": "Can you check how much pressure I am using when I brush?",
+    "url": "homecare-routine.html#daily-routine",
+    "terms": [
+      "brush pressure",
+      "how hard brush",
+      "brush too hard",
+      "how much pressure brushing",
+      "press toothbrush"
+    ],
+    "followups": [
+      "How often and how long should I brush?",
+      "Do I need an electric toothbrush?"
+    ],
+    "sources": [
+      {
+        "title": "ADA: Brushing your teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth"
+      }
+    ],
+    "checked": "October 6, 2026"
   }
 ]
