@@ -110,14 +110,23 @@ if (!embeddedChat) {
   chatMobile.addEventListener("change", syncChatViewport);
   // Stop a swipe at a chat scroll boundary from reaching the page on iOS.
   let touchY = 0;
+  let touchX = 0;
   dialog.addEventListener("touchstart", event => {
-    if (event.touches.length === 1) touchY = event.touches[0].clientY;
+    if (event.touches.length === 1) {
+      touchY = event.touches[0].clientY;
+      touchX = event.touches[0].clientX;
+    }
   }, { passive: true });
   dialog.addEventListener("touchmove", event => {
     if (!chatMobile.matches || event.touches.length !== 1) return;
     const nextY = event.touches[0].clientY;
     const delta = nextY - touchY;
+    const nextX = event.touches[0].clientX;
+    const deltaX = nextX - touchX;
     touchY = nextY;
+    touchX = nextX;
+    const comparison = event.target.closest(".chat-comparison-wrap");
+    if (comparison && comparison.scrollWidth > comparison.clientWidth && Math.abs(deltaX) > Math.abs(delta)) return;
     const scroller = event.target.closest("textarea, .chat-messages");
     const canScroll = scroller && (
       (delta > 0 && scroller.scrollTop > 0) ||
@@ -163,15 +172,15 @@ if (!embeddedChat) {
         document.body.append(script);
       });
       chatLoading = (async () => {
-        const response = await fetch("questions.html?v=20261006-product-choice");
+        const response = await fetch("questions.html?v=20261006-dental-conversations");
         if (!response.ok) throw new Error("Chat unavailable");
         const page = new DOMParser().parseFromString(await response.text(), "text/html");
         const workspace = page.querySelector(".chat-workspace");
         if (!workspace) throw new Error("Chat unavailable");
-        if (!window.DentalEngine) await loadScript("assets/js/dental-engine.js?v=20261006-product-choice");
+        if (!window.DentalEngine) await loadScript("assets/js/dental-engine.js?v=20261006-dental-conversations");
         content.append(document.importNode(workspace, true));
         placeCloseButton();
-        await loadScript("assets/js/answer-finder.js?v=20261006-chat-quality");
+        await loadScript("assets/js/answer-finder.js?v=20261006-dental-conversations");
         loading.remove();
       })().catch(() => {
         dialog.prepend(close);

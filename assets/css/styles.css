@@ -515,6 +515,12 @@ footer .footer-disclaimer { max-width: 78ch; margin: .8rem auto 0; font-size: .8
 .chat-comparison thead th { background: #edf3ef; color: var(--deep); }
 .chat-comparison th:first-child { width: 25%; }
 .chat-comparison tbody th { font-weight: 600; }
+.chat-comparison-wrap { max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; }
+.chat-comparison-wide .chat-comparison th:first-child { width: 130px; }
+.chat-comparison-wide:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.chat-comparison-hint { color: var(--muted); font-size: .75rem; }
+.chat-answer-title { margin: 1.4rem 0 .5rem; font-size: 1rem; color: var(--deep); }
+.chat-answer-title:first-child { margin-top: 0; }
 .chat-evidence summary { cursor: pointer; color: var(--muted); padding: .25rem 0; }
 .chat-evidence a { display: block; margin-top: .5rem; }
 .chat-dentist-question { margin-top: .75rem !important; padding-left: .75rem; border-left: 2px solid var(--teal); }

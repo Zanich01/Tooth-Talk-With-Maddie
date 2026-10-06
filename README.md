@@ -63,9 +63,9 @@ Current retailer links remain ordinary links. Before monetization, supply the ap
 
 ## Dental question engine
 
-The Q&A chat uses 33 sourced answers in `data/answers.json`. The shared `assets/js/dental-engine.js` recognizes question intent, topic aliases, basic negation, and selected contextual follow-ups. It distinguishes appointment preparation from visit frequency, symptoms from routine questions, and adult from baby loose teeth. Close matches and incomplete questions can request clarification; unsupported questions receive a fallback instead of invented advice. This is a curated intent system, not generative AI or a diagnostic tool. Coverage remains limited and clinician review is pending.
+The Q&A chat uses 111 sourced dental answers in `data/answers.json`, covering daily care, gums, cavities, whitening, braces, implants, restorations, children’s care, treatment recovery, and other oral-health topics. The shared `assets/js/dental-engine.js` recognizes request types, topic aliases, common dental typos, negation, and contextual follow-ups. It can answer several questions or comparisons in one message. Incomplete questions request clarification, and unsupported questions receive a dental-specific fallback. This is a curated conversation system with finite coverage, not generative AI or a diagnostic tool. New clinical wording still needs Maddie’s review.
 
-`server.cjs` provides `POST /api/answer` with `{question, context}` and returns an answer, clarification, or unknown result. Context records the last answer intent, the current product category and options, and whether the visitor was offered product recommendations. The browser handles chat history and does not persist it. The local server does not log or save questions and makes no outside AI calls. It binds to loopback, limits body size and requests, checks origins, and only serves public website files. If it is unavailable, the browser resolves answers with the same engine and catalog.
+`server.cjs` provides `POST /api/answer` with `{question, context}` and returns an answer, clarification, or unknown result. Messages can contain up to 1,500 characters. Context records recent answer topics, current products, previous comparison sets, accepted product offers, and category-specific format preferences and exclusions. Both runtimes sanitize context against known product names and categories. The browser handles chat history without persisting it; New chat clears preferences and comparisons. The local server does not log or save questions and makes no outside AI calls. It binds to loopback, limits body size and requests, checks origins, and only serves public website files. If it is unavailable, the browser resolves answers with the same engine and catalog.
 
 The existing GitHub Pages deployment runs the browser engine only. Hosting the Node backend publicly would require a server-capable host and deployment work; this local preview does not deploy it. Public hosting may cost money even though the engine has no API usage charges. The basic per-process rate limit is for local/small-instance use; shared deployment needs coordinated limits.
 
@@ -74,6 +74,7 @@ Validation:
 ```
 node scripts/check_answers.cjs
 node scripts/check_conversations.cjs
+node scripts/check_dental_coverage.cjs
 node scripts/check_backend.cjs
 python scripts/check_site.py
 ```
@@ -86,10 +87,16 @@ Every page has an “Ask a question” launcher in place of the former back-to-t
 
 ## Daily routine update
 
-The Homecare Routine and FAQ pages present Maddie’s preference to floss first, then brush. Walkthroughs follow that sequence; water flossing is described as additional gum care. The library now has 27 sourced answers, including technique, tool alternatives, and floss reuse. Regression checks ensure tool mentions do not override bleeding-gum or frequency questions. Clinician review remains pending.
+The Homecare Routine and FAQ pages present Maddie’s preference to floss first, then brush. The chat preserves her sequence: string floss, water floss, mouthwash, then fluoride brushing, with the sweeping-before-mopping analogy. Fluoride or prescribed rinses receive their own label-specific timing guidance. Regression checks ensure tool mentions do not override bleeding-gum, frequency, technique, or treatment-care questions.
 
 ## Advice and product comparisons
 
 Care questions receive educational answers first. Maddie’s electric-toothbrush advice offers to explore products, but purchase cards appear only after a request or an accepted offer. Product questions use `data/products.json`; `comparisonFacts` provides recorded differences, `shortName`/`comparisonName` labels the table, and `factSources` links product records. Avoid adding unverified specifications or live price claims. A missing feature is acknowledged rather than guessed.
 
-Comparison follow-ups retain the products already shown. A new educational topic clears that product context. Suggested questions stay relevant to the current subject. The engine and optional backend share these rules and make no outside AI calls. `scripts/check_conversations.cjs` covers advice, accepted and declined offers, actual comparison rows, topic changes, constraints, and unsupported requests.
+Comparison follow-ups can select the first/second/third option, revisit an earlier comparison, add a named option, or compare an entire category. Multiple categories receive separate comparisons. Tables with more than two options scroll horizontally inside the chat on small screens. A new educational topic clears active product references while preserving category preferences, so asking about floss timing does not lose a prior cordless preference. Suggested questions stay relevant to the reply.
+
+New topics use `requiredGroups` for complete concepts, `exclude` for incompatible wording, and a `priority` when specific care needs to outrank a general subject. Every answer needs authoritative `sources`, a relevant dentist question, and supported follow-ups. `checked` means sources were actually checked on that date; otherwise use `sourceNote`. Product `aliases` and `family` resolve model names and grouping without guessing brand specifications. Do not promise exhaustive understanding: an unrecorded specification, a personal diagnosis, drug selection, or an unrelated subject should ask for clarification or explain the limit.
+
+The engine and optional backend share all rules. `scripts/check_conversations.cjs` covers advice and offers; `scripts/check_dental_coverage.cjs` adds dental paraphrases, multiple requests and comparisons, preference chains, and clinical boundaries. Run both when changing routing or the catalogs.
+
+With Playwright available, run `node scripts/check_browser.cjs` against a running `node server.cjs` preview. It checks 390px and 1280px layouts through both the local browser engine and Node API, including quick-question clicks, mobile table swipes, reset/reopen, and the Q&A page. `TEST_DENTAL_URL`, `PLAYWRIGHT_PATH`, and `CHROMIUM_PATH` can override the preview URL, module, and browser executable for your environment.

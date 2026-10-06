@@ -68,7 +68,10 @@
       "saliva",
       "xerostomia",
       "medication",
-      "medications"
+      "medications",
+      "xerostomia",
+      "drymouth",
+      "mouth dry"
     ],
     "followups": [
       "Does a sensitive tooth mean I have a cavity?",
@@ -378,7 +381,9 @@
       "brush my teeth",
       "two minutes",
       "2 minutes",
-      "how long brush"
+      "how long brush",
+      "brush twice",
+      "two minutes brushing"
     ],
     "sources": [
       {
@@ -479,7 +484,11 @@
       "after brushing",
       "before or after",
       "floss first",
-      "brush first"
+      "brush first",
+      "floss timing",
+      "time to floss",
+      "best time for floss",
+      "floss comes first"
     ],
     "sources": [
       {
@@ -516,7 +525,8 @@
       "How often should I floss?",
       "Why do my gums bleed?"
     ],
-    "id": "plaque"
+    "id": "plaque",
+    "comparisonTopic": true
   },
   {
     "question": "Why do I have bad breath?",
@@ -528,7 +538,10 @@
       "breath smells",
       "stinky breath",
       "halitosis",
-      "mouth smells"
+      "mouth smells",
+      "halitosis",
+      "badbreath",
+      "breath smells"
     ],
     "sources": [
       {
@@ -926,5 +939,3187 @@
       }
     ],
     "checked": "October 6, 2026"
+  },
+  {
+    "id": "daily-routine",
+    "question": "What is Maddie’s daily oral-care routine?",
+    "answer": "Maddie recommends string floss first, water floss next if you use one, mouthwash, and finally brushing with fluoride toothpaste—think of sweeping before you mop! Brush twice a day for two minutes and clean between your teeth daily. Spit out toothpaste after brushing; avoid washing the fluoride away with a water rinse. Follow any individual prescription or aftercare instructions from your dental team.",
+    "requiredGroups": [
+      [
+        "routine",
+        "oral care steps",
+        "oral hygiene steps",
+        "cleaning order",
+        "order of everything",
+        "sequence",
+        "daily oral care",
+        "take care of my mouth",
+        "care for my tooth",
+        "oral care",
+        "oral hygiene",
+        "take care of my tooth"
+      ]
+    ],
+    "terms": [
+      "routine",
+      "oral care steps",
+      "oral hygiene steps",
+      "cleaning order",
+      "order of everything",
+      "sequence",
+      "daily oral care"
+    ],
+    "priority": 50,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Brushing your teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "When should I use mouthwash?",
+      "How do I floss properly?"
+    ]
+  },
+  {
+    "id": "brushing-technique",
+    "question": "How do I brush properly?",
+    "answer": "Use a soft-bristled brush and fluoride toothpaste. Aim the bristles gently toward the gumline and clean every surface for two minutes. With a manual brush, use small gentle movements. With an electric brush, guide the head slowly from tooth to tooth and let its movement do the work; follow that model’s directions.",
+    "requiredGroups": [
+      [
+        "brush",
+        "toothbrush"
+      ],
+      [
+        "how to",
+        "how do i",
+        "technique",
+        "properly",
+        "correctly",
+        "angle",
+        "45 degrees"
+      ]
+    ],
+    "terms": [
+      "brush",
+      "toothbrush",
+      "how to",
+      "how do i",
+      "technique",
+      "properly",
+      "correctly",
+      "angle",
+      "45 degrees"
+    ],
+    "priority": 70,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Brushing your teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How hard should I brush?",
+      "How often and how long should I brush?"
+    ],
+    "exclude": [
+      "floss"
+    ]
+  },
+  {
+    "id": "rinse-after-brushing",
+    "question": "Should I rinse with water after brushing?",
+    "answer": "Spit out excess toothpaste after brushing rather than rinsing immediately with water. This leaves fluoride in contact with your teeth. In Maddie’s routine, the rinse step comes before brushing. A prescribed rinse or fluoride mouthrinse may have different timing instructions; follow its label and your dental team’s advice.",
+    "requiredGroups": [
+      [
+        "rinse",
+        "rinsing",
+        "spit",
+        "water",
+        "wash",
+        "toothpaste"
+      ],
+      [
+        "after brushing",
+        "after i brush",
+        "after brush",
+        "toothpaste away",
+        "spit or rinse"
+      ]
+    ],
+    "terms": [
+      "rinse",
+      "rinsing",
+      "spit",
+      "water",
+      "after brushing",
+      "after i brush",
+      "after brush",
+      "toothpaste away",
+      "spit or rinse"
+    ],
+    "priority": 115,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/fluoride",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Fluoride",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/fluoride"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "When should I use mouthwash?"
+    ]
+  },
+  {
+    "id": "acid-brushing",
+    "question": "Should I brush immediately after acidic food or drinks?",
+    "answer": "After acidic drinks or food, rinse with water and give your mouth time to recover before brushing. Brushing immediately after an acid exposure can add wear to softened enamel. Keep acidic drinks with meals rather than sipping them throughout the day, and ask your dental team about erosion if it is a frequent concern.",
+    "requiredGroups": [
+      [
+        "brush",
+        "brushing"
+      ],
+      [
+        "acidic",
+        "acid",
+        "lemon",
+        "soda",
+        "orange juice",
+        "vomit",
+        "vomiting",
+        "reflux"
+      ]
+    ],
+    "terms": [
+      "brush",
+      "brushing",
+      "acidic",
+      "acid",
+      "lemon",
+      "soda",
+      "orange juice",
+      "vomit",
+      "vomiting",
+      "reflux"
+    ],
+    "priority": 110,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/dietary-acids-and-your-teeth",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Dietary acids and your teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/dietary-acids-and-your-teeth"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What causes enamel erosion?"
+    ]
+  },
+  {
+    "id": "toothpaste-choice",
+    "question": "What should I look for in a toothpaste?",
+    "answer": "For routine cavity prevention, choose a fluoride toothpaste you can use comfortably twice a day. A sensitivity formula may help sensitive teeth, while prescription-strength fluoride is for people whose dentist recommends it. Toothpaste cannot remove hardened tartar or treat a tooth infection. What would you like help with: cavities, sensitivity, or dry mouth?",
+    "requiredGroups": [
+      [
+        "toothpaste"
+      ],
+      [
+        "look for",
+        "choose",
+        "which",
+        "what kind",
+        "what type",
+        "best",
+        "recommend"
+      ]
+    ],
+    "terms": [
+      "toothpaste",
+      "look for",
+      "choose",
+      "which",
+      "what kind",
+      "what type",
+      "best",
+      "recommend"
+    ],
+    "priority": 70,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/fluoride",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Fluoride",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/fluoride"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What does fluoride do?",
+      "Can sensitivity toothpaste help?"
+    ],
+    "exclude": [
+      "prescription",
+      "fluoridex",
+      "whitening",
+      "child",
+      "baby"
+    ]
+  },
+  {
+    "id": "sensitivity-toothpaste",
+    "question": "Can sensitivity toothpaste help?",
+    "answer": "A desensitizing toothpaste can help some types of tooth sensitivity, and it may take repeated use to notice a difference. Choose one with fluoride and follow the label. Sensitivity in one tooth, lingering pain, or a new change should be examined rather than assumed to be ordinary sensitivity.",
+    "requiredGroups": [
+      [
+        "sensitivity",
+        "sensitive",
+        "desensitizing"
+      ],
+      [
+        "toothpaste",
+        "paste"
+      ]
+    ],
+    "terms": [
+      "sensitivity",
+      "sensitive",
+      "desensitizing",
+      "toothpaste",
+      "paste"
+    ],
+    "priority": 120,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/sensitive-teeth",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Sensitive teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/sensitive-teeth"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Does a sensitive tooth mean I have a cavity?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "water-floss-technique",
+    "question": "How do I use a water flosser?",
+    "answer": "Fill the reservoir as directed, start with a comfortable low setting, and lean over the sink. Guide the tip along the gumline, pausing between teeth; follow the device instructions for tip placement and any dental work. Maddie recommends string floss first, then water floss, mouthwash, and brushing. Ask your hygienist to demonstrate the pressure and technique for your gums.",
+    "requiredGroups": [
+      [
+        "water floss",
+        "water flosser",
+        "waterpik",
+        "oral irrigator"
+      ],
+      [
+        "how to",
+        "how do i",
+        "technique",
+        "properly",
+        "use it",
+        "use one"
+      ]
+    ],
+    "terms": [
+      "water floss",
+      "water flosser",
+      "waterpik",
+      "oral irrigator",
+      "how to",
+      "how do i",
+      "technique",
+      "properly",
+      "use it",
+      "use one"
+    ],
+    "priority": 115,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Flossing",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Should I string floss or water floss first?",
+      "Why do my gums bleed?"
+    ]
+  },
+  {
+    "id": "water-flosser-cleaning",
+    "question": "How do I clean my water flosser?",
+    "answer": "Follow your model’s cleaning instructions for the tank, handle, hose, and tip. Empty remaining water, let parts dry as directed, and replace tips on the manufacturer’s schedule. Cleaning methods differ by device, so check before using vinegar, disinfectant, or the dishwasher. Do not share a tip.",
+    "requiredGroups": [
+      [
+        "water flosser",
+        "waterpik",
+        "oral irrigator"
+      ],
+      [
+        "clean",
+        "cleaning",
+        "maintain",
+        "maintenance",
+        "wash",
+        "mold",
+        "mould",
+        "dirty",
+        "dishwasher"
+      ]
+    ],
+    "terms": [
+      "water flosser",
+      "waterpik",
+      "oral irrigator",
+      "clean",
+      "cleaning",
+      "maintain",
+      "maintenance",
+      "wash",
+      "mold",
+      "mould",
+      "dirty",
+      "dishwasher"
+    ],
+    "priority": 135,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Flossing",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do I use a water flosser?"
+    ]
+  },
+  {
+    "id": "water-flosser-liquid",
+    "question": "Can I put mouthwash in a water flosser?",
+    "answer": "Use the liquid allowed by your water flosser’s instructions. Some models permit diluted mouthrinse and others restrict additives; do not assume a prescription rinse or essential oil is compatible. If mouthwash is allowed, follow the dilution and flushing instructions for that device.",
+    "requiredGroups": [
+      [
+        "water flosser",
+        "waterpik",
+        "reservoir"
+      ],
+      [
+        "mouthwash",
+        "mouthrinse",
+        "salt water",
+        "add",
+        "put in",
+        "liquid",
+        "essential oil"
+      ]
+    ],
+    "terms": [
+      "water flosser",
+      "waterpik",
+      "reservoir",
+      "mouthwash",
+      "mouthrinse",
+      "salt water",
+      "add",
+      "put in",
+      "liquid",
+      "essential oil"
+    ],
+    "priority": 115,
+    "url": "https://www.ada.org/resources/ada-library/oral-health-topics/mouthrinse-mouthwash",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Mouthrinse",
+        "url": "https://www.ada.org/resources/ada-library/oral-health-topics/mouthrinse-mouthwash"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "When should I use mouthwash?",
+      "How do I clean my water flosser?"
+    ]
+  },
+  {
+    "id": "interdental-brush",
+    "question": "How do interdental brushes differ from floss?",
+    "answer": "String floss slides through tight contacts and wraps around each tooth. An interdental brush has small bristles that clean an open space; it should fit gently without forcing the wire against the tooth. A water flosser adds a stream of water. Your hygienist can size interdental brushes for you and show how to clean around bridges, braces, or implants.",
+    "requiredGroups": [
+      [
+        "interdental brush",
+        "interproximal brush",
+        "between tooth brush",
+        "proxy brush"
+      ]
+    ],
+    "terms": [
+      "interdental brush",
+      "interproximal brush",
+      "between tooth brush",
+      "proxy brush"
+    ],
+    "priority": 105,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Flossing",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do I floss properly?",
+      "What if string floss is difficult to use?"
+    ]
+  },
+  {
+    "id": "floss-picks",
+    "question": "Are floss picks as useful as string floss?",
+    "answer": "Floss picks can make reaching between teeth easier, especially when holding string floss is difficult. The important part is gently contacting both tooth surfaces rather than just moving through the gap. String floss is easier to curve around each tooth and lets you use a fresh section. Ask your hygienist to check your technique with the tool you prefer.",
+    "requiredGroups": [
+      [
+        "floss pick",
+        "floss stick",
+        "floss handle"
+      ]
+    ],
+    "terms": [
+      "floss pick",
+      "floss stick",
+      "floss handle"
+    ],
+    "priority": 70,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Flossing",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do I floss properly?",
+      "Can I reuse dental floss?"
+    ]
+  },
+  {
+    "id": "floss-stuck",
+    "question": "What should I do if floss gets stuck or shreds?",
+    "answer": "Do not snap or force floss through a tight area. Gently release it and try a fresh piece with careful technique. Repeated shredding or catching in one spot can come from a tight contact, rough restoration, or another issue that your dentist should check. Do not use a sharp object to clear it.",
+    "requiredGroups": [
+      [
+        "floss"
+      ],
+      [
+        "stuck",
+        "shred",
+        "shreds",
+        "caught",
+        "catches",
+        "tight contact",
+        "cant get through"
+      ]
+    ],
+    "terms": [
+      "floss",
+      "stuck",
+      "shred",
+      "shreds",
+      "caught",
+      "catches",
+      "tight contact",
+      "cant get through"
+    ],
+    "priority": 110,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Flossing",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do I floss properly?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "floss-duration",
+    "question": "How long should flossing take?",
+    "answer": "There is no single minute target for flossing. Take enough time to gently clean both sides of every space between your teeth, including the back sides of the last teeth. Maddie recommends doing this daily before brushing—think of sweeping before you mop!",
+    "requiredGroups": [
+      [
+        "floss"
+      ],
+      [
+        "how long",
+        "minutes",
+        "duration"
+      ]
+    ],
+    "terms": [
+      "floss",
+      "how long",
+      "minutes",
+      "duration"
+    ],
+    "priority": 70,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Flossing",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do I floss properly?"
+    ],
+    "exclude": [
+      "water floss"
+    ]
+  },
+  {
+    "id": "tongue-cleaning",
+    "question": "How should I clean my tongue?",
+    "answer": "Gently brush your tongue or use a tongue scraper to remove coating. Work from a comfortable point toward the front with light pressure, rinse the tool, and stop if it hurts or causes bleeding. Tongue cleaning can remove coating, but it does not address every cause of bad breath. Ongoing odor deserves a dental check instead of only adding more products.",
+    "requiredGroups": [
+      [
+        "tongue"
+      ],
+      [
+        "clean",
+        "scrape",
+        "scraper",
+        "coating",
+        "white",
+        "brush",
+        "how"
+      ]
+    ],
+    "terms": [
+      "tongue",
+      "clean",
+      "scrape",
+      "scraper",
+      "coating",
+      "white",
+      "brush",
+      "how"
+    ],
+    "priority": 70,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Brushing your teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Why do I have bad breath?"
+    ],
+    "exclude": [
+      "sore",
+      "ulcer",
+      "lump",
+      "patch"
+    ]
+  },
+  {
+    "id": "mouthwash-types",
+    "question": "How do fluoride, gum-care, and dry-mouth rinses differ?",
+    "answer": "The active ingredient and purpose matter more than the flavor. A fluoride rinse supports cavity prevention; an antimicrobial gum-care rinse targets bacteria as an addition to cleaning; a dry-mouth rinse is aimed at comfort. Some rinses only freshen breath. Check the label for ingredients, age limits, directions, and whether it is prescribed. What would you like the rinse to help with?",
+    "requiredGroups": [
+      [
+        "rinse",
+        "mouthwash"
+      ],
+      [
+        "types",
+        "difference",
+        "compare",
+        "fluoride and",
+        "gum care and",
+        "dry mouth and",
+        "what kind",
+        "which kind"
+      ]
+    ],
+    "terms": [
+      "rinse",
+      "mouthwash",
+      "types",
+      "difference",
+      "compare",
+      "fluoride and",
+      "gum care and",
+      "dry mouth and",
+      "what kind",
+      "which kind"
+    ],
+    "priority": 105,
+    "url": "https://www.ada.org/resources/ada-library/oral-health-topics/mouthrinse-mouthwash",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Mouthrinse",
+        "url": "https://www.ada.org/resources/ada-library/oral-health-topics/mouthrinse-mouthwash"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Can mouthwash replace flossing?",
+      "When should I use mouthwash?"
+    ]
+  },
+  {
+    "id": "alcohol-rinse",
+    "question": "Should my mouthwash be alcohol free?",
+    "answer": "Alcohol-free mouthrinse can be more comfortable if your mouth is dry or a rinse burns. Alcohol content alone does not tell you what the rinse treats; look at its active ingredients and directions. If you have persistent dryness or irritation, bring that up with your dental team.",
+    "requiredGroups": [
+      [
+        "mouthwash",
+        "rinse"
+      ],
+      [
+        "alcohol",
+        "burns",
+        "burning",
+        "sting",
+        "stings"
+      ]
+    ],
+    "terms": [
+      "mouthwash",
+      "rinse",
+      "alcohol",
+      "burns",
+      "burning",
+      "sting",
+      "stings"
+    ],
+    "priority": 70,
+    "url": "https://www.ada.org/resources/ada-library/oral-health-topics/mouthrinse-mouthwash",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Mouthrinse",
+        "url": "https://www.ada.org/resources/ada-library/oral-health-topics/mouthrinse-mouthwash"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Why is my mouth always dry?"
+    ]
+  },
+  {
+    "id": "fluoride-rinse-timing",
+    "question": "When should I use a fluoride mouthrinse?",
+    "answer": "Follow the fluoride rinse’s label or prescription for timing, age suitability, and how long to avoid eating or drinking afterward. Using it at a separate time from brushing can help avoid washing away the more concentrated fluoride from toothpaste. Maddie’s regular non-fluoride mouthwash step is after flossing and before brushing.",
+    "requiredGroups": [
+      [
+        "fluoride"
+      ],
+      [
+        "rinse",
+        "mouthwash"
+      ],
+      [
+        "when",
+        "time",
+        "before",
+        "after",
+        "order"
+      ]
+    ],
+    "terms": [
+      "fluoride",
+      "rinse",
+      "mouthwash",
+      "when",
+      "time",
+      "before",
+      "after",
+      "order"
+    ],
+    "priority": 130,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/fluoride",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Fluoride",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/fluoride"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "When should I use mouthwash?"
+    ]
+  },
+  {
+    "id": "gum-disease",
+    "question": "How do gingivitis and periodontitis differ?",
+    "answer": "Gingivitis is inflammation of the gums without the supporting bone loss seen in periodontitis. Gingivitis can improve with effective home care and professional cleaning. Periodontitis affects the tissues and bone supporting teeth and needs a treatment and maintenance plan. Bleeding alone cannot tell you which one you have.",
+    "requiredGroups": [
+      [
+        "gingivitis",
+        "periodontitis",
+        "periodontal disease",
+        "gum disease"
+      ]
+    ],
+    "terms": [
+      "gingivitis",
+      "periodontitis",
+      "periodontal disease",
+      "gum disease"
+    ],
+    "priority": 85,
+    "url": "https://www.nidcr.nih.gov/health-info/gum-disease",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Gum disease",
+        "url": "https://www.nidcr.nih.gov/health-info/gum-disease"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Why do my gums bleed?",
+      "What is a deep cleaning?"
+    ],
+    "exclude": [
+      "diabetes",
+      "pregnant",
+      "pregnancy",
+      "smoking"
+    ],
+    "comparisonTopic": true
+  },
+  {
+    "id": "deep-cleaning",
+    "question": "What is a deep cleaning?",
+    "answer": "Scaling and root planing, often called a deep cleaning, removes plaque and tartar below the gumline as part of periodontal treatment. It differs from a routine cleaning because it treats affected root surfaces and gum pockets. Your dental team may numb the area and schedule follow-up or periodontal maintenance based on healing.",
+    "requiredGroups": [
+      [
+        "deep cleaning",
+        "scaling and root planing",
+        "root planing",
+        "periodontal scaling",
+        "srp"
+      ]
+    ],
+    "terms": [
+      "deep cleaning",
+      "scaling and root planing",
+      "root planing",
+      "periodontal scaling",
+      "srp"
+    ],
+    "priority": 105,
+    "url": "https://www.nidcr.nih.gov/health-info/gum-disease",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Gum disease",
+        "url": "https://www.nidcr.nih.gov/health-info/gum-disease"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do gingivitis and periodontitis differ?",
+      "What is periodontal maintenance?"
+    ]
+  },
+  {
+    "id": "periodontal-maintenance",
+    "question": "What is periodontal maintenance?",
+    "answer": "Periodontal maintenance is continuing care after gum-disease treatment. Your team checks pockets, bleeding, plaque, and changes in support, and removes deposits that need professional care. Visits may be more frequent than routine cleanings; your interval should match your risk and findings.",
+    "requiredGroups": [
+      [
+        "periodontal maintenance",
+        "perio maintenance",
+        "maintenance cleaning"
+      ]
+    ],
+    "terms": [
+      "periodontal maintenance",
+      "perio maintenance",
+      "maintenance cleaning"
+    ],
+    "priority": 70,
+    "url": "https://www.nidcr.nih.gov/health-info/gum-disease",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Gum disease",
+        "url": "https://www.nidcr.nih.gov/health-info/gum-disease"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How often should I come back?",
+      "How do gingivitis and periodontitis differ?"
+    ]
+  },
+  {
+    "id": "gum-pockets",
+    "question": "What do gum pocket measurements mean?",
+    "answer": "The dental team measures the space between each tooth and its gum with a small probe. They interpret the numbers together with bleeding, recession, attachment changes, and X-rays. A number by itself is not a diagnosis. Ask which areas need attention and how your measurements compare with earlier visits.",
+    "requiredGroups": [
+      [
+        "gum pocket",
+        "pocket depth",
+        "probing",
+        "perio chart",
+        "gum measurement",
+        "3 4 5",
+        "4mm",
+        "5mm",
+        "6mm"
+      ]
+    ],
+    "terms": [
+      "gum pocket",
+      "pocket depth",
+      "probing",
+      "perio chart",
+      "gum measurement",
+      "3 4 5",
+      "4mm",
+      "5mm",
+      "6mm"
+    ],
+    "priority": 70,
+    "url": "https://www.nidcr.nih.gov/health-info/gum-disease",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Gum disease",
+        "url": "https://www.nidcr.nih.gov/health-info/gum-disease"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What is a deep cleaning?"
+    ]
+  },
+  {
+    "id": "gum-recession",
+    "question": "Can receding gums grow back?",
+    "answer": "Receded gum tissue does not simply grow back from brushing or mouthwash. Gentle cleaning and treating the cause can help limit further damage. Recession can expose sensitive roots; your dentist can assess the cause and whether treatment such as a gum graft is appropriate.",
+    "requiredGroups": [
+      [
+        "gum recession",
+        "receding gum",
+        "gum recede",
+        "gum grow back",
+        "exposed root"
+      ]
+    ],
+    "terms": [
+      "gum recession",
+      "receding gum",
+      "gum recede",
+      "gum grow back",
+      "exposed root"
+    ],
+    "priority": 110,
+    "url": "https://www.nidcr.nih.gov/health-info/gum-disease",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Gum disease",
+        "url": "https://www.nidcr.nih.gov/health-info/gum-disease"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How hard should I brush?",
+      "Does a sensitive tooth mean I have a cavity?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "oral-systemic",
+    "question": "How are oral health and overall health connected?",
+    "answer": "Oral health and overall health influence each other. For example, diabetes can increase gum-disease risk, and dry mouth from medications can increase cavity risk. Researchers also study associations between periodontal disease and other conditions; an association does not prove one condition causes another. Dental care supports oral health and complements medical care.",
+    "requiredGroups": [
+      [
+        "oral systemic",
+        "mouth body",
+        "overall health",
+        "heart disease",
+        "heart health",
+        "systemic link"
+      ]
+    ],
+    "terms": [
+      "oral systemic",
+      "mouth body",
+      "overall health",
+      "heart disease",
+      "heart health",
+      "systemic link"
+    ],
+    "priority": 70,
+    "url": "https://www.nidcr.nih.gov/health-info/gum-disease",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Gum disease",
+        "url": "https://www.nidcr.nih.gov/health-info/gum-disease"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How does diabetes affect my mouth?"
+    ]
+  },
+  {
+    "id": "diabetes-mouth",
+    "question": "How does diabetes affect my mouth?",
+    "answer": "Diabetes, especially when blood glucose is not well managed, can increase the risk and severity of gum disease and affect healing. Gum problems, dry mouth, or infections deserve attention. Tell your dental team about your diabetes and work with both your medical and dental teams on care.",
+    "requiredGroups": [
+      [
+        "diabetes",
+        "diabetic",
+        "blood sugar",
+        "blood glucose"
+      ]
+    ],
+    "terms": [
+      "diabetes",
+      "diabetic",
+      "blood sugar",
+      "blood glucose"
+    ],
+    "priority": 100,
+    "url": "https://www.nidcr.nih.gov/health-info/diabetes",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Diabetes and oral health",
+        "url": "https://www.nidcr.nih.gov/health-info/diabetes"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do gingivitis and periodontitis differ?",
+      "Why is my mouth always dry?"
+    ]
+  },
+  {
+    "id": "pregnancy-mouth",
+    "question": "Is dental care safe during pregnancy?",
+    "answer": "Preventive dental care and necessary treatment can be provided during pregnancy. Tell the dental team that you are pregnant, which medicines you take, and about any pregnancy complications. Hormonal changes can make gums more prone to inflammation, so keep gentle daily cleaning and arrange care for pain or swelling instead of waiting.",
+    "requiredGroups": [
+      [
+        "pregnant",
+        "pregnancy",
+        "expecting a baby"
+      ]
+    ],
+    "terms": [
+      "pregnant",
+      "pregnancy",
+      "expecting a baby"
+    ],
+    "priority": 105,
+    "url": "https://www.mouthhealthy.org/life-stages/pregnancy",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Pregnancy",
+        "url": "https://www.mouthhealthy.org/life-stages/pregnancy"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Why do my gums bleed?",
+      "Do I need X-rays at every visit?"
+    ]
+  },
+  {
+    "id": "tobacco-mouth",
+    "question": "How do smoking and vaping affect oral health?",
+    "answer": "Smoking raises the risk of gum disease, tooth loss, and oral cancer and can slow healing. Vaping is not a harmless alternative for your mouth; tell your dental team about either habit. Support to stop tobacco or nicotine use can be part of improving your oral health.",
+    "requiredGroups": [
+      [
+        "smoking",
+        "smoke",
+        "tobacco",
+        "vaping",
+        "vape",
+        "nicotine"
+      ]
+    ],
+    "terms": [
+      "smoking",
+      "smoke",
+      "tobacco",
+      "vaping",
+      "vape",
+      "nicotine"
+    ],
+    "priority": 95,
+    "url": "https://www.cdc.gov/oral-health/data-research/facts-stats/fast-facts-tobacco-use-and-oral-health.html",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "CDC: Smoking and oral health",
+        "url": "https://www.cdc.gov/oral-health/data-research/facts-stats/fast-facts-tobacco-use-and-oral-health.html"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do gingivitis and periodontitis differ?",
+      "What mouth changes should be checked?"
+    ]
+  },
+  {
+    "id": "dry-mouth-care",
+    "question": "What can I do for dry mouth?",
+    "answer": "Sip water regularly, consider sugar-free gum or a suitable dry-mouth product, and avoid tobacco and irritating or alcohol-containing rinses. Saliva substitutes may improve comfort, but persistent dry mouth needs assessment because it increases cavity risk. Do not stop a prescribed medicine on your own; discuss possible effects with your prescriber and dental team.",
+    "requiredGroups": [
+      [
+        "dry mouth",
+        "drymouth",
+        "mouth dry",
+        "dryness"
+      ],
+      [
+        "help",
+        "relieve",
+        "relief",
+        "manage",
+        "what can i do",
+        "how to",
+        "how do i",
+        "treat"
+      ]
+    ],
+    "terms": [
+      "dry mouth",
+      "drymouth",
+      "mouth dry",
+      "dryness",
+      "help",
+      "relieve",
+      "relief",
+      "manage",
+      "what can i do",
+      "how to",
+      "how do i",
+      "treat"
+    ],
+    "priority": 100,
+    "url": "https://www.nidcr.nih.gov/health-info/dry-mouth",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Dry mouth",
+        "url": "https://www.nidcr.nih.gov/health-info/dry-mouth"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Why is my mouth always dry?",
+      "What should I look for in a toothpaste?"
+    ]
+  },
+  {
+    "id": "medication-dry-mouth",
+    "question": "Can medication make my mouth dry?",
+    "answer": "Many medicines can reduce saliva or cause a dry-mouth feeling. Tell your dentist and prescriber what you take, including over-the-counter products. They can check whether the medicine contributes and discuss ways to protect your teeth or manage symptoms. Do not stop or change the dose yourself.",
+    "requiredGroups": [
+      [
+        "medication",
+        "antidepressant",
+        "antihistamine"
+      ],
+      [
+        "dry mouth",
+        "drymouth",
+        "dryness",
+        "mouth dry"
+      ]
+    ],
+    "terms": [
+      "medication",
+      "antidepressant",
+      "antihistamine",
+      "dry mouth",
+      "drymouth",
+      "dryness",
+      "mouth dry"
+    ],
+    "priority": 110,
+    "url": "https://www.nidcr.nih.gov/health-info/dry-mouth",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Dry mouth",
+        "url": "https://www.nidcr.nih.gov/health-info/dry-mouth"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What can I do for dry mouth?"
+    ]
+  },
+  {
+    "id": "sugar-cavities",
+    "question": "How do sugar and snacking affect cavities?",
+    "answer": "Plaque bacteria use sugars to produce acid that can remove minerals from teeth. Frequent sugary snacks or sipping sweet drinks gives teeth repeated acid exposure. Keep these with meals when possible, drink water between meals, and keep fluoride brushing and daily cleaning between teeth.",
+    "requiredGroups": [
+      [
+        "sugar",
+        "sugary",
+        "snack",
+        "snacking",
+        "sweets",
+        "candy",
+        "sweet drinks"
+      ]
+    ],
+    "terms": [
+      "sugar",
+      "sugary",
+      "snack",
+      "snacking",
+      "sweets",
+      "candy",
+      "sweet drinks"
+    ],
+    "priority": 70,
+    "url": "https://www.nidcr.nih.gov/health-info/tooth-decay",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Tooth decay",
+        "url": "https://www.nidcr.nih.gov/health-info/tooth-decay"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What causes enamel erosion?",
+      "What does fluoride do?"
+    ],
+    "exclude": [
+      "baby",
+      "bottle",
+      "child"
+    ]
+  },
+  {
+    "id": "enamel-erosion",
+    "question": "What causes enamel erosion?",
+    "answer": "Erosion is tooth-surface loss from acids, such as acidic drinks, reflux, or repeated vomiting. It differs from decay, where bacteria produce acid from sugars. Lost enamel does not grow back. Reduce repeated acid exposure, rinse with water after acidic food or drinks, and ask your dentist about sensitivity, wear, or a medical cause such as reflux.",
+    "requiredGroups": [
+      [
+        "enamel erosion",
+        "acid erosion",
+        "erosion",
+        "enamel wear",
+        "enamel grow back",
+        "reflux",
+        "acid damage"
+      ]
+    ],
+    "terms": [
+      "enamel erosion",
+      "acid erosion",
+      "erosion",
+      "enamel wear",
+      "enamel grow back",
+      "reflux",
+      "acid damage"
+    ],
+    "priority": 90,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/dietary-acids-and-your-teeth",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Dietary acids and your teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/dietary-acids-and-your-teeth"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Should I brush immediately after acidic food or drinks?",
+      "Does a sensitive tooth mean I have a cavity?"
+    ]
+  },
+  {
+    "id": "xylitol",
+    "question": "Does xylitol help teeth?",
+    "answer": "Xylitol is a sugar substitute used in some sugar-free gums, mints, and dry-mouth products. Sugar-free gum can help stimulate saliva, but xylitol products do not replace fluoride toothpaste, flossing, or dental treatment. Follow product directions; large amounts of sugar alcohols can upset your stomach.",
+    "requiredGroups": [
+      [
+        "xylitol",
+        "sugar free gum",
+        "sugarless gum",
+        "chewing gum"
+      ]
+    ],
+    "terms": [
+      "xylitol",
+      "sugar free gum",
+      "sugarless gum",
+      "chewing gum"
+    ],
+    "priority": 70,
+    "url": "https://www.mouthhealthy.org/oral-health-recommendations",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Oral health recommendations",
+        "url": "https://www.mouthhealthy.org/oral-health-recommendations"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What can I do for dry mouth?"
+    ],
+    "exclude": [
+      "xylimelts"
+    ]
+  },
+  {
+    "id": "whitening-basics",
+    "question": "How does teeth whitening work?",
+    "answer": "Many whitening products use peroxide to lighten natural tooth color. Strips, gel with trays, prefilled trays, and in-office treatment deliver it differently. Whitening may cause temporary sensitivity and does not fix decay or change the color of fillings, crowns, or veneers. A dental check helps confirm suitability before starting.",
+    "requiredGroups": [
+      [
+        "whitening"
+      ],
+      [
+        "how",
+        "what is",
+        "safe",
+        "work",
+        "does it",
+        "should i",
+        "do i need"
+      ]
+    ],
+    "terms": [
+      "whitening",
+      "how",
+      "what is",
+      "safe",
+      "work",
+      "does it",
+      "should i",
+      "do i need"
+    ],
+    "priority": 85,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Whitening",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Can whitening make teeth sensitive?",
+      "Will whitening change crowns or fillings?"
+    ],
+    "exclude": [
+      "recommend",
+      "compare",
+      "versus",
+      "vs",
+      "buy",
+      "show",
+      "product"
+    ]
+  },
+  {
+    "id": "whitening-sensitivity",
+    "question": "Can whitening make teeth sensitive?",
+    "answer": "Whitening can cause temporary sensitivity or gum irritation. Pause whitening if it is uncomfortable and ask your dentist about the cause, formulation, and schedule. Do not use more gel or leave it on longer to speed results. Severe, persistent, or one-tooth pain needs an examination.",
+    "requiredGroups": [
+      [
+        "whitening"
+      ],
+      [
+        "sensitivity",
+        "hurt",
+        "pain",
+        "irritation",
+        "sore",
+        "burn"
+      ]
+    ],
+    "terms": [
+      "whitening",
+      "sensitivity",
+      "hurt",
+      "pain",
+      "irritation",
+      "sore",
+      "burn"
+    ],
+    "priority": 140,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Whitening",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Can sensitivity toothpaste help?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "whitening-restorations",
+    "question": "Will whitening change crowns or fillings?",
+    "answer": "Whitening lightens natural tooth structure; it does not reliably change the color of crowns, veneers, fillings, or bonding. That can leave a color mismatch. Talk with your dentist about the order of whitening and any planned restorations before buying a kit.",
+    "requiredGroups": [
+      [
+        "whitening"
+      ],
+      [
+        "crown",
+        "filling",
+        "veneer",
+        "bonding",
+        "restoration",
+        "implant"
+      ]
+    ],
+    "terms": [
+      "whitening",
+      "crown",
+      "filling",
+      "veneer",
+      "bonding",
+      "restoration",
+      "implant"
+    ],
+    "priority": 115,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Whitening",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How does teeth whitening work?"
+    ]
+  },
+  {
+    "id": "whitening-directions",
+    "question": "How long should I wear whitening strips or trays?",
+    "answer": "Use the wear time and frequency for your exact product and concentration. Strips, prefilled trays, and syringe gels can have different schedules; there is no single safe wear time for all of them. Do not sleep in a product or extend its time unless its directions specifically allow it. If you name the product, I can explain the format recorded in Maddie’s guide.",
+    "requiredGroups": [
+      [
+        "whitening",
+        "whitening strip",
+        "whitening tray",
+        "opalescence",
+        "crest"
+      ],
+      [
+        "how long",
+        "minutes",
+        "overnight",
+        "sleep",
+        "wear time",
+        "how often",
+        "frequency"
+      ]
+    ],
+    "terms": [
+      "whitening",
+      "whitening strip",
+      "whitening tray",
+      "opalescence",
+      "crest",
+      "how long",
+      "minutes",
+      "overnight",
+      "sleep",
+      "wear time",
+      "how often",
+      "frequency"
+    ],
+    "priority": 110,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Whitening",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Can whitening make teeth sensitive?"
+    ]
+  },
+  {
+    "id": "diy-whitening",
+    "question": "Are charcoal, lemon, or DIY whitening remedies a good idea?",
+    "answer": "Avoid acidic or abrasive DIY whitening methods. Lemon or other acids can damage enamel, and abrasive powders can add wear. Do not apply household bleach or concentrated peroxide to your teeth or gums. Ask your dental team about a tested whitening approach that suits your teeth.",
+    "requiredGroups": [
+      [
+        "charcoal",
+        "lemon whitening",
+        "baking soda whitening",
+        "diy whitening",
+        "household bleach",
+        "hydrogen peroxide whitening"
+      ]
+    ],
+    "terms": [
+      "charcoal",
+      "lemon whitening",
+      "baking soda whitening",
+      "diy whitening",
+      "household bleach",
+      "hydrogen peroxide whitening"
+    ],
+    "priority": 115,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Whitening",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How does teeth whitening work?"
+    ]
+  },
+  {
+    "id": "tooth-stains",
+    "question": "Why are my teeth stained or yellow?",
+    "answer": "Natural tooth color varies. Coffee, tea, tobacco, plaque, and other factors can cause surface stains; deeper color changes have other causes. A professional cleaning can remove some surface deposits, while whitening changes natural tooth color. A new color change in one tooth, especially after injury, should be checked.",
+    "requiredGroups": [
+      [
+        "stain",
+        "stained",
+        "yellow tooth",
+        "yellow teeth",
+        "discolored",
+        "discolour",
+        "tooth color"
+      ]
+    ],
+    "terms": [
+      "stain",
+      "stained",
+      "yellow tooth",
+      "yellow teeth",
+      "discolored",
+      "discolour",
+      "tooth color"
+    ],
+    "priority": 70,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Whitening",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How does teeth whitening work?"
+    ],
+    "exclude": [
+      "purple"
+    ]
+  },
+  {
+    "id": "sealants",
+    "question": "What are dental sealants?",
+    "answer": "Sealants are thin protective coatings placed in the grooves of back teeth to help prevent cavities. They complement fluoride and daily cleaning rather than replace them. Children and some adults may benefit; your dentist checks whether the grooves are suitable and monitors the sealants over time.",
+    "requiredGroups": [
+      [
+        "sealant"
+      ]
+    ],
+    "terms": [
+      "sealant"
+    ],
+    "priority": 70,
+    "url": "https://www.nidcr.nih.gov/health-info/dental-sealants",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Dental sealants",
+        "url": "https://www.nidcr.nih.gov/health-info/dental-sealants"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What does fluoride do?"
+    ]
+  },
+  {
+    "id": "filling-crown",
+    "question": "How do a filling and a crown differ?",
+    "answer": "A filling replaces a damaged part of a tooth. A crown covers much or all of the visible tooth to restore its shape and strength when there is more extensive damage or another reason for coverage. The choice depends on remaining healthy tooth, cracks, bite, and other findings; your dentist can explain why one is appropriate.",
+    "requiredGroups": [
+      [
+        "filling"
+      ],
+      [
+        "crown"
+      ],
+      [
+        "compare",
+        "difference",
+        "vs",
+        "versus",
+        "or"
+      ]
+    ],
+    "terms": [
+      "filling",
+      "crown",
+      "compare",
+      "difference",
+      "vs",
+      "versus",
+      "or"
+    ],
+    "priority": 115,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/crowns",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Crowns",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/crowns"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What questions should I ask at my next dental visit?"
+    ],
+    "comparisonTopic": true
+  },
+  {
+    "id": "filling",
+    "question": "What is a dental filling?",
+    "answer": "A filling restores an area of a tooth damaged by decay or another problem. The dentist removes affected material and places a restoration suited to the tooth. Material choices, numbness, and recovery depend on the procedure. If your bite feels high or pain persists afterward, contact the office.",
+    "requiredGroups": [
+      [
+        "filling"
+      ]
+    ],
+    "terms": [
+      "filling"
+    ],
+    "priority": 75,
+    "url": "https://www.nidcr.nih.gov/health-info/tooth-decay",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Tooth decay",
+        "url": "https://www.nidcr.nih.gov/health-info/tooth-decay"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do a filling and a crown differ?"
+    ],
+    "exclude": [
+      "crown",
+      "whitening",
+      "fallen",
+      "fell",
+      "lost",
+      "loose",
+      "temporary"
+    ]
+  },
+  {
+    "id": "crown",
+    "question": "What is a dental crown?",
+    "answer": "A crown is a restoration that covers a tooth to restore shape, strength, or appearance. It may be recommended for a heavily damaged tooth or after root canal treatment, depending on the tooth. Crowns still need brushing and careful cleaning at the gumline; the tooth underneath can still develop decay.",
+    "requiredGroups": [
+      [
+        "crown"
+      ]
+    ],
+    "terms": [
+      "crown"
+    ],
+    "priority": 75,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/crowns",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Crowns",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/crowns"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do a filling and a crown differ?"
+    ],
+    "exclude": [
+      "filling",
+      "whitening",
+      "fallen",
+      "fell",
+      "lost",
+      "loose",
+      "temporary"
+    ]
+  },
+  {
+    "id": "lost-restoration",
+    "question": "What should I do if a filling or crown falls out?",
+    "answer": "Contact your dentist promptly and keep the crown or broken piece if you have it. Avoid chewing on that side and keep the area gently clean. Do not use household glue to attach it. Pain, swelling, or a sharp edge that injures your mouth needs timely dental advice.",
+    "requiredGroups": [
+      [
+        "filling",
+        "crown",
+        "restoration"
+      ],
+      [
+        "fell",
+        "fallen",
+        "lost",
+        "came off",
+        "came out",
+        "loose",
+        "broken",
+        "falls out"
+      ]
+    ],
+    "terms": [
+      "filling",
+      "crown",
+      "restoration",
+      "fell",
+      "fallen",
+      "lost",
+      "came off",
+      "came out",
+      "loose",
+      "broken",
+      "falls out"
+    ],
+    "priority": 140,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Dental emergencies",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Why does my tooth hurt?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "bridge-implant",
+    "question": "How do a bridge and an implant differ?",
+    "answer": "A bridge replaces a missing tooth with a restoration supported by neighboring teeth or implants. A dental implant is placed in the jawbone to support a replacement tooth or another restoration. Surgery, neighboring-tooth condition, bone support, cleaning needs, time, and cost differ. Your dentist can assess which options fit your situation.",
+    "requiredGroups": [
+      [
+        "bridge"
+      ],
+      [
+        "implant"
+      ],
+      [
+        "compare",
+        "difference",
+        "vs",
+        "versus",
+        "or"
+      ]
+    ],
+    "terms": [
+      "bridge",
+      "implant",
+      "compare",
+      "difference",
+      "vs",
+      "versus",
+      "or"
+    ],
+    "priority": 115,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/implants",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Implants",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/implants"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do I understand a treatment recommendation?"
+    ],
+    "comparisonTopic": true
+  },
+  {
+    "id": "implant-care",
+    "question": "How should I clean around dental implants?",
+    "answer": "Implants need daily cleaning and professional monitoring. Brush gently at the gumline and clean between teeth with tools sized for the space and restoration. Your hygienist can show floss, interdental brushes, or a water-flosser technique that will not damage the restoration. Bleeding, discomfort, or looseness around an implant needs a dental check.",
+    "requiredGroups": [
+      [
+        "implant"
+      ],
+      [
+        "clean",
+        "care",
+        "brush",
+        "floss",
+        "water floss",
+        "maintain"
+      ]
+    ],
+    "terms": [
+      "implant",
+      "clean",
+      "care",
+      "brush",
+      "floss",
+      "water floss",
+      "maintain"
+    ],
+    "priority": 105,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/implants",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Implants",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/implants"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do interdental brushes differ from floss?"
+    ]
+  },
+  {
+    "id": "bridge-care",
+    "question": "How do I clean under a dental bridge?",
+    "answer": "Clean around the supporting teeth and under the replacement tooth every day. A floss threader, appropriate interdental brush, or another tool recommended by your hygienist can help reach underneath. A water flosser can be an additional step in Maddie’s routine. Ask for a demonstration that fits your particular bridge.",
+    "requiredGroups": [
+      [
+        "bridge"
+      ],
+      [
+        "clean",
+        "under",
+        "floss",
+        "brush",
+        "care"
+      ]
+    ],
+    "terms": [
+      "bridge",
+      "clean",
+      "under",
+      "floss",
+      "brush",
+      "care"
+    ],
+    "priority": 70,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Flossing",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/flossing"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do interdental brushes differ from floss?"
+    ]
+  },
+  {
+    "id": "denture-care",
+    "question": "How do I care for dentures?",
+    "answer": "Remove and clean dentures as directed, use a denture-cleaning product suited to the material, and brush your gums, tongue, and any remaining teeth gently. Do not use hot water, household bleach, or abrasive toothpaste unless the denture instructions specifically allow it. Follow your dentist’s advice about overnight removal and soaking; fit problems or sores need an adjustment.",
+    "requiredGroups": [
+      [
+        "denture"
+      ]
+    ],
+    "terms": [
+      "denture"
+    ],
+    "priority": 80,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/dentures",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Dentures",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/dentures"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What mouth changes should be checked?"
+    ],
+    "exclude": [
+      "implant",
+      "bridge"
+    ]
+  },
+  {
+    "id": "braces-care",
+    "question": "How should I clean my teeth with braces?",
+    "answer": "Brush carefully around brackets and along the gumline with fluoride toothpaste. Clean between teeth daily using a floss threader, orthodontic floss tool, or sized interdental brush recommended by your team. A water flosser can help as an additional step; it does not replace careful brushing and the cleaning your team recommends. Keep regular dental and orthodontic visits.",
+    "requiredGroups": [
+      [
+        "braces",
+        "brackets"
+      ],
+      [
+        "clean",
+        "care",
+        "brush",
+        "floss",
+        "water floss",
+        "routine"
+      ]
+    ],
+    "terms": [
+      "braces",
+      "brackets",
+      "clean",
+      "care",
+      "brush",
+      "floss",
+      "water floss",
+      "routine"
+    ],
+    "priority": 110,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/braces",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Braces",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/braces"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do interdental brushes differ from floss?",
+      "Should I string floss or water floss first?"
+    ]
+  },
+  {
+    "id": "retainer-aligner-care",
+    "question": "How should I clean retainers or clear aligners?",
+    "answer": "Follow the appliance maker’s and orthodontist’s instructions. Remove it for cleaning, use the recommended cleaner and water temperature, and keep teeth clean before putting it back. Hot water can distort some appliances. Avoid eating or drinking anything other than what your team allows while wearing clear aligners; sugary or acidic liquid can stay against your teeth.",
+    "requiredGroups": [
+      [
+        "retainer",
+        "aligner",
+        "invisalign"
+      ]
+    ],
+    "terms": [
+      "retainer",
+      "aligner",
+      "invisalign"
+    ],
+    "priority": 85,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/braces",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Braces",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/braces"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How often and how long should I brush?"
+    ]
+  },
+  {
+    "id": "abscess",
+    "question": "What should I do about a possible dental abscess?",
+    "answer": "A dental abscess is an infection that needs urgent dental treatment. Contact a dentist promptly for tooth or gum swelling, a pus-filled bump, or worsening pain; an abscess will not be cured by brushing, rinsing, or buying a product. If swelling affects breathing or swallowing, seek emergency medical help now. Do not try to drain it yourself.",
+    "requiredGroups": [
+      [
+        "abscess",
+        "pus",
+        "pus filled",
+        "gum boil",
+        "face swelling",
+        "facial swelling",
+        "swollen face",
+        "dental infection"
+      ]
+    ],
+    "terms": [
+      "abscess",
+      "pus",
+      "pus filled",
+      "gum boil",
+      "face swelling",
+      "facial swelling",
+      "swollen face",
+      "dental infection"
+    ],
+    "priority": 180,
+    "url": "https://www.nhs.uk/conditions/dental-abscess/",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NHS: Dental abscess",
+        "url": "https://www.nhs.uk/conditions/dental-abscess/"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Why does my tooth hurt?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "pain-relief",
+    "question": "What can I do while waiting for a dentist with toothache?",
+    "answer": "Arrange a dental assessment and avoid chewing on the painful area or triggering it with very hot, cold, or sweet foods. If you can take an over-the-counter pain reliever safely, follow the package instructions or ask a pharmacist about your medicines and health conditions. Do not put aspirin on the tooth or gums. Swelling, fever, injury, or worsening pain needs prompt care.",
+    "requiredGroups": [
+      [
+        "toothache",
+        "tooth pain",
+        "tooth hurt"
+      ],
+      [
+        "relieve",
+        "relief",
+        "while waiting",
+        "until",
+        "painkiller",
+        "ibuprofen",
+        "aspirin",
+        "acetaminophen",
+        "paracetamol",
+        "help",
+        "what can i do"
+      ]
+    ],
+    "terms": [
+      "toothache",
+      "tooth pain",
+      "tooth hurt",
+      "relieve",
+      "relief",
+      "while waiting",
+      "until",
+      "painkiller",
+      "ibuprofen",
+      "aspirin",
+      "acetaminophen",
+      "paracetamol",
+      "help",
+      "what can i do"
+    ],
+    "priority": 130,
+    "url": "https://www.nhs.uk/conditions/toothache/",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NHS: Toothache",
+        "url": "https://www.nhs.uk/conditions/toothache/"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What should I do about a possible dental abscess?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "antibiotic-basics",
+    "question": "Do dental infections always need antibiotics?",
+    "answer": "Dental infections usually need treatment of the source, such as drainage, root canal treatment, or extraction as appropriate. Antibiotics may be used in certain circumstances, but they are not a substitute for dental treatment. A dentist must assess whether you need one; do not use leftover antibiotics or choose a drug or dose from a chat.",
+    "requiredGroups": [
+      [
+        "antibiotic"
+      ],
+      [
+        "always",
+        "need",
+        "why",
+        "infection",
+        "work"
+      ]
+    ],
+    "terms": [
+      "antibiotic",
+      "always",
+      "need",
+      "why",
+      "infection",
+      "work"
+    ],
+    "priority": 110,
+    "url": "https://www.nhs.uk/conditions/dental-abscess/",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NHS: Dental abscess",
+        "url": "https://www.nhs.uk/conditions/dental-abscess/"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What should I do about a possible dental abscess?"
+    ],
+    "exclude": [
+      "which",
+      "dose",
+      "dosage",
+      "prescribe"
+    ]
+  },
+  {
+    "id": "extraction-aftercare",
+    "question": "What should I do after a tooth extraction?",
+    "answer": "Follow the written instructions from your treating dentist. Protect the clot: avoid smoking, vigorous rinsing, spitting, or disturbing the socket in the early healing period. Use any gauze, medicines, foods, and cleaning steps exactly as directed. Contact the office for persistent bleeding, increasing swelling, fever, or pain that is worsening rather than improving.",
+    "requiredGroups": [
+      [
+        "extraction",
+        "tooth removed",
+        "tooth pulled",
+        "wisdom tooth removal",
+        "wisdom tooth removed",
+        "tooth was pulled",
+        "tooth was removed",
+        "tooth got pulled",
+        "tooth taken out"
+      ],
+      [
+        "after",
+        "recovery",
+        "heal",
+        "healing",
+        "care",
+        "eat",
+        "drink",
+        "rinse",
+        "smoke",
+        "straw"
+      ]
+    ],
+    "terms": [
+      "extraction",
+      "tooth removed",
+      "tooth pulled",
+      "wisdom tooth removal",
+      "wisdom tooth removed",
+      "after",
+      "recovery",
+      "heal",
+      "healing",
+      "care",
+      "eat",
+      "drink",
+      "rinse",
+      "smoke",
+      "straw"
+    ],
+    "priority": 125,
+    "url": "https://www.nhs.uk/tests-and-treatments/wisdom-tooth-removal/",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NHS: Wisdom tooth removal and recovery",
+        "url": "https://www.nhs.uk/tests-and-treatments/wisdom-tooth-removal/"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What is dry socket?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "dry-socket",
+    "question": "What is dry socket?",
+    "answer": "Dry socket can occur after an extraction when the blood clot is lost or does not protect the socket. It can cause significant pain, often a few days after removal. Your dental team needs to assess and treat it; do not try to pack or clean the socket yourself. New or worsening pain after extraction is a reason to call the office.",
+    "requiredGroups": [
+      [
+        "dry socket",
+        "socket pain"
+      ],
+      [
+        "dry socket",
+        "socket pain"
+      ]
+    ],
+    "terms": [
+      "dry socket",
+      "socket pain"
+    ],
+    "priority": 155,
+    "url": "https://www.nhs.uk/tests-and-treatments/wisdom-tooth-removal/",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NHS: Wisdom tooth removal and recovery",
+        "url": "https://www.nhs.uk/tests-and-treatments/wisdom-tooth-removal/"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What should I do after a tooth extraction?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "wisdom-teeth",
+    "question": "Do wisdom teeth always need to be removed?",
+    "answer": "Wisdom teeth do not always need removal. Your dentist looks at whether they have room to come in, can be kept clean, or are causing problems such as infection, decay, or damage to nearby teeth. An examination and any appropriate images help decide between monitoring and treatment.",
+    "requiredGroups": [
+      [
+        "wisdom tooth",
+        "wisdom teeth",
+        "third molar"
+      ]
+    ],
+    "terms": [
+      "wisdom tooth",
+      "wisdom teeth",
+      "third molar"
+    ],
+    "priority": 85,
+    "url": "https://www.nhs.uk/tests-and-treatments/wisdom-tooth-removal/",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NHS: Wisdom tooth removal and recovery",
+        "url": "https://www.nhs.uk/tests-and-treatments/wisdom-tooth-removal/"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How do I understand a treatment recommendation?"
+    ],
+    "exclude": [
+      "after",
+      "removal",
+      "recovery",
+      "pulled"
+    ]
+  },
+  {
+    "id": "tmj",
+    "question": "Why does my jaw click or hurt?",
+    "answer": "Jaw clicking without pain can occur, while pain, locking, or trouble opening needs assessment. Jaw-joint and muscle problems have several possible causes. Avoid habits that aggravate it, such as prolonged gum chewing, and ask your dentist about gentle conservative care. A chat cannot diagnose a jaw-joint disorder.",
+    "requiredGroups": [
+      [
+        "jaw",
+        "tmj",
+        "tmd"
+      ],
+      [
+        "click",
+        "clicking",
+        "pain",
+        "hurt",
+        "lock",
+        "locking",
+        "stiff",
+        "pop",
+        "popping",
+        "tmj",
+        "tmd"
+      ]
+    ],
+    "terms": [
+      "jaw",
+      "tmj",
+      "tmd",
+      "click",
+      "clicking",
+      "pain",
+      "hurt",
+      "lock",
+      "locking",
+      "stiff",
+      "pop",
+      "popping"
+    ],
+    "priority": 115,
+    "url": "https://www.nidcr.nih.gov/health-info/tmd",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: TMD",
+        "url": "https://www.nidcr.nih.gov/health-info/tmd"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Can grinding or clenching damage teeth?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "grinding",
+    "question": "Can grinding or clenching damage teeth?",
+    "answer": "Grinding and clenching can contribute to tooth wear, cracks, jaw-muscle soreness, or headaches. Tell your dentist if you notice morning soreness, worn edges, or someone hears you grinding. They can check the cause and whether a protective appliance or other treatment is appropriate. A night guard protects teeth but does not automatically stop the habit.",
+    "requiredGroups": [
+      [
+        "grind",
+        "clench",
+        "bruxism"
+      ]
+    ],
+    "terms": [
+      "grind",
+      "clench",
+      "bruxism"
+    ],
+    "priority": 100,
+    "url": "https://www.nidcr.nih.gov/health-info/bruxism",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Bruxism",
+        "url": "https://www.nidcr.nih.gov/health-info/bruxism"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Why does my jaw click or hurt?",
+      "How do sports mouthguards and night guards differ?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "mouthguards",
+    "question": "How do sports mouthguards and night guards differ?",
+    "answer": "A sports mouthguard cushions impacts during activities. A night guard or occlusal appliance is designed for a different purpose, such as protecting teeth from grinding, and should be selected with your dentist. They are not interchangeable. Fit, material, cleaning, and replacement instructions depend on the appliance.",
+    "requiredGroups": [
+      [
+        "mouthguard",
+        "mouth guard",
+        "night guard",
+        "nightguard",
+        "sports guard"
+      ]
+    ],
+    "terms": [
+      "mouthguard",
+      "mouth guard",
+      "night guard",
+      "nightguard",
+      "sports guard"
+    ],
+    "priority": 70,
+    "url": "https://www.nidcr.nih.gov/health-info/bruxism",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Bruxism",
+        "url": "https://www.nidcr.nih.gov/health-info/bruxism"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "Can grinding or clenching damage teeth?"
+    ],
+    "comparisonTopic": true
+  },
+  {
+    "id": "mouth-ulcer",
+    "question": "What should I do about a mouth ulcer?",
+    "answer": "Small mouth ulcers can have several causes and often heal on their own. Avoid foods or sharp edges that irritate the area and keep it gently clean. Arrange a dental or medical check if an ulcer persists for more than about two weeks, recurs frequently, is unusually large, or comes with other symptoms. A persistent sore should not be covered up with a product.",
+    "requiredGroups": [
+      [
+        "mouth ulcer",
+        "canker sore",
+        "mouth sore",
+        "tongue sore",
+        "sore in mouth"
+      ]
+    ],
+    "terms": [
+      "mouth ulcer",
+      "canker sore",
+      "mouth sore",
+      "tongue sore",
+      "sore in mouth"
+    ],
+    "priority": 110,
+    "url": "https://www.nhs.uk/conditions/mouth-ulcers/",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NHS: Mouth ulcers",
+        "url": "https://www.nhs.uk/conditions/mouth-ulcers/"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What mouth changes should be checked?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "oral-changes",
+    "question": "What mouth changes should be checked?",
+    "answer": "A sore, red or white patch, lump, or unexplained bleeding that persists for about two weeks should be assessed by a dentist or doctor. Difficulty chewing or swallowing, unexplained numbness, or a change in how teeth fit also deserves attention. These changes can have many causes; an examination is needed rather than diagnosing cancer from a chat.",
+    "requiredGroups": [
+      [
+        "oral cancer",
+        "mouth cancer",
+        "white patch",
+        "red patch",
+        "mouth lump",
+        "tongue lump",
+        "persistent sore",
+        "mouth changes"
+      ]
+    ],
+    "terms": [
+      "oral cancer",
+      "mouth cancer",
+      "white patch",
+      "red patch",
+      "mouth lump",
+      "tongue lump",
+      "persistent sore",
+      "mouth changes"
+    ],
+    "priority": 140,
+    "url": "https://www.nidcr.nih.gov/health-info/oral-cancer",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Oral cancer",
+        "url": "https://www.nidcr.nih.gov/health-info/oral-cancer"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What questions should I ask at my next dental visit?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "baby-brushing",
+    "question": "When should I start brushing my baby’s teeth?",
+    "answer": "Start brushing when the first tooth appears. Use a small soft brush and a smear of fluoride toothpaste about the size of a grain of rice for a child under three. For ages three to six, use a pea-sized amount. Help with brushing and teach spitting as the child is able; keep toothpaste out of reach.",
+    "requiredGroups": [
+      [
+        "baby",
+        "child",
+        "toddler"
+      ],
+      [
+        "brush",
+        "toothpaste",
+        "fluoride",
+        "first tooth"
+      ]
+    ],
+    "terms": [
+      "baby",
+      "child",
+      "toddler",
+      "brush",
+      "toothpaste",
+      "fluoride",
+      "first tooth"
+    ],
+    "priority": 110,
+    "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Baby and toddler oral health",
+        "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "When should my child first see a dentist?"
+    ],
+    "exclude": [
+      "loose",
+      "visit",
+      "dental",
+      "teething",
+      "swallowed",
+      "swallow"
+    ]
+  },
+  {
+    "id": "child-flossing",
+    "question": "When should I start flossing my child’s teeth?",
+    "answer": "Start cleaning between your child’s teeth when two teeth touch. Help them until they can do it effectively on their own; the timing depends on skill rather than one birthday. Ask their dentist or hygienist to show a comfortable technique and check whether the contacts need flossing.",
+    "requiredGroups": [
+      [
+        "child",
+        "baby",
+        "toddler"
+      ],
+      [
+        "floss",
+        "between tooth"
+      ]
+    ],
+    "terms": [
+      "child",
+      "baby",
+      "toddler",
+      "floss",
+      "between tooth"
+    ],
+    "priority": 115,
+    "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Baby and toddler oral health",
+        "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "When should my child first see a dentist?"
+    ],
+    "exclude": [
+      "water floss"
+    ]
+  },
+  {
+    "id": "teething",
+    "question": "How can I help a teething baby?",
+    "answer": "A cool teething ring or gently rubbing the gums with a clean finger may help. Use an age-appropriate teether and avoid teething jewelry or unsafe numbing remedies. Fever, marked illness, or ongoing pain should not simply be blamed on teething; ask your child’s healthcare professional.",
+    "requiredGroups": [
+      [
+        "teething"
+      ]
+    ],
+    "terms": [
+      "teething"
+    ],
+    "priority": 70,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/teething",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Teething",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/teething"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "When should I start brushing my baby’s teeth?"
+    ]
+  },
+  {
+    "id": "bottle-decay",
+    "question": "Can bottles or bedtime drinks cause cavities?",
+    "answer": "Frequent contact with sugary drinks, including milk or formula around erupted teeth during sleep, can contribute to decay. Avoid putting a child to bed with a bottle containing anything other than water, follow feeding guidance from their clinician, and clean their teeth with age-appropriate fluoride toothpaste. Do not dip a pacifier in sugar or honey.",
+    "requiredGroups": [
+      [
+        "bottle",
+        "sippy cup",
+        "pacifier"
+      ],
+      [
+        "bed",
+        "bedtime",
+        "sleep",
+        "night",
+        "decay",
+        "cavity",
+        "juice",
+        "milk",
+        "sugar"
+      ]
+    ],
+    "terms": [
+      "bottle",
+      "sippy cup",
+      "pacifier",
+      "bed",
+      "bedtime",
+      "sleep",
+      "night",
+      "decay",
+      "cavity",
+      "juice",
+      "milk",
+      "sugar"
+    ],
+    "priority": 70,
+    "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Baby and toddler oral health",
+        "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "When should I start brushing my baby’s teeth?"
+    ]
+  },
+  {
+    "id": "fluoride-amount",
+    "question": "How much fluoride toothpaste should a child use?",
+    "answer": "For children under three, use a smear about the size of a grain of rice. For ages three to six, use a pea-sized amount. Supervise brushing, encourage spitting when they can, and keep toothpaste out of reach. Ask your child’s dental team about their cavity risk and product suitability.",
+    "requiredGroups": [
+      [
+        "child",
+        "baby",
+        "toddler"
+      ],
+      [
+        "toothpaste",
+        "fluoride"
+      ],
+      [
+        "how much",
+        "amount",
+        "pea",
+        "rice"
+      ]
+    ],
+    "terms": [
+      "child",
+      "baby",
+      "toddler",
+      "toothpaste",
+      "fluoride",
+      "how much",
+      "amount",
+      "pea",
+      "rice"
+    ],
+    "priority": 135,
+    "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Baby and toddler oral health",
+        "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "When should I start brushing my baby’s teeth?"
+    ]
+  },
+  {
+    "id": "toothpaste-ingestion",
+    "question": "What if someone swallows a lot of toothpaste?",
+    "answer": "A small accidental amount during normal brushing is different from swallowing a large amount. If a child or adult swallowed more than a normal brushing amount, contact Poison Control for advice and keep the tube available. In the U.S., call 1-800-222-1222; elsewhere use your local poison service. Do not make them vomit. Call emergency services for breathing trouble or severe illness.",
+    "requiredGroups": [
+      [
+        "toothpaste"
+      ],
+      [
+        "swallowed",
+        "swallow",
+        "ate",
+        "eaten",
+        "ingested"
+      ]
+    ],
+    "terms": [
+      "toothpaste",
+      "swallowed",
+      "swallow",
+      "ate",
+      "eaten",
+      "ingested"
+    ],
+    "priority": 185,
+    "url": "https://www.poison.org/",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "Poison Control",
+        "url": "https://www.poison.org/"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [],
+    "clinicalPriority": true
+  },
+  {
+    "id": "toothbrush-cleaning",
+    "question": "How should I store and clean a toothbrush?",
+    "answer": "Rinse the brush after use, store it upright so it can air-dry, and keep separate brushes from touching. Do not share a toothbrush. Routine soaking or sealing a wet brush in a closed container is not necessary; follow the maker’s directions for an electric handle and charging base. Replace worn bristles rather than trying to disinfect them into lasting longer.",
+    "requiredGroups": [
+      [
+        "toothbrush",
+        "brush head"
+      ],
+      [
+        "clean",
+        "store",
+        "storage",
+        "sanitize",
+        "disinfect",
+        "share",
+        "wash"
+      ]
+    ],
+    "terms": [
+      "toothbrush",
+      "brush head",
+      "clean",
+      "store",
+      "storage",
+      "sanitize",
+      "disinfect",
+      "share",
+      "wash"
+    ],
+    "priority": 100,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Brushing your teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "How often should I replace my toothbrush?"
+    ]
+  },
+  {
+    "id": "dental-anatomy",
+    "question": "What are enamel, dentin, and pulp?",
+    "answer": "Enamel is the hard outer layer of the crown of a tooth. Dentin is the layer underneath, and the pulp contains nerves and blood vessels inside the tooth. Gums and supporting bone hold teeth in place. The location and depth of a problem help your dentist explain treatment.",
+    "requiredGroups": [
+      [
+        "enamel",
+        "dentin",
+        "dentine",
+        "pulp"
+      ],
+      [
+        "what is",
+        "what are",
+        "difference",
+        "layers",
+        "anatomy",
+        "compare"
+      ]
+    ],
+    "terms": [
+      "enamel",
+      "dentin",
+      "dentine",
+      "pulp",
+      "what is",
+      "what are",
+      "difference",
+      "layers",
+      "anatomy",
+      "compare"
+    ],
+    "priority": 80,
+    "url": "https://www.nidcr.nih.gov/health-info/tooth-decay",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Tooth decay",
+        "url": "https://www.nidcr.nih.gov/health-info/tooth-decay"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What is a root canal?"
+    ],
+    "exclude": [
+      "erosion",
+      "grow back",
+      "fluoride"
+    ],
+    "comparisonTopic": true
+  },
+  {
+    "id": "professional-cleaning",
+    "question": "What happens during a professional dental cleaning?",
+    "answer": "A dental cleaning removes deposits such as tartar that home care cannot remove and may include polishing and personalized home-care coaching. Your team checks gum health and decides whether you need routine preventive care or periodontal treatment. Tell them about discomfort or sensitive areas so they can adjust the visit.",
+    "requiredGroups": [
+      [
+        "cleaning",
+        "scale and polish",
+        "dental hygiene visit"
+      ],
+      [
+        "what happens",
+        "what is",
+        "what does",
+        "professional",
+        "routine",
+        "regular",
+        "during"
+      ]
+    ],
+    "terms": [
+      "cleaning",
+      "scale and polish",
+      "dental hygiene visit",
+      "what happens",
+      "what is",
+      "what does",
+      "professional",
+      "routine",
+      "regular",
+      "during"
+    ],
+    "priority": 70,
+    "url": "https://www.nidcr.nih.gov/health-info/gum-disease",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NIDCR: Gum disease",
+        "url": "https://www.nidcr.nih.gov/health-info/gum-disease"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What is a deep cleaning?",
+      "What questions should I ask at my next dental visit?"
+    ],
+    "exclude": [
+      "deep cleaning",
+      "maintenance",
+      "water flosser",
+      "toothbrush",
+      "water floss"
+    ]
+  },
+  {
+    "id": "saltwater",
+    "question": "Can a saltwater rinse treat a dental problem?",
+    "answer": "A gentle saltwater rinse may help comfort in some situations, but it does not remove tartar, repair a cavity, or cure a dental abscess. After an extraction or procedure, use rinses only when and how your treating dentist tells you. Ongoing pain, swelling, or a persistent sore needs an assessment.",
+    "requiredGroups": [
+      [
+        "salt water",
+        "saltwater"
+      ]
+    ],
+    "terms": [
+      "salt water",
+      "saltwater"
+    ],
+    "priority": 70,
+    "url": "https://www.nhs.uk/conditions/toothache/",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "NHS: Toothache",
+        "url": "https://www.nhs.uk/conditions/toothache/"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What should I do about a possible dental abscess?"
+    ],
+    "exclude": [
+      "water flosser",
+      "waterpik",
+      "extraction"
+    ]
+  },
+  {
+    "id": "oil-pulling",
+    "question": "Does oil pulling replace brushing or flossing?",
+    "answer": "Oil pulling does not replace brushing with fluoride toothpaste, cleaning between teeth, or dental treatment. Keep the routine that removes plaque and provides fluoride protection; do not delay an assessment for bleeding, pain, or swelling while trying a home remedy.",
+    "requiredGroups": [
+      [
+        "oil pulling",
+        "oil pull",
+        "coconut oil"
+      ]
+    ],
+    "terms": [
+      "oil pulling",
+      "oil pull",
+      "coconut oil"
+    ],
+    "priority": 70,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "sources": [
+      {
+        "title": "ADA: Brushing your teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "followups": [
+      "What is Maddie’s daily oral-care routine?"
+    ]
+  },
+  {
+    "id": "gum-care-basics",
+    "question": "How can I keep my gums healthy?",
+    "answer": "Clean plaque away gently every day: brush with soft bristles and fluoride toothpaste, and clean between teeth. Maddie recommends string floss, water floss if you use one, mouthwash, then brushing—think of sweeping before you mop! Regular professional care and avoiding tobacco also matter. Bleeding, recession, or changes in support need an assessment rather than adding a product alone.",
+    "requiredGroups": [
+      [
+        "gum"
+      ],
+      [
+        "healthy",
+        "healthier",
+        "improve",
+        "care",
+        "protect",
+        "prevent",
+        "take care"
+      ]
+    ],
+    "terms": [
+      "gum",
+      "healthy",
+      "healthier",
+      "improve",
+      "care",
+      "protect",
+      "prevent",
+      "take care"
+    ],
+    "priority": 95,
+    "url": "https://www.nidcr.nih.gov/health-info/gum-disease",
+    "sources": [
+      {
+        "title": "NIDCR: Gum disease",
+        "url": "https://www.nidcr.nih.gov/health-info/gum-disease"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "followups": [
+      "Why do my gums bleed?",
+      "How do gingivitis and periodontitis differ?"
+    ]
+  },
+  {
+    "id": "implant-basics",
+    "question": "What is a dental implant?",
+    "answer": "A dental implant is placed in the jawbone to support a replacement tooth or another restoration. The visible replacement tooth is a separate part attached to the implant. Suitability depends on your oral health, bone, medical history, and other factors. Implants still need careful daily cleaning and professional follow-up.",
+    "requiredGroups": [
+      [
+        "implant"
+      ],
+      [
+        "what is",
+        "what are",
+        "explain",
+        "tell me about",
+        "how does"
+      ]
+    ],
+    "terms": [
+      "implant",
+      "what is",
+      "what are",
+      "explain",
+      "tell me about",
+      "how does"
+    ],
+    "priority": 95,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/implants",
+    "sources": [
+      {
+        "title": "ADA: Implants",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/implants"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "followups": [
+      "How do a bridge and an implant differ?",
+      "How should I clean around dental implants?"
+    ]
+  },
+  {
+    "id": "loose-implant",
+    "question": "What if an implant or its crown feels loose?",
+    "answer": "Contact the dentist who treats your implant promptly and avoid chewing on that area. The loose part could be the crown, a connector, or the implant itself; those are different problems that require an examination. Do not try to tighten or glue it yourself. Swelling or pain makes timely assessment especially important.",
+    "requiredGroups": [
+      [
+        "implant"
+      ],
+      [
+        "loose",
+        "moving",
+        "wobbly",
+        "came off",
+        "fell",
+        "fallen"
+      ]
+    ],
+    "terms": [
+      "implant",
+      "loose",
+      "moving",
+      "wobbly",
+      "came off",
+      "fell",
+      "fallen"
+    ],
+    "priority": 150,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/implants",
+    "sources": [
+      {
+        "title": "ADA: Implants",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/implants"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "followups": [
+      "How should I clean around dental implants?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "bridge-basics",
+    "question": "What is a dental bridge?",
+    "answer": "A bridge replaces one or more missing teeth with a restoration supported by neighboring teeth or implants. The support, materials, and cleaning method depend on its design. Ask how the supporting teeth will be treated, what alternatives are available, and how to clean beneath the replacement tooth.",
+    "requiredGroups": [
+      [
+        "bridge"
+      ],
+      [
+        "what is",
+        "what are",
+        "explain",
+        "tell me about"
+      ]
+    ],
+    "terms": [
+      "bridge",
+      "what is",
+      "what are",
+      "explain",
+      "tell me about"
+    ],
+    "priority": 95,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/implants",
+    "sources": [
+      {
+        "title": "ADA: Implants",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/implants"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "followups": [
+      "How do a bridge and an implant differ?",
+      "How do I clean under a dental bridge?"
+    ]
+  },
+  {
+    "id": "filling-aftercare",
+    "question": "What should I expect after a filling?",
+    "answer": "Follow your dentist’s instructions about eating while numb and caring for the treated tooth. Some temporary sensitivity can happen, but a bite that feels too high, worsening pain, or sensitivity that persists should be checked. Do not assume you need to wait through significant pain; call the office and describe what triggers it.",
+    "requiredGroups": [
+      [
+        "filling"
+      ],
+      [
+        "after",
+        "getting",
+        "just had",
+        "new filling",
+        "bite high",
+        "high bite"
+      ]
+    ],
+    "terms": [
+      "filling",
+      "after",
+      "getting",
+      "just had",
+      "new filling",
+      "bite high",
+      "high bite"
+    ],
+    "priority": 125,
+    "url": "https://www.nidcr.nih.gov/health-info/tooth-decay",
+    "sources": [
+      {
+        "title": "NIDCR: Tooth decay",
+        "url": "https://www.nidcr.nih.gov/health-info/tooth-decay"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "followups": [
+      "Does a sensitive tooth mean I have a cavity?"
+    ],
+    "clinicalPriority": true
+  },
+  {
+    "id": "child-water-flosser",
+    "question": "Can children use a water flosser?",
+    "answer": "Some water flossers are suitable for children with supervision, but check the exact device’s age guidance and ask the child’s dental team about pressure and technique. Maddie’s current listed models have not been matched to your child’s age. Keep brushing with age-appropriate fluoride toothpaste and help with cleaning between touching teeth.",
+    "requiredGroups": [
+      [
+        "child",
+        "baby",
+        "toddler"
+      ],
+      [
+        "water floss",
+        "water flosser",
+        "waterpik"
+      ]
+    ],
+    "terms": [
+      "child",
+      "baby",
+      "toddler",
+      "water floss",
+      "water flosser",
+      "waterpik"
+    ],
+    "priority": 130,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth",
+    "sources": [
+      {
+        "title": "ADA: Brushing your teeth",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "followups": [
+      "When should I start flossing my child’s teeth?"
+    ]
+  },
+  {
+    "id": "dental-nutrition",
+    "question": "What foods and drinks support healthy teeth?",
+    "answer": "Choose a balanced diet, drink water, and limit frequent sugary or acidic snacks and drinks. The frequency of sugar exposure matters, not just the amount. Keep sweet drinks with meals when possible rather than sipping all day. Food choices support oral health alongside fluoride brushing and daily cleaning between teeth.",
+    "requiredGroups": [
+      [
+        "nutrition",
+        "diet for tooth",
+        "healthy food",
+        "what i eat",
+        "what should i eat",
+        "food for tooth",
+        "food good for tooth",
+        "food bad for tooth",
+        "food and drink"
+      ]
+    ],
+    "terms": [
+      "nutrition",
+      "diet for tooth",
+      "healthy food",
+      "what i eat",
+      "what should i eat",
+      "food for tooth",
+      "food good for tooth",
+      "food bad for tooth",
+      "food and drink"
+    ],
+    "priority": 95,
+    "url": "https://www.mouthhealthy.org/oral-health-recommendations",
+    "sources": [
+      {
+        "title": "ADA: Oral health recommendations",
+        "url": "https://www.mouthhealthy.org/oral-health-recommendations"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "followups": [
+      "How do sugar and snacking affect cavities?",
+      "What causes enamel erosion?"
+    ]
+  },
+  {
+    "id": "missing-teeth-options",
+    "question": "What are the options for replacing missing teeth?",
+    "answer": "Options can include a bridge, an implant-supported restoration, or a removable partial or complete denture. They differ in support, surgery, cleaning, time, and cost. The number and location of missing teeth, remaining teeth, bone, and health affect suitability. Your dentist can explain what fits and what happens if you wait.",
+    "requiredGroups": [
+      [
+        "missing tooth",
+        "missing teeth",
+        "replace tooth",
+        "replace teeth",
+        "tooth replacement"
+      ]
+    ],
+    "terms": [
+      "missing tooth",
+      "missing teeth",
+      "replace tooth",
+      "replace teeth",
+      "tooth replacement"
+    ],
+    "priority": 95,
+    "url": "https://www.mouthhealthy.org/all-topics-a-z/implants",
+    "sources": [
+      {
+        "title": "ADA: Implants",
+        "url": "https://www.mouthhealthy.org/all-topics-a-z/implants"
+      }
+    ],
+    "sourceNote": "Sources for further reading.",
+    "prompt": "How does this apply to my teeth and health, and what next steps would you recommend?",
+    "followups": [
+      "How do a bridge and an implant differ?",
+      "How do I understand a treatment recommendation?"
+    ]
   }
 ]

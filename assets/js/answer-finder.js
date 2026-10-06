@@ -66,8 +66,8 @@ if (finder) {
       }
       if (!result) {
         const [answerLibrary, productLibrary] = await Promise.allSettled([
-          loadCatalog('data/answers.json?v=20261006-chat-quality'),
-          loadCatalog('data/products.json?v=20261006-chat-quality')
+          loadCatalog('data/answers.json?v=20261006-dental-conversations'),
+          loadCatalog('data/products.json?v=20261006-dental-conversations')
         ]);
         if (answerLibrary.status !== 'fulfilled') throw answerLibrary.reason;
         result = DentalEngine.resolve(question, answerLibrary.value, context,
@@ -83,6 +83,7 @@ if (finder) {
         setSuggestions(result.suggestions || []);
       } else {
         for(const entry of result.entries) {
+          if (result.entries.length > 1 && (entry.title || entry.question)) reply.bubble.append(element('h3', entry.title || entry.question, 'chat-answer-title'));
           reply.bubble.append(element('p',entry.answer));
           if (entry.comparison?.rows.length) {
             const table = element('table', null, 'chat-comparison');
@@ -109,7 +110,17 @@ if (finder) {
               body.append(line);
             }
             table.append(head, body);
-            reply.bubble.append(table);
+            const wrapper = element('div', null, 'chat-comparison-wrap');
+            if (entry.comparison.products.length > 2) {
+              reply.bubble.append(element('p', 'Scroll sideways to see all options.', 'chat-comparison-hint'));
+              wrapper.classList.add('chat-comparison-wide');
+              wrapper.tabIndex = 0;
+              wrapper.setAttribute('role', 'region');
+              wrapper.setAttribute('aria-label', 'Product comparison; scroll sideways for more options');
+              table.style.minWidth = `${130 + entry.comparison.products.length * 150}px`;
+            }
+            wrapper.append(table);
+            reply.bubble.append(wrapper);
           }
           for (const product of entry.products || []) {
             const card = element('section', null, 'chat-product');
@@ -140,7 +151,7 @@ if (finder) {
             reply.bubble.append(details);
           }
         }
-        setSuggestions(result.entries[0].followups || []);
+        setSuggestions([...new Set(result.entries.flatMap(entry => entry.followups || []))]);
       }
       status.textContent='';
     } catch {

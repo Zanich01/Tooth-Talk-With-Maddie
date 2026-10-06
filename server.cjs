@@ -24,17 +24,12 @@ function createServer({ answers, products = [], publicFiles }) {
         let body = '';
         for await (const chunk of req) {
           body += chunk;
-          if (Buffer.byteLength(body) > 4096) return json(res, 413, { error: 'Request too large' });
+          if (Buffer.byteLength(body) > 16384) return json(res, 413, { error: 'Request too large' });
         }
         let data;
         try { data = JSON.parse(body); } catch { return json(res, 400, { error: 'Invalid JSON' }); }
-        if (typeof data.question !== 'string' || !data.question.trim() || data.question.length > 500) return json(res, 400, { error: 'Enter a question of 1–500 characters' });
-        const context = typeof data.context?.lastIntent === 'string' ? {
-          lastIntent: data.context.lastIntent.slice(0, 80),
-          productGroup: typeof data.context.productGroup === 'string' ? data.context.productGroup.slice(0, 80) : undefined,
-          pending: data.context.pending === 'product-options' ? 'product-options' : undefined,
-          productNames: Array.isArray(data.context.productNames) ? data.context.productNames.filter(name => typeof name === 'string').slice(0, 4) : []
-        } : {};
+        if (typeof data.question !== 'string' || !data.question.trim() || data.question.length > 1500) return json(res, 400, { error: 'Enter a question of 1–1500 characters' });
+        const context = engine.cleanContext(data.context, products);
         // No request text is logged or written to disk. Context belongs to the browser session.
         return json(res, 200, engine.resolve(data.question.trim(), answers, context, products));
       }

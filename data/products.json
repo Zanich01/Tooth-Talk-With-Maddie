@@ -19,14 +19,26 @@
       "Cleaning action": "Round head oscillates with micro-vibrations.",
       "Brush head": "Small round head; guide it around each tooth.",
       "Replacement heads": "Oral-B iO heads; standard Oral-B heads do not fit.",
-      "Practical fit": "A round head for cleaning around one tooth at a time."
+      "Practical fit": "A round head for cleaning around one tooth at a time.",
+      "Format": "Powered toothbrush for daily brushing.",
+      "Purpose": "Cleaning tooth surfaces with soft bristles."
     },
     "factSources": [
       {
         "title": "Oral B iO Electric Toothbrush product details",
         "url": "https://www.target.com/p/oral-b-io3-electric-toothbrush-light-blue/-/A-87153883"
       }
-    ]
+    ],
+    "aliases": [
+      "oral b io",
+      "oralb io",
+      "io3",
+      "io 3",
+      "oral b electric toothbrush",
+      "oral b brush",
+      "oral b io toothbrush"
+    ],
+    "family": "electric toothbrush"
   },
   {
     "name": "Sonicare ProtectiveClean",
@@ -47,7 +59,9 @@
       "Cleaning action": "Sonic vibration moves the bristles side to side.",
       "Brush head": "Elongated head; guide it slowly along the gumline.",
       "Replacement heads": "Philips Sonicare click-on heads.",
-      "Practical fit": "An elongated brush head with a shape closer to a manual brush."
+      "Practical fit": "An elongated brush head with a shape closer to a manual brush.",
+      "Format": "Powered toothbrush for daily brushing.",
+      "Purpose": "Cleaning tooth surfaces with soft bristles."
     },
     "factSources": [
       {
@@ -55,7 +69,15 @@
         "url": "https://www.amazon.com/Philips-Sonicare-ProtectiveClean-Rechargeable-HX6857/dp/B078GVMVRJ"
       }
     ],
-    "comparisonName": "Sonicare"
+    "comparisonName": "Sonicare",
+    "aliases": [
+      "protectiveclean",
+      "protective clean",
+      "sonicare toothbrush",
+      "philips electric toothbrush",
+      "philips toothbrush"
+    ],
+    "family": "electric toothbrush"
   },
   {
     "name": "Oral B Cordless Waterflosser",
@@ -76,14 +98,22 @@
     "comparisonFacts": {
       "Format": "Cordless handheld unit with a built-in reservoir.",
       "Counter space": "No separate countertop tank or hose.",
-      "Practical fit": "Portable use and smaller spaces; refill the handheld reservoir as needed."
+      "Practical fit": "Portable use and smaller spaces; refill the handheld reservoir as needed.",
+      "Purpose": "Water flossing along the gumline and between teeth as an additional care step."
     },
     "factSources": [
       {
         "title": "Oral B Cordless Waterflosser product details",
         "url": "https://www.walgreens.com/store/c/oral-b-water-flosser-advanced,-portable-oral-irrigator-handle-with-2-nozzles/ID=300411189-product"
       }
-    ]
+    ],
+    "aliases": [
+      "oral b water flosser",
+      "oralb water flosser",
+      "oral b cordless",
+      "oralb cordless"
+    ],
+    "family": "water flosser"
   },
   {
     "name": "Philips Countertop Waterflosser",
@@ -108,14 +138,24 @@
       "Counter space": "Needs space for the base and reservoir.",
       "Practical fit": "A stationary home setup with a separate water tank.",
       "Cleaning settings": "Two cleaning modes and ten intensity settings.",
-      "Included nozzles": "Two nozzles."
+      "Included nozzles": "Two nozzles.",
+      "Purpose": "Water flossing along the gumline and between teeth as an additional care step."
     },
     "factSources": [
       {
         "title": "Philips Countertop Waterflosser product details",
         "url": "https://a.co/d/03bvKCGX"
       }
-    ]
+    ],
+    "aliases": [
+      "philips water flosser",
+      "philips power flosser",
+      "power flosser 5000",
+      "sonicare water flosser",
+      "sonicare power flosser",
+      "philips countertop"
+    ],
+    "family": "water flosser"
   },
   {
     "name": "TheraBreath Healthy Gums Oral Rinse",
@@ -134,14 +174,21 @@
     "comparisonFacts": {
       "Format": "Swish-and-spit oral rinse.",
       "Purpose": "Gum-care mouthrinse.",
-      "Practical fit": "A rinse step in a gum-care routine."
+      "Practical fit": "A rinse step in a gum-care routine.",
+      "How it is used": "Swish and spit according to the package directions."
     },
     "factSources": [
       {
         "title": "TheraBreath Healthy Gums Oral Rinse product details",
         "url": "https://www.therabreath.com/products/healthy-gums-oral-rinse-clean-mint"
       }
-    ]
+    ],
+    "aliases": [
+      "therabreath healthy gums",
+      "healthy gums rinse",
+      "therabreath gum rinse"
+    ],
+    "family": "gum care"
   },
   {
     "name": "TheraBreath Dry Mouth Oral Rinse",
@@ -158,15 +205,21 @@
     "shortName": "TheraBreath Dry Mouth Rinse",
     "comparisonFacts": {
       "Format": "Swish-and-spit oral rinse.",
-      "How it is used": "Rinse for the time stated on the label, then spit it out.",
-      "Practical fit": "A rinse step for dry mouth comfort."
+      "How it is used": "Swish and spit according to the package directions.",
+      "Practical fit": "A rinse step for dry mouth comfort.",
+      "Purpose": "Dry-mouth comfort."
     },
     "factSources": [
       {
         "title": "TheraBreath Dry Mouth Oral Rinse product details",
         "url": "https://www.therabreath.com/products/dry-mouth-oral-rinse-tingling-mint"
       }
-    ]
+    ],
+    "aliases": [
+      "therabreath dry mouth rinse",
+      "dry mouth rinse"
+    ],
+    "family": "dry mouth"
   },
   {
     "name": "TheraBreath Dry Mouth Lozenges",
@@ -184,14 +237,21 @@
     "comparisonFacts": {
       "Format": "Dissolving lozenge.",
       "How it is used": "Let a lozenge dissolve according to the package directions.",
-      "Practical fit": "A portable option for dry mouth comfort."
+      "Practical fit": "A portable option for dry mouth comfort.",
+      "Purpose": "Dry-mouth comfort."
     },
     "factSources": [
       {
         "title": "TheraBreath Dry Mouth Lozenges product details",
         "url": "https://www.therabreath.com/products/dry-mouth-lozenges-tart-berry"
       }
-    ]
+    ],
+    "aliases": [
+      "therabreath lozenges",
+      "dry mouth lozenges",
+      "dry mouth lozenge"
+    ],
+    "family": "dry mouth"
   },
   {
     "name": "Xylimelts",
@@ -210,14 +270,20 @@
     "comparisonFacts": {
       "Format": "Adhering dry mouth tablet.",
       "How it is used": "Place the adhering tablet as directed on the package.",
-      "Practical fit": "An option that stays in place rather than a loose lozenge or rinse."
+      "Practical fit": "An option that stays in place rather than a loose lozenge or rinse.",
+      "Purpose": "Dry-mouth comfort."
     },
     "factSources": [
       {
         "title": "Xylimelts product details",
         "url": "https://www.amazon.com/XyliMelts-Moisturizing-Adhering-Stimulates-Non-Acidic/dp/B007XEVQ8G"
       }
-    ]
+    ],
+    "aliases": [
+      "xyli melts",
+      "xylimelts"
+    ],
+    "family": "dry mouth"
   },
   {
     "name": "Metal Tongue Scraper",
@@ -242,7 +308,12 @@
         "title": "Metal Tongue Scraper product details",
         "url": "https://www.walmart.com/ip/GuruNanda-Stainless-Steel-Spoon-Tongue-Scraper-2pk/2112475696"
       }
-    ]
+    ],
+    "aliases": [
+      "tongue scraper",
+      "tongue cleaner"
+    ],
+    "family": "bad breath"
   },
   {
     "name": "Therabreath Deep Clean",
@@ -260,14 +331,20 @@
     "comparisonFacts": {
       "Format": "Swish-and-spit oral rinse.",
       "Purpose": "A mouthrinse step; check the label for its intended use.",
-      "Practical fit": "Rinsing the mouth rather than physically scraping the tongue."
+      "Practical fit": "Rinsing the mouth rather than physically scraping the tongue.",
+      "How it is used": "Swish and spit according to the package directions."
     },
     "factSources": [
       {
         "title": "Therabreath Deep Clean product details",
         "url": "https://www.walmart.com/ip/TheraBreath-Deep-Clean-Mouthwash-Alcohol-Free-Fresh-Mint-16-fl-oz/3784750828"
       }
-    ]
+    ],
+    "aliases": [
+      "therabreath deep clean",
+      "deep clean rinse"
+    ],
+    "family": "bad breath"
   },
   {
     "name": "Opalescence Whitening Gel 15% Syringes",
@@ -285,14 +362,22 @@
       "Format": "Whitening gel in syringes.",
       "Tray setup": "Requires a separate whitening tray.",
       "Practical fit": "Someone who has suitable whitening trays and wants gel refills.",
-      "Use directions": "Use the wear time and amount recommended for this formulation by your dentist."
+      "Use directions": "Use the wear time and amount recommended for this formulation by your dentist.",
+      "Purpose": "Lightening the color of natural teeth."
     },
     "factSources": [
       {
         "title": "Opalescence Whitening Gel 15% Syringes product details",
         "url": "https://www.amazon.com/Opalescence-Teeth-Whitening-Flavor-Syringes/dp/B00VQTM43A"
       }
-    ]
+    ],
+    "aliases": [
+      "opalescence gel",
+      "opalescence syringes",
+      "opalescence 15",
+      "whitening gel"
+    ],
+    "family": "whitening"
   },
   {
     "name": "Opalescence Go Trays",
@@ -304,21 +389,28 @@
       "whitening",
       "tray",
       "trays",
-      "opalescence go"
+      "opalescence go",
+      "opalescence"
     ],
     "shortName": "Opalescence Go Trays",
     "comparisonFacts": {
       "Format": "Prefilled whitening trays.",
       "Tray setup": "Gel is already loaded in the trays.",
       "Practical fit": "A tray option without separately loading gel from a syringe.",
-      "Use directions": "Follow the package schedule for the linked 15% hydrogen-peroxide trays."
+      "Use directions": "Follow the package schedule for the linked 15% hydrogen-peroxide trays.",
+      "Purpose": "Lightening the color of natural teeth."
     },
     "factSources": [
       {
         "title": "Opalescence Go Trays product details",
         "url": "https://www.walmart.com/ip/Opalescence-Go-Prefilled-Teeth-Whitening-Trays-15-Hydrogen-Peroxide-Mint/2097180240"
       }
-    ]
+    ],
+    "aliases": [
+      "opalescence go",
+      "prefilled whitening trays"
+    ],
+    "family": "whitening"
   },
   {
     "name": "Crest 3D White Strips",
@@ -337,14 +429,23 @@
       "Format": "Flexible whitening strips.",
       "Tray setup": "Strips are applied directly to teeth; no tray.",
       "Practical fit": "A strip option without whitening trays.",
-      "Use directions": "Follow the linked Classic White package schedule."
+      "Use directions": "Follow the linked Classic White package schedule.",
+      "Purpose": "Lightening the color of natural teeth."
     },
     "factSources": [
       {
         "title": "Crest 3D White Strips product details",
         "url": "https://www.target.com/p/crest-3dwhitestrips-classic-white-at-home-teeth-whitening-kit-10-treatments/-/A-80137822"
       }
-    ]
+    ],
+    "aliases": [
+      "crest strips",
+      "crest whitestrips",
+      "crest 3d white",
+      "white strips",
+      "whitestrips"
+    ],
+    "family": "whitening"
   },
   {
     "name": "Fluoridex",
@@ -365,14 +466,20 @@
       "Format": "Prescription toothpaste with 1.1% sodium fluoride.",
       "Where it is used": "At home according to your prescription directions.",
       "Practical fit": "Additional cavity protection as part of your prescribed home-care routine.",
-      "Access": "Requires a prescription."
+      "Access": "Requires a prescription.",
+      "Purpose": "Additional cavity protection."
     },
     "factSources": [
       {
         "title": "Fluoridex product details",
         "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5fd60635-4b66-15e3-e053-2991aa0ab23a"
       }
-    ]
+    ],
+    "aliases": [
+      "fluoridex",
+      "prescription fluoride toothpaste"
+    ],
+    "family": "fluoride"
   },
   {
     "name": "Fluoride Varnish",
@@ -394,13 +501,19 @@
       "Format": "A fluoride coating applied by your dental team.",
       "Where it is used": "Applied professionally during a dental visit.",
       "Practical fit": "An in-office fluoride treatment with aftercare from your dental team.",
-      "Access": "Professionally applied prescription-strength option."
+      "Access": "Professionally applied prescription-strength option.",
+      "Purpose": "Additional cavity protection."
     },
     "factSources": [
       {
         "title": "Fluoride Varnish product details",
         "url": "https://www.colgateprofessional.com/products/prescription-only-products/colgate-prevident-varnish-prescription-strength"
       }
-    ]
+    ],
+    "aliases": [
+      "fluoride varnish",
+      "in office fluoride"
+    ],
+    "family": "fluoride"
   }
 ]

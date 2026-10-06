@@ -43,7 +43,7 @@ for (const question of ['What is the weather?', 'My tooth is purple', '<script>a
 const titles = new Set(answers.map(answer => answer.question));
 assert.equal(titles.size, answers.length);
 for (const answer of answers) {
-  assert.ok(answer.answer && answer.prompt && answer.sources.length && answer.checked);
+  assert.ok(answer.answer && answer.prompt && answer.sources.length && (answer.checked || answer.sourceNote));
   if (!answer.url.startsWith('https://')) assert.ok(fs.existsSync(path.join(root, answer.url.split('#')[0])));
   for (const source of answer.sources) assert.equal(new URL(source.url).protocol, 'https:');
   for (const followup of answer.followups) assert.ok(titles.has(followup), followup);
