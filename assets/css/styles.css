@@ -1,3 +1,34 @@
+/* Stylesheet sections
+ * 01. Theme, reset and typography
+ * 02. Header and search
+ * 03. Reading layouts
+ * 04. Biography
+ * 05. Product cards
+ * 06. Search results, footer and base responsive rules
+ * 07. Navigation disclosure
+ * 08. Homepage
+ * 09. Learning guides and catalog controls
+ * 10. Routine, FAQ and comparison cards
+ * 11. Product shelf
+ * 12. Library links
+ * 13. Search focus
+ * 14. Educational notices
+ * 15. Learning paths and visit planner
+ * 16. Answer finder
+ * 17. Question workspace
+ * 18. Chat conversation
+ * 19. Text input focus and selection
+ * 20. Chat typing indicator
+ * 21. Floating and embedded chat
+ * 22. Link accessibility, routine tips and footer links
+ * 23. Standalone routine layout
+ * 24. Pointer and keyboard focus
+ *
+ * Responsive and print rules stay with their sections.
+ * Rule order is intentional: later refinements override earlier base styles.
+ */
+
+/* === 01. Theme, reset and typography === */
 /* Shared responsive design: mobile first, no external font dependencies. */
 :root {
   color-scheme: light;
@@ -31,6 +62,8 @@ p { margin: 0 0 1.4rem; }
 ul { padding-left: 1.4rem; }
 li { padding-left: .3rem; margin-bottom: .8rem; }
 li::marker { color: var(--teal); }
+
+/* === 02. Header and search === */
 /* Brand and search have their own row, leaving each navigation link room. */
 header { background: var(--paper); border-bottom: 1px solid var(--line); }
 .navbar { width: min(1240px, calc(100% - 2rem)); margin: auto; padding: 1.25rem 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; align-items: stretch; }
@@ -45,6 +78,8 @@ header { background: var(--paper); border-bottom: 1px solid var(--line); }
 #search-bar::placeholder { color: var(--muted); opacity: 1; }
 .skip-link { position: absolute; top: -120px; left: 1rem; z-index: 20; padding: .75rem 1rem; background: white; border-radius: 8px; }
 .skip-link:focus { top: 1rem; }
+
+/* === 03. Reading layouts === */
 /* Reading layouts keep long text to a comfortable line length. */
 main { flex: 1; width: min(1200px, calc(100% - 2rem)); margin: clamp(1.5rem, 5vw, 4rem) auto; min-width: 0; }
 .main-content { max-width: 860px; margin: 0 auto; padding: clamp(1.25rem, 4.5vw, 3.5rem); background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
@@ -55,6 +90,8 @@ main { flex: 1; width: min(1200px, calc(100% - 2rem)); margin: clamp(1.5rem, 5vw
 .brushingTeeth { margin: 1.5rem auto 2rem; }
 img.brushingTeeth { max-height: 380px; object-fit: contain; }
 .pdimg, .periodontalDisease { width: 100%; margin: 2rem auto; border-radius: 12px; }
+
+/* === 04. Biography === */
 /* Biography becomes a two-column feature only when both columns fit. */
 .home-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; align-content: start; }
 .photo-logo { margin: 0; }
@@ -63,6 +100,8 @@ img.brushingTeeth { max-height: 380px; object-fit: contain; }
 .head h1 { margin: .5rem 0 0; }
 .home-layout .main-content { width: 100%; padding: 0; background: none; border: 0; box-shadow: none; }
 #aboutme { margin: 0; }
+
+/* === 05. Product cards === */
 /* Cards resize by available space; images never set the column width. */
 .header { max-width: 800px; margin: 0 auto 2.5rem; text-align: center; }
 .header h1 { margin: 0; }
@@ -79,6 +118,8 @@ img.brushingTeeth { max-height: 380px; object-fit: contain; }
 .product-item p a:hover { background: var(--deep); border-color: var(--deep); color: white; }
 .related-link { display: block; margin-top: 1rem; }
 .disclaimer { max-width: 78ch; margin: 2.5rem auto 0; padding: 1.5rem; border-left: 3px solid var(--teal); color: var(--muted); font-size: .9rem; }
+
+/* === 06. Search results, footer and base responsive rules === */
 /* Search stays in document flow so it never covers the page. */
 #results { width: min(860px, calc(100% - 2rem)); margin: 1.5rem auto 0; padding: 1.25rem; border: 1px solid var(--line); border-radius: 16px; background: white; box-shadow: var(--shadow); }
 #results > p { margin: 0 0 .5rem; color: var(--muted); }
@@ -125,6 +166,8 @@ footer p { margin: 0; }
   .product-item { break-inside: avoid; }
   footer { background: none; padding: 1rem; }
 }
+
+/* === 07. Navigation disclosure === */
 /* Compact mobile header and an accessible disclosure menu. */
 .nav-links {
   grid-column: 1 / -1;
@@ -202,6 +245,8 @@ footer p { margin: 0; }
   .nav-links { animation: none; }
   .menu-icon::before, .menu-icon::after { transition: none; }
 }
+
+/* === 08. Homepage === */
 /* Homepage: a personal introduction and clear paths into the learning library. */
 .home-page { margin-top: clamp(2rem, 5vw, 4.5rem); }
 .welcome { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.5rem; align-items: center; }
@@ -271,6 +316,8 @@ footer p { margin: 0; }
   .topic-card { transition: none; }
   .topic-card:hover { transform: none; }
 }
+
+/* === 09. Learning guides and catalog controls === */
 /* Learning guides */
 .guide-hero { display: grid; grid-template-columns: minmax(0, 1fr) 150px; gap: 2rem; align-items: center; padding-bottom: 2.5rem; }
 .guide-hero h1 { max-width: 20ch; }
@@ -316,6 +363,8 @@ footer p { margin: 0; }
 }
 .nav-links a { overflow-wrap: anywhere; }
 .health-banner > span:first-child { min-width: 0; }
+
+/* === 10. Routine, FAQ and comparison cards === */
 /* Shared brand and practical learning sections. */
 .routine-section, .faq-section { margin-top: clamp(3.5rem, 7vw, 6rem); }
 .routine-grid { display: grid; gap: 1rem; }
@@ -351,9 +400,18 @@ footer p { margin: 0; }
 .comparison-grid p { font-size: .85rem; color: var(--muted); }
 .comparison-grid p:last-child { margin-bottom: 0; }
 .comparison-grid strong, .product-detail-label { display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--teal); margin-bottom: .3rem; }
-@media (min-width: 700px) { .routine-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .comparison-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1000px) { .faq-section { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 4rem; } }
-@media print { .routine-card { break-inside: avoid; } }
+@media (min-width: 700px) {
+  .routine-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .comparison-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1000px) {
+  .faq-section { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 4rem; }
+}
+@media print {
+  .routine-card { break-inside: avoid; }
+}
+
+/* === 11. Product shelf === */
 /* A quieter product shelf: concise comparisons and consistent card spacing. */
 .products-page .header { text-align: left; padding: 0; margin-bottom: 2rem; }
 .products-page .header > p:last-child { max-width: 58ch; color: var(--muted); }
@@ -377,6 +435,8 @@ footer p { margin: 0; }
 .routine-card summary:hover .routine-open, .faq-list summary:hover, .comparison-card summary:hover { color: var(--teal); }
 .products-page .header { max-width: none; margin: 0 0 2rem; }
 .products-page .header h1 { margin-bottom: .75rem; }
+
+/* === 12. Library links === */
 /* Clear routes into the library and a compact product landing page. */
 .library-secondary { display: grid; gap: 1rem; margin-top: 1rem; }
 .library-secondary a { display: block; padding: 1.25rem 1.5rem; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); text-decoration: none; }
@@ -388,16 +448,21 @@ footer p { margin: 0; }
 .buying-help[open] > summary { margin-bottom: 1.5rem; }
 .buying-help[open] > summary > span { transform: rotate(45deg); }
 .products-page .buying-help:not([open]) { padding: 1rem 1.25rem; }
-@media (min-width: 700px) { .library-secondary { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 700px) {
+  .library-secondary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 /* Keep mobile pages focused on content instead of section navigation. */
 @media (max-width: 799px) {
   .guide-toc { display: none; }
 }
+
+/* === 13. Search focus === */
 /* Subtle search focus, with a distinct keyboard focus indicator. */
 #search-bar:focus { outline: none; box-shadow: none; }
 #search-bar:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 #search-bar::selection { background: #dce9e0; color: var(--deep); }
 
+/* === 14. Educational notices === */
 /* Readable educational notices and disclaimer page. */
 footer .footer-disclaimer { max-width: 78ch; margin: .8rem auto 0; font-size: .875rem; line-height: 1.65; }
 .legal-page { max-width: 850px; padding: clamp(1.25rem, 4vw, 3rem); background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
@@ -407,6 +472,8 @@ footer .footer-disclaimer { max-width: 78ch; margin: .8rem auto 0; font-size: .8
 .legal-intro { font-size: 1.1rem; }
 .legal-callout, .education-notice { padding: 1.25rem; border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: 10px; background: #edf3ef; }
 .education-notice { margin: 0 0 2rem; }
+
+/* === 15. Learning paths and visit planner === */
 /* Learning paths and practical appointment preparation. */
 .knowledge-page { max-width: 950px; }
 .knowledge-page > h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
@@ -430,12 +497,16 @@ footer .footer-disclaimer { max-width: 78ch; margin: .8rem auto 0; font-size: .8
 .planner-option { display: flex; gap: .75rem; align-items: baseline; padding: .75rem 0; cursor: pointer; }
 .planner-option input { flex-shrink: 0; width: 1.1rem; height: 1.1rem; accent-color: var(--teal); }
 #selected-questions button { margin: .5rem .75rem .5rem 0; padding: .75rem 1rem; border: 1px solid var(--teal); border-radius: 8px; font: inherit; cursor: pointer; background: var(--paper); color: var(--deep); }
-@media (max-width: 600px) { .knowledge-links, .planner-groups { grid-template-columns: 1fr; } }
+@media (max-width: 600px) {
+  .knowledge-links, .planner-groups { grid-template-columns: 1fr; }
+}
 @media print {
  body:has(#selected-questions) header, body:has(#selected-questions) footer, body:has(#selected-questions) #results, body:has(#selected-questions) main > :not(#selected-questions), #selected-questions button { display: none !important; }
  body:has(#selected-questions) main { width: 100%; margin: 0; }
  #selected-questions { border: none; background: white; color: black; padding: 0; }
 }
+
+/* === 16. Answer finder === */
 /* Natural-language questions lead to existing, sourced learning guides. */
 .answer-finder { padding: clamp(1.25rem, 4vw, 2rem); border-radius: 18px; border: 1px solid var(--line); background: #edf3ef; }
 .answer-finder[hidden] { display: none; }
@@ -449,6 +520,8 @@ footer .footer-disclaimer { max-width: 78ch; margin: .8rem auto 0; font-size: .8
 #finder-results { display: grid; gap: 1rem; }
 .finder-answer { padding: 1.25rem; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
 .finder-answer h3 { margin-top: 0; }
+
+/* === 17. Question workspace === */
 /* One focused question workspace, with answers brought into view. */
 .qa-page { max-width: 780px; margin-top: 1.5rem; }
 .qa-heading { text-align: center; margin-bottom: 1.5rem; }
@@ -487,7 +560,12 @@ footer .footer-disclaimer { max-width: 78ch; margin: .8rem auto 0; font-size: .8
 .qa-guide-links { display: flex; flex-wrap: wrap; gap: .6rem 1rem; margin: 1rem 0; }
 .qa-secondary details p { font-size: .8rem; color: var(--muted); margin: 0; }
 .qa-care-note { margin: 1.5rem 0 0; font-size: .75rem; color: var(--muted); line-height: 1.6; }
-@media (max-width: 480px) { .qa-submit-row { align-items: stretch; flex-direction: column; gap: .5rem; } .qa-submit-row .button-primary { justify-content: center; } }
+@media (max-width: 480px) {
+  .qa-submit-row { align-items: stretch; flex-direction: column; gap: .5rem; }
+  .qa-submit-row .button-primary { justify-content: center; }
+}
+
+/* === 18. Chat conversation === */
 /* A messaging conversation with a fixed composer inside the card. */
 .chat-workspace.answer-finder { padding: 0; background: var(--paper); overflow: hidden; border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); }
 .chat-topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 1.25rem; border-bottom: 1px solid var(--line); }
@@ -548,10 +626,14 @@ footer .footer-disclaimer { max-width: 78ch; margin: .8rem auto 0; font-size: .8
  .chat-suggestions { padding: .6rem .75rem; }
  .chat-bubble { padding: .85rem; }
 }
+
+/* === 19. Text input focus and selection === */
 /* Match text entry focus and selection to the search bar. */
 textarea:focus, input[type="text"]:focus, input[type="search"]:focus { outline: none; box-shadow: none; }
 textarea:focus-visible, input[type="text"]:focus-visible, input[type="search"]:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 textarea::selection, input[type="text"]::selection, input[type="search"]::selection { background: #dce9e0; color: var(--deep); }
+
+/* === 20. Chat typing indicator === */
 /* A brief typing bubble while an answer is being retrieved. */
 .chat-message.chat-typing { width: fit-content; }
 .chat-typing .chat-bubble { padding: .9rem 1.1rem; }
@@ -560,7 +642,11 @@ textarea::selection, input[type="text"]::selection, input[type="search"]::select
 .typing-dots span:nth-child(2) { animation-delay: .15s; }
 .typing-dots span:nth-child(3) { animation-delay: .3s; }
 @keyframes chat-dot { 0%, 70%, 100% { opacity: .4; transform: translateY(0); } 35% { opacity: 1; transform: translateY(-3px); } }
-@media (prefers-reduced-motion: reduce) { .typing-dots span { animation: none; opacity: .65; } }
+@media (prefers-reduced-motion: reduce) {
+  .typing-dots span { animation: none; opacity: .65; }
+}
+
+/* === 21. Floating and embedded chat === */
 /* Chat is available beside every guide without navigating away. */
 .chat-launcher { position: fixed; z-index: 70; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); display: flex; gap: .6rem; align-items: center; min-height: 50px; padding: .8rem 1.1rem; background: var(--deep); color: white; border: 1px solid #ffffff55; border-radius: 100px; box-shadow: 0 5px 24px #103f4333; cursor: pointer; font-size: .85rem; }
 .chat-launcher svg { width: 22px; height: 22px; }
@@ -601,8 +687,11 @@ html.chat-page-locked { overflow: hidden; overscroll-behavior: none; }
   body:has(.floating-chat[open]) { overflow: hidden; }
   body:has(.floating-chat[open]) .chat-launcher { visibility: hidden; }
 }
-@media print { .chat-launcher, .floating-chat { display: none !important; } }
+@media print {
+  .chat-launcher, .floating-chat { display: none !important; }
+}
 
+/* === 22. Link accessibility, routine tips and footer links === */
 /* New-tab links announce their behavior without adding visual clutter. */
 .external-link-note { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 
@@ -613,10 +702,12 @@ html.chat-page-locked { overflow: hidden; overscroll-behavior: none; }
 .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: .5rem 1.5rem; margin-bottom: 1rem; }
 .footer-links a { padding: .5rem; font-size: .9rem; }
 
+/* === 23. Standalone routine layout === */
 /* Standalone routine starts at the normal page inset. */
 .routine-page > .routine-section { margin-top: 0; }
 .routine-page .section-intro h1 { margin: 0; font-size: clamp(2rem, 3vw, 2.8rem); }
 
+/* === 24. Pointer and keyboard focus === */
 /* Pointer interactions stay plain; keyboard navigation retains focus outlines. */
 a, button, summary, input, textarea, select, label { -webkit-tap-highlight-color: transparent; }
 :focus:not(:focus-visible) { outline: none; }

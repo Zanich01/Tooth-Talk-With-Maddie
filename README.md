@@ -21,19 +21,23 @@ hshy.html              Oral health and overall health
 cpd.html               Cavity prevention and decay
 pr.html                Product recommendations
 assets/css/styles.css  Shared responsive styles
-assets/js/main.js      Product search and back to top
+assets/js/main.js      Navigation, product search and floating chat
+assets/js/answer-finder.js  Chat interface and answer rendering
+assets/js/dental-engine.js  Shared question and comparison engine
 assets/images/         Site and product images
+data/answers.json      Sourced dental answer library
 data/products.json     Product search catalog
 data/topics.json       Educational search catalog
-scripts/check_site.py  Structure and asset checks
+server.cjs             Optional local answer API and static preview
+scripts/               Structure, answer, conversation and backend checks
 ```
 
-Existing page URLs are retained for bookmarks and GitHub Pages. Untracked tire artwork in the root is unrelated and has been left in place.
+Existing page URLs are retained for bookmarks and GitHub Pages.
 
 ## Editing
 
 - Edit page content in its HTML file. Navigation is static so it works without JavaScript; update all HTML pages when adding a link.
-- Use the shared stylesheet for visual changes.
+- Use the shared stylesheet for visual changes. Its numbered section index covers page layouts, shared components, chat, and accessibility. Keep override order intact; responsive and print rules remain with their sections.
 - Update both data/products.json and the cards in pr.html when changing products. Image paths are relative to the site root.
 - Search matches topics, names, categories, descriptions, and keywords. It handles partial loading failures and closes with Escape or an outside click. Update data/topics.json when changing a guide. Product filters match each unique card to one or more care needs and progressively enhance the static catalog; all products remain readable without JavaScript.
 - The unrelated world population widget and its external API request have been removed.
@@ -45,7 +49,7 @@ python scripts/check_site.py
 node --check assets/js/main.js
 ```
 
-The Python check validates nesting, unique IDs, landmarks, current navigation links, local file references, and product records. Also preview desktop and narrow layouts and try search, empty results, Escape, and back to top.
+The Python check validates nesting, unique IDs, landmarks, current navigation links, local file references, and product records. Also preview desktop and narrow layouts and try search, empty results, Escape, product filters, and the floating chat.
 
 ## Deployment
 

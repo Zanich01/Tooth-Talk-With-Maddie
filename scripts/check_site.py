@@ -38,13 +38,13 @@ for path in sorted(ROOT.glob('*.html')):
     assert check.active in ([], [path.name]), "Current-page links must match this page without duplicates"
     assert 'main-content' in check.ids
     print(f'PASS {path.name}')
-products = json.loads((ROOT / 'data/products.json').read_text())
+products = json.loads((ROOT / 'data/products.json').read_text(encoding='utf-8'))
 for product in products:
     assert all(product.get(key) for key in ('name', 'category', 'url', 'image'))
     assert (ROOT / product['image']).is_file()
     assert urlsplit(product['url']).scheme == 'https'
 print(f'PASS {len(products)} products and images')
-topics = json.loads((ROOT / 'data/topics.json').read_text())
+topics = json.loads((ROOT / 'data/topics.json').read_text(encoding='utf-8'))
 for topic in topics:
     assert all(topic.get(key) for key in ('name', 'url', 'description', 'keywords'))
     assert (ROOT / topic['url']).is_file()
